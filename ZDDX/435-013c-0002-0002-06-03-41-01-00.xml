@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0002"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="41"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>15397</certId>
+            <certNumber>ZC08-13050003</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">PIR, door/window, temperature and illumination Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">Single press tamper button</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tripple press tamper button</lang>
+          </inclusionNote>
+            <productName>Slim Multi-Sensor PSM02-1</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Product</productLine>
+            <productCode>PSM02-1</productCode>
+            <productVersion>V 1.0</productVersion>
+            <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0030" version="2"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="7">
+            <description>
+                <lang xml:lang="en">The group 2 is for light control, the device will send the “Basic Set” command to this group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="7">
+            <description>
+                <lang xml:lang="en">The group 1 is for receiving the report message, like triggered event, temperature, illumination etc.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The 255 means turn ON the light. For dimmer equipment 1 to 100 means the light strength.</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">turn On</lang>
+                  </description>
+              </value>
+            <value from="01" to="64">
+                <description>
+                    <lang xml:lang="en">dimming level</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="46">
+            <name>
+                <lang xml:lang="en">PIR Sensitivity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">0 means disable the PIR motion.
+1 means the lowest sensitivity,
+99 means the highest sensitivity.
+High sensitivity means can detected long distance, but if there is more noise signal in the environment, it will re-trigger too frequency.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable the PIR motion</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Light Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light.
+0 means turn off illumination detected function. And never turn on the light. 1 means darkest.
+99 means brightest.
+100 means turn off illumination detected function. And always turn on the light.
+Notice: In none test mode, only the value in 1 to 99 will enable the illumination detected function and update the illumination value.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">turn off illumination detected</lang>
+                  </description>
+              </value>
+            <value from="00" to="64">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Operation Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Operation mode. Using bit to control. Bit0: 1 means security mode,
+0 means home automation mode. Bit1: 1 means enable test mode,
+0 means disable test mode.
+Notice:
+Bit0 and bit1 will effect when the DIP Switch setting to program mode.
+If bit1 is enabled, the bit0 is useless.
+Bit2: Disable the door/window function. Bit3: Setting the temperature scale.
+0: Fahrenheit, 1:Celsius
+Bit4: Disable illumination report after event triggered.
+Bit5: Disable temperature report after event triggered.</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="04">
+            <name>
+                <lang xml:lang="en">Multi-Sensor Function Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Multi-Sensor function switch. Using bit to control.
+Bit0: Disable magnetic integrate illumination.
+Bit1: Disable PIR integrate Illumination. Bit2: Disable magnetic integrate PIR (Default is Disable)
+Bit3: When Bit2 is 0 (Enable), the device is install in the same room with the light?
+0: In the same room(Default),
+1: In the different room.
+Bit4: Disable delay 5 seconds to turn off the light, when door/window closed. Bit5: Disable auto turn off the light, after door/window opened to turn on the light.
+Notice: If bit2 is zero, this setting is useless.
+Bit6:Enable temperature monitoring. When this bit enable, the temperature changed 3 degree Fahrenheit, it will report.
+And also the temperature over 140 degree Fahrenheit, it will report every 64 seconds.</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">PIR Re-Detect Interval Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">In the security mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, and minimum time is 24 seconds, default tick is 3 (24 seconds).
+Setting the suitable value to prevent received the trigger signal too frequency. Also can save the battery energy. Notice: If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR not detecting.</lang>
+              </description>
+      
+                  <value from="03" to="7f" unit="8sec">
+                <description>
+                    <lang xml:lang="en">3 = 24 sec</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="04">
+            <name>
+                <lang xml:lang="en">Turn Off Light Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected. 8 seconds per tick, and minimum time is 32 seconds, default tick is 4 (32 seconds).</lang>
+              </description>
+      
+                  <value from="04" to="7f" unit="8sec">
+                <description>
+                    <lang xml:lang="en">4 = 32sec</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Battery Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The interval time for auto report the battery level. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30min">
+                <description>
+                    <lang xml:lang="en">12 = 6 hours</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Door/Window State Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The interval time for auto report the door/window state. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="en">12 = 6 hours</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Illumination Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The interval time for auto report the illumination. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="en">12 = 6 hours</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Temperature Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The interval time for auto report the temperature. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="en">12 = 6 hours</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/c52ed2bd37ec5fc746e2d92f5446c74fa7b0717f.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

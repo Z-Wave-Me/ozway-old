@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0600"/>
+    <productId value="1000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="16"/>
+    <appSubVersion value="16"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Zwischenstecker mit Messfunktion und Multicolor-LED</lang>
+            <lang xml:lang="en">Wall Plug Switch with Metering and multicolor LED indicator</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach-Klick auf Taste</lang>
+            <lang xml:lang="en">Tripple Click on Button</lang>
+          </inclusionNote>
+            <productName>FGWPE</productName>
+            <brandName>Fibar</brandName>
+                                </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0071" version="0"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a"/>
+        <commandClass id="009c" version="0"/>
+        <commandClass id="0025"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Sendet Schaltzustand zu einem einzigen Gerät</lang>
+                <lang xml:lang="en">reports relais status to one device</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Sendet Kommando in Abhängigkeit der Last</lang>
+                <lang xml:lang="en">send commands depending on current load</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Schaltstatus: Sendet ein Kommando bei jeder Änderung des Schaltstatus</lang>
+                <lang xml:lang="en">plug status. Will send BASIC command whenever the status of the plug changes</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Immer AN</lang>
+                <lang xml:lang="en">Always On Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wenn aktiviert, bleibt der Schalter immer im Einschaltzustand</lang>
+                <lang xml:lang="en">Once activated the Plug will keep the connected device always on</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiv</lang>
+                    <lang xml:lang="en">active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Zurück zu altem Status nach Stromausfall</lang>
+                <lang xml:lang="en">Remember setting after power failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Verhalten nach einem Stromausfall</lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">nicht zurück zu altem Status</lang>
+                    <lang xml:lang="en">dont return tu old status</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">zurück zu altem Status</lang>
+                    <lang xml:lang="en">return to old status</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="rangemapped" size="1" default="3f">
+            <name>
+                <lang xml:lang="de">Reaktion auf Alarm</lang>
+                <lang xml:lang="en">Reaction to Alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Alarmtypen, auf die der Schalter reagiert</lang>
+                <lang xml:lang="en">defines the alarm types the plug reacts to</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Allgemeiner Alarm</lang>
+                    <lang xml:lang="en">General Alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Rauchalarm</lang>
+                    <lang xml:lang="en">Smoke Alarm</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">CO Alarm</lang>
+                    <lang xml:lang="en">CO Alarm</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">CO2 Alarm</lang>
+                    <lang xml:lang="en">CO2 Alarm</lang>
+                  </description>
+              </value>
+            <value from="16" to="16">
+                <description>
+                    <lang xml:lang="de">Übertemperaturalarm</lang>
+                    <lang xml:lang="en">High Temperature Alarm</lang>
+                  </description>
+              </value>
+            <value from="32" to="32">
+                <description>
+                    <lang xml:lang="de">Überflutungsalarm</lang>
+                    <lang xml:lang="en">Flood Alarm</lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="de">Alle Alarme</lang>
+                    <lang xml:lang="en">All Alarms</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="36" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Antwort auf Alarmmeldung</lang>
+                <lang xml:lang="en">Response to Alarm Frames</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Aktion des Schalters bei Alarm. Im &quot;Immer An&quot; Modus wird diese Einstellung ignoriert.</lang>
+                <lang xml:lang="en">defines the response of the plug to an alarm. In &quot;always on&quot; mode this setting is ignored.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">No Reaktion</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">Turn on connected device, LED ring signals alarm throught time set in Parameter 39 or until alarm is turned off</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">Turn off connected device, LED ring signals alarm throught time set in Parameter 39 or until alarm is turned off</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">Change Device state every second. In alarm mode the plug does not report status changes, power changes and ignores 
+                    alarm frames. After alarm time (Parameter 39) has passed or alarm was canceled device is set back to previous state</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="constant" size="2" default="0600">
+            <name>
+                <lang xml:lang="de">max. Alarmzeit</lang>
+                <lang xml:lang="en">max Alarm time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Aktion des Schalters bei Alarm. Im &quot;Immer An&quot; Modus wird diese Einstellung ignoriert.</lang>
+                <lang xml:lang="en">defines the time an alarm condition is presented.</lang>
+              </description>
+      
+                  <value from="0000" to="ffff">
+                <description>
+                    <lang xml:lang="de">sec</lang>
+                    <lang xml:lang="en">sec</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="70" type="constant" size="2" default="ffff">
+            <name>
+                <lang xml:lang="de">Überlastabschaltung</lang>
+                <lang xml:lang="en">Overload Safety Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Aktion des Schalters bei Alarm. Im &quot;Immer An&quot; Modus wird diese Einstellung ignoriert.</lang>
+                <lang xml:lang="en">Allows turning off a device in case of overloading. This will even happen in &quot;always on&quot; mode. Device can 
+                be turned back on using the button on the device or sending a ON command.</lang>
+              </description>
+      
+                  <value from="0010" to="ffff">
+                <description>
+                    <lang xml:lang="de">* 100 mW</lang>
+                    <lang xml:lang="en">* 100 mW</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="61" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Ring Farbe im Einschaltzustand</lang>
+                <lang xml:lang="en">LED Ring Color when device is on</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Farbe des LED Rings im eingeschalteten Zustand</lang>
+                <lang xml:lang="en">defines the color of the LED ring in ON state </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Farbe wechselt entsprechend der Leistungsaufnahme des Verbrauchers</lang>
+                    <lang xml:lang="en">changes in predefined steps according to power load</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Farbe wird kontinuierlich verändert entsprechend der Leistungsaufnahme des Verbrauchers</lang>
+                    <lang xml:lang="en">changes continously according to power load using full spectrum of LED color</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Weiss</lang>
+                    <lang xml:lang="en">White</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Geld</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="63" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Ring Farbe bei Z-Wave Alarmmeldungen</lang>
+                <lang xml:lang="en">LED Ring Color on Z-Wave Alarms</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Farbe des LED Rings im Alarmfall</lang>
+                <lang xml:lang="en">defines the color of the LED ring on Alarm State </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Farbänderung</lang>
+                    <lang xml:lang="en">No Change of color</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Blinked rot/blau/weiss</lang>
+                    <lang xml:lang="en">flashes red/blue/white</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Weiss</lang>
+                    <lang xml:lang="en">White</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Geld</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="60" type="constant" size="2" default="61a8">
+            <name>
+                <lang xml:lang="de">Leistungsschwellwert für violettes Blinken</lang>
+                <lang xml:lang="en">Power Load Trigger</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Schwellwert des Stromverbrauches, ab dem das Gerät violett blinkt</lang>
+                <lang xml:lang="en">defines the power load that will make the plug flash purple</lang>
+              </description>
+      
+                  <value from="000a" to="ffff">
+                <description>
+                    <lang xml:lang="de">* 100 mW</lang>
+                    <lang xml:lang="en">* 100 mW</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="constant" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">unterer Leistungsschwellwert</lang>
+                <lang xml:lang="en">DOWN value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Bereich des Stromverbrauches, der am Gerät signalisiert wird</lang>
+                <lang xml:lang="en">defines the power range that caused the device to signal according to parameter 52</lang>
+              </description>
+      
+                  <value from="0a" to="a8">
+                <description>
+                    <lang xml:lang="de">* 100 mW</lang>
+                    <lang xml:lang="en">* 100 mW</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="constant" size="2" default="01f4">
+            <name>
+                <lang xml:lang="de">oberer Leistungsschwellwert</lang>
+                <lang xml:lang="en">UP value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Bereich des Stromverbrauches, der am Gerät signalisiert wird</lang>
+                <lang xml:lang="en">defines the power range that caused the device to signal according to parameter 52</lang>
+              </description>
+      
+                  <value from="0010" to="61a8">
+                <description>
+                    <lang xml:lang="de">* 100 mW</lang>
+                    <lang xml:lang="en">* 100 mW</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="constant" size="1" default="0f">
+            <name>
+                <lang xml:lang="de">Änderung der Leistung zum Generieren eines Reports</lang>
+                <lang xml:lang="en">Standard Power Load Reporting</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die notwendige Änderung der Leistungsaufnahme, um einen entsprechenden automatischen Report zu generieren</lang>
+                <lang xml:lang="en">defines the change in power consumption to cause an unsolicided power report</lang>
+              </description>
+      
+                  <value from="00" to="64">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="constant" size="1" default="1d">
+            <name>
+                <lang xml:lang="de">Regelmäßiges Senden eines Reports über die Stromaufnahme</lang>
+                <lang xml:lang="en">Power Reporting Frequency</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Interval, in dem ein automatischer Report über den Stromverbrauch ausgesandt wird.</lang>
+                <lang xml:lang="en">defines the frequency to send an unsolicided power report</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de">sec</lang>
+                    <lang xml:lang="en">sec</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="constant" size="1" default="10">
+            <name>
+                <lang xml:lang="de">Automatisches Senden eines Reportes über Stromverbrauch bei Verbrauchsänderung</lang>
+                <lang xml:lang="en">Reporting Changes in energy consumed by controlled devices</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Änderung im Stromverbrauch, bei der ein automatischer Report über den Stromverbrauch ausgesandt wird.</lang>
+                <lang xml:lang="en">defines needed change of power draw to generate an unsoliceded power report</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de">* 10 W</lang>
+                    <lang xml:lang="en">* 10 W</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="47" type="constant" size="2" default="3600">
+            <name>
+                <lang xml:lang="de">Zeitinterval zum Senden eines Reportes ohne Änderung im Verbrauch</lang>
+                <lang xml:lang="en">Time Period between reports on power and energy consumption</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Interval, in dem ein automatischer Report über den Stromverbrauch ausgesandt wird, wenn keine Änderung des Stromverbrauches erkannt wurde</lang>
+                <lang xml:lang="en">defines the time pweriod between reports sent when changes in power load have nit been reported.</lang>
+              </description>
+      
+                  <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="de">sec</lang>
+                    <lang xml:lang="en">sec</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="49" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Messen des Eigenstromverbrauches</lang>
+                <lang xml:lang="en">Metering Energy consumed by Power Plug itself</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, ob der Eigenstromverbrauch berücksichtigt werden soll.</lang>
+                <lang xml:lang="en">defines whether or not the own power consumption shall be recorded.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiv</lang>
+                    <lang xml:lang="en">active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="constant" size="1" default="80">
+            <name>
+                <lang xml:lang="de">Sofortiger Bericht über Stromverbrauch</lang>
+                <lang xml:lang="en">Immediate Power Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die notwendige Änderung im Stromverbrauch, die zu einer sofortigen Absendung eines Reports führt. Achtung: Bei stark schwankenden Lasten kann dies zu einer Überlastung des Z-Wave-Netzes führen.</lang>
+                <lang xml:lang="en">defines the minimum change in power consumption to cause an immediate power report: Attention: in base of volatile loads this function may cause an overflood of the Z-Wave network with report packets.</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="constant" size="1" default="06">
+            <name>
+                <lang xml:lang="de">Aktion bei Erreichen des definierten Schwellwertes (Parameter 50/51)</lang>
+                <lang xml:lang="en">Action on case of exceeded power trigger (Parameter 50/51)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, welche Aktion bei Geräten in Assoziationsgruppe 2 bei Erreichen des Schwellwertes des Stromverbrauches durchgeführt werden soll </lang>
+                <lang xml:lang="en">definies the action for devices in association group 2 when power trigger value is reached.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des DOWN Wertes ein</lang>
+                    <lang xml:lang="en">turns associated devices ON when when power drops below DOWN value</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des DOWN Wertes aus</lang>
+                    <lang xml:lang="en">turns associated devices OFF when when power drops below DOWN value</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des UP Wertes aus</lang>
+                    <lang xml:lang="en">turns associated devices ON when when power drops below UP value</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des UP Wertes ein</lang>
+                    <lang xml:lang="en">turns associated devices OFF when when power drops below UP value</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Kombination von Option 1 und Option 4</lang>
+                    <lang xml:lang="en">Option 1 and 4 combined</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Kombination von Option 2 und Option 3</lang>
+                    <lang xml:lang="en">Option 2 and 3 combined</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/142203b945a49094d99ab2f3ab8647e27c994cd8.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

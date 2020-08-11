@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ZWavePlus>
+	<RoleTypes>
+		<RoleType id='0'>
+			<name>
+				<lang xml:lang="en">Central Controller</lang>
+			</name>
+		</RoleType>
+		<RoleType id='1'>
+			<name>
+				<lang xml:lang="en">Sub Controller</lang>
+			</name>
+		</RoleType>
+		<RoleType id='2'>
+			<name>
+				<lang xml:lang="en">Portable Controller</lang>
+			</name>
+		</RoleType>
+		<RoleType id='3'>
+			<name>
+				<lang xml:lang="en">Portable Reporting Controller</lang>
+			</name>
+		</RoleType>
+		<RoleType id='4'>
+			<name>
+				<lang xml:lang="en">Portable Slave</lang>
+			</name>
+		</RoleType>
+		<RoleType id='5'>
+			<name>
+				<lang xml:lang="en">Always On Slave</lang>
+			</name>
+		</RoleType>
+		<RoleType id='6'>
+			<name>
+				<lang xml:lang="en">Reporting Sleeping Slave</lang>
+			</name>
+		</RoleType>
+		<RoleType id='7'>
+			<name>
+				<lang xml:lang="en">Listening Sleeping Slave</lang>
+			</name>
+		</RoleType>
+	</RoleTypes>
+</ZWavePlus>

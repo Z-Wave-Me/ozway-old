@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<VendorIds>
+	<Vendor id="0x0000">
+		<Name>Sigma Designs</Name>
+		<Webpage>http://www.sigmadesigns.com</Webpage>
+	</Vendor>
+	<Vendor id="0x0001">
+		<Name>Advaned Control Solutions</Name>
+		<Webpage>http://www.act-solutions.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/ACT.gif</Logo>
+	</Vendor>
+	<Vendor id="0x0002">
+		<Name>Danfoss</Name>
+		<Webpage>http://www.danfoss.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/Danfoss.gif</Logo>
+	</Vendor>
+	<Vendor id="0x0004">
+		<Name>Exhausto</Name>
+		<Webpage>http://www.exhausto.com</Webpage>
+	</Vendor>
+	<Vendor id="0x0012">
+		<Name>Tell It Online</Name>
+	</Vendor>		
+	<Vendor id="0x001e">
+		<Name>Express Controls</Name>
+		<Webpage>http://www.expresscontrols.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/ExCLogo.gif</Logo>
+	</Vendor>
+	<Vendor id="0x0020">
+		<Name>Universal Electronics</Name>
+		<Webpage>http://www.uie.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/uei.gif</Logo>
+	</Vendor>	
+	<Vendor id="0x0033">
+		<Name>Hunter Douglas</Name>
+		<Webpage>http://www.hdl.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/dhl.gif</Logo>
+	</Vendor>		
+	<Vendor id="0x0039">
+		<Name>Honeywell</Name>
+	</Vendor>	 
+	<Vendor id="0x0059">
+		<Name>Hostmann Controls</Name>
+		<Webpage>http://www.horstmann.co.uk</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/horstmann.png</Logo>
+	</Vendor>  
+	<Vendor id="0x0060">
+		<Name>Everspring</Name>
+		<Webpage>http://www.everspring.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/everspring1.gif</Logo>
+	</Vendor>
+	<Vendor id="0x0064">
+		<Name>Duwi</Name>
+		<Webpage>http://www.duewi.de</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/Duewi.png</Logo>
+	</Vendor>
+	<Vendor id="0x006b">
+		<Name>Tricklestar</Name>
+		<Webpage>http://www.tricklestar.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/tricklestarlogo1.gif</Logo>
+	</Vendor> 
+	<Vendor id="0x0071">
+		<Name>LS Control</Name>
+	</Vendor>	
+	<Vendor id="0x0077">
+		<Name>Innovus</Name>
+	</Vendor>
+	<Vendor id="0x007a">
+		<Name>Merten</Name>
+		<Webpage>http://www.merten.de</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/merten1.gif</Logo>
+	</Vendor>
+	<Vendor id="0x0080">
+		<Name>Vero Duco</Name>
+	</Vendor>	
+	<Vendor id="0x0081">
+		<Name>Siegenia Aubi</Name>
+	</Vendor>	
+	<Vendor id="0x0084">
+		<Name>Fortrezz</Name>
+		<Webpage>http://www.fortrezz.com</Webpage>
+	</Vendor>	
+	<Vendor id="0x0085">
+		<Name>Fakro</Name>
+		<Webpage>http://www.fakro.com</Webpage>
+	</Vendor>		
+	<Vendor id="0x0086">
+		<Name>Aeon Labs</Name>
+		<Webpage>http://www.aeon-labs.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/aeonlabs.jpg</Logo>
+	</Vendor>	
+	<Vendor id="0x008a">
+		<Name>BeNeXt</Name>
+		<Webpage>http://benext.nl</Webpage>
+	</Vendor>
+	<Vendor id="0x0095">
+		<Name>QEES</Name>
+		<Webpage>http://www.qees.eu</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/qees.gif</Logo>
+	</Vendor>
+	<Vendor id="0x008e">
+		<Name>Raritan</Name>
+		<Webpage>http://www.raritan.com</Webpage>
+	</Vendor>
+	<Vendor id="0x0092">
+		<Name>Martin Rentz</Name>
+		<Webpage>http://www.rentz-gmbh.de</Webpage>
+	</Vendor> 
+	<Vendor id="0x001d">
+		<Name>Leviton</Name>
+		<Webpage>http://www.leviton.com</Webpage>
+	</Vendor> 	
+	<Vendor id="0x001a">
+		<Name>Cooper</Name>
+		<Webpage>http://www.cooper.com</Webpage>
+	</Vendor> 	
+	<Vendor id="0x0113">
+		<Name>Evolve</Name>
+		<Webpage></Webpage>
+	</Vendor> 	
+	<Vendor id="0x0098">
+		<Name>RTCA</Name>
+		<Webpage></Webpage>
+	</Vendor> 
+	<Vendor id="0x0125">
+		<Name>Motion Inc</Name>
+		<Webpage>http://www.cooper.com</Webpage>
+	</Vendor> 		
+	<Vendor id="0x0109">
+		<Name>Vision Security</Name>
+		<Webpage>http://www.visionsecurity.com.tw</Webpage>
+	</Vendor>
+	<Vendor id="0x0116">
+		<Name>Chromatic Technologies</Name>
+		<Webpage>http://www.visionsecurity.com.tw</Webpage>
+	</Vendor>	
+	<Vendor id="0x0162">
+		<Name>Remotec</Name>
+		<Webpage>http://www.remotec.com.hk</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/remotec.png</Logo>
+	</Vendor>
+	<Vendor id="0x5254">
+		<Name>Remotec</Name>
+		<Webpage>http://www.remotec.com.hk</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/remotec.png</Logo>
+	</Vendor>
+	<Vendor id="0x0115">
+		<Name>Z-Wave.Me</Name>
+		<Webpage>http://www.z-wave.me</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/z-wave.me.png</Logo>
+	</Vendor>
+	<Vendor id="0x010f">
+		<Name>Fibar Group</Name>
+		<Webpage>http://www.fibaro.com</Webpage>
+	</Vendor>	
+	<Vendor id="0x0081">
+		<Name>Siegenia-Aubi</Name>
+		<Webpage>http://www.siegenia-aubi.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/siegenia-aubi.png</Logo>
+	</Vendor>
+	<Vendor id="0x0084">
+		<Name>FortrezZ</Name>
+		<Webpage>http://www.fortrezz.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/fortrezz.png</Logo>
+	</Vendor>
+	<Vendor id="0x0097">
+		<Name>Wintop</Name>
+		<Webpage>http://www.wintop.com</Webpage>
+		<Logo>ftp://85.214.154.123/pub/logo/wintop.gif</Logo>
+	</Vendor>
+	<Vendor id="0x0129">
+		<Name>Yale</Name>
+		<Webpage>http://www.yalelocks.com</Webpage>
+	</Vendor>
+	<Vendor id="0x0137">
+		<Name>FollowGood</Name>
+		<Webpage>http://www.follow-good.com/</Webpage>
+	</Vendor>
+	<Vendor id="0x0142">
+		<Name>Rademacher</Name>
+		<Webpage>http://rademacher.de</Webpage>
+	</Vendor>
+	<Vendor id="0x0147">
+		<Name>RaZberry by Z-Wave.Me</Name>
+		<Webpage>http://razpberry.z-wave.me</Webpage>
+	</Vendor>
+	<Vendor id="0x0148">
+		<Name>Eurotronic Technology</Name>
+		<Webpage>http://www.eurotronic.org</Webpage>
+	</Vendor>
+	<Vendor id="0x008c">
+		<Name>Mi Casa Verde</Name>
+		<Webpage>http://www.micasaverde.com</Webpage>
+	</Vendor>
+	<Vendor id="0x0175">
+		<Name>Devolo</Name>
+		<Webpage>http://www.devolo.com</Webpage>
+	</Vendor>
+	<Vendor id="0x018f">
+		<Name>Focal Point</Name>
+		<Webpage></Webpage>
+	</Vendor>
+</VendorIds>

@@ -1,0 +1,314 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:xml="http://www.w3.org/XML/1998/namespace"
+            xmlns:zwv="http://www.pepper1.net/zwavedb/xml-schemata/z-wave"
+            targetNamespace="http://www.pepper1.net/zwavedb/xml-schemata/z-wave"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+  <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
+              schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+     Z-Wave device descriptor schema.
+     Version 2
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="ZWaveDevice" type="zwv:zWaveDeviceType"/>
+
+  <xsd:complexType name="zWaveDeviceType">
+    <xsd:sequence>
+      <xsd:element name="descriptorVersion" type="xsd:unsignedInt" minOccurs="0"/>
+      <xsd:element name="deviceData" type="zwv:deviceData"/>
+      <xsd:element name="deviceDescription" type="zwv:deviceDescription" minOccurs="0"/>
+      <xsd:element name="commandClasses" type="zwv:commandClasses" minOccurs="0">
+        <xsd:unique name="cmdClassUnique">
+          <xsd:selector xpath="zwv:commandClass"/>
+          <xsd:field xpath="@id"/>
+          <xsd:field xpath="@version"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="assocGroups" type="zwv:assocGroups" minOccurs="0">
+        <xsd:unique name="assocGroupUnique">
+          <xsd:selector xpath="zwv:assocGroup"/>
+          <xsd:field xpath="@number"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="configParams" type="zwv:configParams" minOccurs="0">
+        <xsd:unique name="configsUnique">
+          <xsd:selector xpath="zwv:configParam"/>
+          <xsd:field xpath="@number"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="endpoints" type="zwv:endpoints" minOccurs="0">
+        <xsd:unique name="endpointsUnique">
+          <xsd:selector xpath="zwv:endpoint"/>
+          <xsd:field xpath="@number"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="resourceLinks" type="zwv:resourceLinks" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="schemaVersion" type="xsd:unsignedInt" use="required" fixed="2"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="deviceData">
+    <xsd:sequence>
+      <xsd:element name="manufacturerId" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="productType" type="zwv:emptyHexShortAttr" minOccurs="0"/>
+      <xsd:element name="productId" type="zwv:emptyHexShortAttr" minOccurs="0"/>
+      <xsd:element name="libType" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="protoVersion" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="protoSubVersion" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="appVersion" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="appSubVersion" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="basicClass" type="zwv:emptyHexByteAttr"/>
+      <xsd:element name="genericClass" type="zwv:emptyHexByteAttr"/>
+      <xsd:element name="specificClass" type="zwv:emptyHexByteAttr"/>
+      <xsd:element name="optional" type="zwv:emptyBooleanAttr" minOccurs="0"/>
+      <xsd:element name="listening" type="zwv:emptyBooleanAttr" minOccurs="0"/>
+      <xsd:element name="routing" type="zwv:emptyBooleanAttr" minOccurs="0"/>
+      <xsd:element name="beamSensor" type="zwv:beamType" minOccurs="0"/>
+      <xsd:element name="rfFrequency" type="zwv:rfFrequency" minOccurs="0"/>
+      <xsd:element name="certId" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="certNumber" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="deviceDescription">
+    <xsd:sequence>
+      <xsd:element name="description" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langDescrUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element> 
+      <xsd:element name="wakeupNote" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langWakeupUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="inclusionNote" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langInclUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="productName" type="xsd:string"/>
+      <xsd:element name="brandName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="productLine" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="productCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="productVersion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="batteryType" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="batteryCount" type="xsd:unsignedInt" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="commandClasses">
+    <xsd:sequence>
+      <xsd:element name="commandClass" type="zwv:commandClass" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="assocGroups">
+    <xsd:sequence>
+      <xsd:element name="assocGroup" type="zwv:assocGroup" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="configParams">
+    <xsd:sequence>
+      <xsd:element name="configParam" type="zwv:configParam" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="endpoints">
+    <xsd:sequence>
+      <xsd:element name="endpoint" type="zwv:endpoint" maxOccurs="unbounded">
+        <xsd:unique name="endpointCommandClassUnique">
+          <xsd:selector xpath="zwv:commandClass"/>
+          <xsd:field xpath="@id"/>
+          <xsd:field xpath="@version"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="dynamicEndpoints" type="xsd:boolean" default="false"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="resourceLinks">
+    <xsd:sequence>
+      <xsd:element name="deviceImage" type="zwv:deviceImageType" minOccurs="0"/>
+      <xsd:element name="resourceLink" type="zwv:resourceLinkType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- used types -->
+  
+  <xsd:complexType name="assocGroup">
+    <xsd:sequence>
+      <xsd:element name="description" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langAssocUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="number" type="xsd:unsignedByte" use="required"/>
+    <xsd:attribute name="maxNodes" type="xsd:unsignedByte" use="required"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="configParam">
+    <xsd:sequence>
+      <xsd:element name="name" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langParamNameUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="description" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langParamDescriptionUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="value" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="description" type="zwv:description" minOccurs="0">
+              <xsd:unique name="langValueUnique">
+                <xsd:selector xpath="zwv:lang"/>
+                <xsd:field xpath="@xml:lang"/>
+              </xsd:unique>
+            </xsd:element>
+          </xsd:sequence>
+          <xsd:attribute name="from" type="xsd:hexBinary" use="required"/>
+          <xsd:attribute name="to" type="xsd:hexBinary" use="required"/>
+          <xsd:attribute name="reserved" type="xsd:boolean" default="false"/>
+          <xsd:attribute name="unit" type="xsd:string"/>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="number" type="xsd:unsignedByte" use="required"/>
+    <xsd:attribute name="type" type="zwv:configValueType" use="required"/>
+    <xsd:attribute name="size" type="xsd:unsignedByte" default="1"/>
+    <xsd:attribute name="default" type="xsd:hexBinary"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="endpoint">
+    <xsd:sequence>
+      <xsd:element name="name" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langEndpointNameUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="description" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langEndpointDescriptionUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="genericClass" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="specificClass" type="zwv:emptyHexByteAttr" minOccurs="0"/>
+      <xsd:element name="commandClass" type="zwv:commandClass" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="number" type="xsd:unsignedByte" use="required"/>
+    <xsd:attribute name="dynamic" type="xsd:boolean" default="false"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="resourceLinkType">
+    <xsd:sequence>
+      <xsd:element name="description" type="zwv:description" minOccurs="0">
+        <xsd:unique name="langResourceUnique">
+          <xsd:selector xpath="zwv:lang"/>
+          <xsd:field xpath="@xml:lang"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="url" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="deviceImageType">
+    <xsd:attribute name="url" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="commandClass">
+    <xsd:attribute name="id" type="zwv:hexByte" use="required"/>
+    <xsd:attribute name="version" type="xsd:unsignedInt" default="1"/>
+    <xsd:attribute name="supported" type="xsd:boolean" default="true"/>
+    <xsd:attribute name="controlled" type="xsd:boolean" default="false"/>
+    <xsd:attribute name="inNIF" type="xsd:boolean" default="true"/>
+    <xsd:attribute name="secure" type="xsd:boolean" default="false"/>
+    <xsd:attribute name="nonsecure" type="xsd:boolean" default="true"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="description">
+    <xsd:sequence>
+      <xsd:element name="lang" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+              <xsd:attribute ref="xml:lang" use="required"/>
+            </xsd:extension>
+          </xsd:simpleContent>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence> 
+  </xsd:complexType>
+
+  <xsd:simpleType name="rfFrequency">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="US"/>
+      <xsd:enumeration value="EU"/>
+      <xsd:enumeration value="Australia and New Zealand"/>
+      <xsd:enumeration value="Hong Kong"/>
+      <xsd:enumeration value="Malaysia"/>
+      <xsd:enumeration value="Singapore"/>
+      <xsd:enumeration value="India"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="beamType">
+    <xsd:restriction base="xsd:unsignedInt">
+      <xsd:enumeration value="0"/>
+      <xsd:enumeration value="250"/>
+      <xsd:enumeration value="1000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="configValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="constant"/>
+      <xsd:enumeration value="range"/>
+      <xsd:enumeration value="rangemapped"/>
+      <xsd:enumeration value="bitset"/>
+      <xsd:enumeration value="bitrange"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="hexByte">
+    <xsd:restriction base="xsd:hexBinary">
+      <xsd:maxLength value="2"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="hexShort">
+    <xsd:restriction base="xsd:hexBinary">
+      <xsd:maxLength value="4"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="emptyHexByteAttr">
+    <xsd:attribute name="value" type="zwv:hexByte" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="emptyHexShortAttr">
+    <xsd:attribute name="value" type="zwv:hexShort" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="emptyBooleanAttr">
+    <xsd:attribute name="value" type="xsd:boolean" use="required"/>
+  </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0003"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="29"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Zweifach-Wandeinsatzschalter mit Strommessfunktion</lang>
+            <lang xml:lang="en">Dual In-Wall Switch with Metering</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach-Klick auf Taste</lang>
+            <lang xml:lang="en">Tripple Click on Button</lang>
+          </inclusionNote>
+            <productName>In-Wall Dual relay(1 way) Switch Module PAN04</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-wave Products</productLine>
+            <productCode>PAN04</productCode>
+            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0085"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Relay  2 </lang>
+                <lang xml:lang="en">Relais 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Relay 1</lang>
+                <lang xml:lang="en">Relais 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Relay 1 und Relay  2 zusammen</lang>
+                <lang xml:lang="en">Relais 1 and Relais 2 together</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Endpunktauswahl</lang>
+                <lang xml:lang="en">Select End Point</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, welche Relays benutzt werden, wenn der Controller keine Multi Channels unterstützt</lang>
+                <lang xml:lang="en">In case the controller does not support Multi Channel CC this parameter allows to define the use of the relais</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Relay1 und Relay 2</lang>
+                    <lang xml:lang="en">Relais 1 and Relais 2</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Relay 1</lang>
+                    <lang xml:lang="en">Relais 1 </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Relay 2</lang>
+                    <lang xml:lang="en">Relais 2</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Modus des externen Schalters</lang>
+                <lang xml:lang="en">External Switch Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, wie die externen Signale eines Schalters zu interpretieren sind</lang>
+                <lang xml:lang="en">Dedines how the external control signals shall be interpreted</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Edge-Modus</lang>
+                    <lang xml:lang="en">Edge Mode</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Impuls-Modus</lang>
+                    <lang xml:lang="en">Pulse Mode</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Edge-Toggle-Modus</lang>
+                    <lang xml:lang="en">Edge Toggle Mode</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="de">Relay 2</lang>
+                <lang xml:lang="en">Relais 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0032" version="3"/>
+            <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de">Relay 1</lang>
+                <lang xml:lang="en">Relais 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0032" version="3"/>
+            <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de">Relay 1 und Relay 2</lang>
+                <lang xml:lang="en">Relais 1 and Relais 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0032" version="3"/>
+            <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/7247b7f36bcd454247ff7db369f7485edefdfea6.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

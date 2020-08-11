@@ -1,0 +1,791 @@
+<?xml version="1.0"?>
+<Scales>
+<Meter id="1">
+		<name>
+			<lang xml:lang="en">Electric </lang>
+			<lang xml:lang="de">Strom</lang>	
+			<lang xml:lang="ru">Счётчик электричества</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">kWh</lang>
+			<lang xml:lang="de">kWh</lang>
+			<lang xml:lang="ru">кВтЧ</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">kVAh</lang>
+			<lang xml:lang="de">kVAh</lang>
+			<lang xml:lang="ru">кВАЧ</lang>
+		</scale>
+		<scale id="2">
+			<lang xml:lang="en">W</lang>
+			<lang xml:lang="de">W</lang>
+			<lang xml:lang="ru">Вт</lang>
+		</scale>
+		<scale id="3">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählerimpuls</lang>
+			<lang xml:lang="ru">Счётчик импульсов</lang>
+		</scale>
+		<scale id="4">
+			<lang xml:lang="en">V</lang>
+			<lang xml:lang="de">V</lang>
+			<lang xml:lang="ru">В</lang>
+		</scale>
+		<scale id="5">
+			<lang xml:lang="en">A</lang>
+			<lang xml:lang="de">A</lang>
+			<lang xml:lang="ru">А</lang>
+		</scale>
+		<scale id="6">
+			<lang xml:lang="en">Power Factor</lang>
+			<lang xml:lang="de">Leistungsfaktor</lang>
+			<lang xml:lang="ru">Коэффициент мощности</lang>
+		</scale>
+</Meter>
+<Meter id="2">
+		<name>
+			<lang xml:lang="en">Gas</lang>
+			<lang xml:lang="de">Gas</lang>	
+			<lang xml:lang="ru">Счётчик газа</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Qubic meter</lang>
+			<lang xml:lang="de">Kubikmeter</lang>
+			<lang xml:lang="ru">Кубический метр</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">Cubic feet</lang>
+			<lang xml:lang="de">Kubikfuss</lang>
+			<lang xml:lang="ru">Кубический фут</lang>
+		</scale>
+		<scale id="3">
+			<lang xml:lang="en">reserved</lang>
+			<lang xml:lang="de">reserviert</lang>
+			<lang xml:lang="ru">зарезервированно</lang>
+		</scale>
+		<scale id="4">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählerimpuls</lang>
+			<lang xml:lang="ru">Счётчик импульсов</lang>
+		</scale>
+</Meter>
+<Meter id="3">
+		<name>
+			<lang xml:lang="en">Water</lang>
+			<lang xml:lang="de">Wasser</lang>	
+			<lang xml:lang="ru">Счётчик воды</lang>
+		</name>
+		<scale id="1">
+			<lang xml:lang="en">Cubic meter</lang>
+			<lang xml:lang="de">Kubikmeter</lang>
+			<lang xml:lang="ru">Кубический метр</lang>
+		</scale>
+		<scale id="2">
+			<lang xml:lang="en">Cubic feet</lang>
+			<lang xml:lang="de">Kubikfuss</lang>
+			<lang xml:lang="ru">Кубический фут</lang>
+		</scale>
+		<scale id="3">
+			<lang xml:lang="en">US Gallon</lang>
+			<lang xml:lang="de">US Gallone</lang>
+			<lang xml:lang="ru">Американский галлон</lang>
+		</scale>
+		<scale id="4">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählerimpuls</lang>
+			<lang xml:lang="ru">Счётчик импульсов</lang>
+		</scale>
+</Meter>
+<SensorMultilevel id="1">
+		<name>
+			<lang xml:lang="en">Temperature</lang>
+			<lang xml:lang="de">Temperatur</lang>	
+			<lang xml:lang="ru">Температура</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">&#176;C</lang>
+			<lang xml:lang="de">&#176;C</lang>
+			<lang xml:lang="ru">&#176;C</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">&#176;F</lang>
+			<lang xml:lang="de">&#176;F</lang>
+			<lang xml:lang="ru">&#176;F</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="2">
+		<name>
+			<lang xml:lang="en">Generic</lang>
+			<lang xml:lang="de">Generisch</lang>
+			<lang xml:lang="ru">Общий</lang>
+		</name>
+		<scale id="1">
+			<lang xml:lang="en"></lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</scale>
+		<scale id="0">
+			<lang xml:lang="en">%</lang>
+			<lang xml:lang="de">%</lang>
+			<lang xml:lang="ru">%</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="3">
+		<name>
+			<lang xml:lang="en">Luminiscence</lang>
+			<lang xml:lang="de">Helligkeit</lang>
+			<lang xml:lang="ru">Освещённость</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">%</lang>
+			<lang xml:lang="de">%</lang>
+			<lang xml:lang="ru">%</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">Lux</lang>
+			<lang xml:lang="de">Lux</lang>
+			<lang xml:lang="ru">Люкс</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="4">
+		<name>
+			<lang xml:lang="en">Power</lang>
+			<lang xml:lang="de">Leistung</lang>
+			<lang xml:lang="ru">Мощность</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">W</lang>
+			<lang xml:lang="de">W</lang>
+			<lang xml:lang="ru">Вт</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">Btu/h</lang>
+			<lang xml:lang="de">Btu/h</lang>
+			<lang xml:lang="ru">BTU/ч</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="5">
+		<name>
+			<lang xml:lang="en">Humidity</lang>
+			<lang xml:lang="de">Feuchtigkeit</lang>
+			<lang xml:lang="ru">Влажность</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">%</lang>
+			<lang xml:lang="de">%</lang>
+			<lang xml:lang="ru">%</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">Absolute humidity</lang>
+			<lang xml:lang="de">...</lang>
+			<lang xml:lang="ru">Абсолютная влажность</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="6">
+		<name>
+			<lang xml:lang="en">Velocity</lang>
+			<lang xml:lang="de">Wind</lang>
+			<lang xml:lang="ru">Ветер</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">m/s</lang>
+			<lang xml:lang="de">m/s</lang>
+			<lang xml:lang="ru">м/с</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">mph</lang>
+			<lang xml:lang="de">miles/h</lang>
+			<lang xml:lang="ru">миль/ч</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="7">
+		<name>
+			<lang xml:lang="en">Direction</lang>
+			<lang xml:lang="de">Richtung</lang>
+			<lang xml:lang="ru">Направление</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">degree</lang>
+			<lang xml:lang="de">Grad</lang>
+			<lang xml:lang="ru">градус</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="8">
+		<name>
+			<lang xml:lang="en">Athmospheric Pressure</lang>
+			<lang xml:lang="de">Luftdruck</lang>
+			<lang xml:lang="ru">Атмосферное давление</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">kPa</lang>
+			<lang xml:lang="de">kPa</lang>
+			<lang xml:lang="ru">кПа</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">inch Mercury</lang>
+			<lang xml:lang="de">mm Quecksilber</lang>
+			<lang xml:lang="ru">мм ртутного столба</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="9">
+		<name>
+			<lang xml:lang="en">Barometric Pressure</lang>
+			<lang xml:lang="de">Barometr. Luftdruck</lang>
+			<lang xml:lang="ru">Барометрическое давление</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">kPa</lang>
+			<lang xml:lang="de">kPa</lang>
+			<lang xml:lang="ru">кПа</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">inch Mercury</lang>
+			<lang xml:lang="de">mm Quecksilber</lang>
+			<lang xml:lang="ru">мм ртутного столба</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="10">
+		<name>
+			<lang xml:lang="en">Solar Radiation</lang>
+			<lang xml:lang="de">Sonneneinstrahlung</lang>
+			<lang xml:lang="ru">Солнечное излучение</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">W/m2</lang>
+			<lang xml:lang="de">W/m2</lang>
+			<lang xml:lang="ru">Вт/м2</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="11">
+		<name>
+			<lang xml:lang="en">Dew Point</lang>
+			<lang xml:lang="de">Taupunkt</lang>
+			<lang xml:lang="ru">Точка росы</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">&#176;C</lang>
+			<lang xml:lang="de">&#176;C</lang>
+			<lang xml:lang="ru">&#176;C</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">&#176;F</lang>
+			<lang xml:lang="de">&#176;F</lang>
+			<lang xml:lang="ru">&#176;F</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="12">
+		<name>
+			<lang xml:lang="en">Rain Rate</lang>
+			<lang xml:lang="de">Niederschlag</lang>
+			<lang xml:lang="ru">Датчик дождя</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">mm/h</lang>
+			<lang xml:lang="de">mm/h</lang>
+			<lang xml:lang="ru">мм/ч</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">inch/h</lang>
+			<lang xml:lang="de">inch/h</lang>
+			<lang xml:lang="ru">дюйм/ч</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="13">
+		<name>
+			<lang xml:lang="en">Tide Level</lang>
+			<lang xml:lang="de">Wasserniveau</lang>
+			<lang xml:lang="ru">Уровень воды</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">m</lang>
+			<lang xml:lang="de">m</lang>
+			<lang xml:lang="ru">м</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">feet</lang>
+			<lang xml:lang="de">Fuss</lang>
+			<lang xml:lang="ru">футы</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="14">
+		<name>
+			<lang xml:lang="en">Weigth</lang>
+			<lang xml:lang="de">Gewicht</lang>
+			<lang xml:lang="ru">Вес</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">kg</lang>
+			<lang xml:lang="de">kg</lang>
+			<lang xml:lang="ru">кг</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">pounds</lang>
+			<lang xml:lang="de">Pfund</lang>
+			<lang xml:lang="ru">фунт</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="15">
+		<name>
+			<lang xml:lang="en">Voltage</lang>
+			<lang xml:lang="de">Spannung</lang>
+			<lang xml:lang="ru">Напряжение</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">V</lang>
+			<lang xml:lang="de">V</lang>
+			<lang xml:lang="ru">В</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">mV</lang>
+			<lang xml:lang="de">mV</lang>
+			<lang xml:lang="ru">мВ</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="16">
+		<name>
+			<lang xml:lang="en">Current</lang>
+			<lang xml:lang="de">Strom</lang>
+			<lang xml:lang="ru">Ток</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">A</lang>
+			<lang xml:lang="de">A</lang>
+			<lang xml:lang="ru">А</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">mA</lang>
+			<lang xml:lang="de">mA</lang>
+			<lang xml:lang="ru">мА</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="17">
+		<name>
+			<lang xml:lang="en">CO2 Level</lang>
+			<lang xml:lang="de">Kohlendioxid</lang>
+			<lang xml:lang="ru">Уровень CO2</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">ppm</lang>
+			<lang xml:lang="de">ppm</lang>
+			<lang xml:lang="ru">промилле</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="18">
+		<name>
+			<lang xml:lang="en">Air Flow</lang>
+			<lang xml:lang="de">Luftdurchsatz</lang>
+			<lang xml:lang="ru">Воздушный поток</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">m3/h</lang>
+			<lang xml:lang="de">m3/h</lang>
+			<lang xml:lang="ru">м3/ч</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">cfm</lang>
+			<lang xml:lang="de">cfm</lang>
+			<lang xml:lang="ru">кубический фут в минуту</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="19">
+		<name>
+			<lang xml:lang="en">Tank Capacity</lang>
+			<lang xml:lang="de">Tankkapazität</lang>
+			<lang xml:lang="ru">Объем цистерны</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">l</lang>
+			<lang xml:lang="de">l</lang>
+			<lang xml:lang="ru">литр</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">cbm</lang>
+			<lang xml:lang="de">cbm</lang>
+			<lang xml:lang="ru">кубический метр</lang>
+		</scale>
+		<scale id="2">
+			<lang xml:lang="en">gallons</lang>
+			<lang xml:lang="de">Gallonen</lang>
+			<lang xml:lang="ru">галлон</lang>
+		</scale>		
+</SensorMultilevel>
+<SensorMultilevel id="20">
+		<name>
+			<lang xml:lang="en">Distance</lang>
+			<lang xml:lang="de">Abstand</lang>
+			<lang xml:lang="ru">Расстояние</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">m</lang>
+			<lang xml:lang="de">m</lang>
+			<lang xml:lang="ru">м</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">cm</lang>
+			<lang xml:lang="de">cm</lang>
+			<lang xml:lang="ru">см</lang>
+		</scale>
+		<scale id="2">
+			<lang xml:lang="en">Feet</lang>
+			<lang xml:lang="de">Feet</lang>
+			<lang xml:lang="ru">футы</lang>
+		</scale>		
+</SensorMultilevel>
+<SensorMultilevel id="21">
+		<name>
+			<lang xml:lang="en">Angle Position</lang>
+			<lang xml:lang="de">Winkelabstand</lang>
+			<lang xml:lang="ru">Угловое направление</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">%</lang>
+			<lang xml:lang="de">%</lang>
+			<lang xml:lang="ru">%</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">Degree to North Pole</lang>
+			<lang xml:lang="de">Prozent zum Nordpol</lang>
+			<lang xml:lang="ru">Угол на Северный полюс</lang>
+		</scale>
+		<scale id="2">
+			<lang xml:lang="en">Degree to South Pole</lang>
+			<lang xml:lang="de">Prozent zum Südpol</lang>
+			<lang xml:lang="ru">Угол на Южный полюс</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="22">
+		<name>
+			<lang xml:lang="en">Rotation</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Поворот</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">rpm</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">обороты в минуту</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">Hz</lang>
+			<lang xml:lang="de">Hz</lang>
+			<lang xml:lang="ru">Гц</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="23">
+		<name>
+			<lang xml:lang="en">Water temperature</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Температура воды</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">&#176;C</lang>
+			<lang xml:lang="de">&#176;C</lang>
+			<lang xml:lang="ru">&#176;C</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">&#176;F</lang>
+			<lang xml:lang="de">&#176;F</lang>
+			<lang xml:lang="ru">&#176;F</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="24">
+		<name>
+			<lang xml:lang="en">Soil temperature</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Температура почвы</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">&#176;C</lang>
+			<lang xml:lang="de">&#176;C</lang>
+			<lang xml:lang="ru">&#176;c</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">&#176;F</lang>
+			<lang xml:lang="de">&#176;F</lang>
+			<lang xml:lang="ru">&#176;F</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="25">
+		<name>
+			<lang xml:lang="en">Seismic intensity</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Сейсмическая интенсивность</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Mercalli</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Mercalli</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">European Macroseismic</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">European Macroseismic</lang>
+		</scale>
+		<scale id="2">
+			<lang xml:lang="en">Liedu</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Liedu</lang>
+		</scale>
+		<scale id="3">
+			<lang xml:lang="en">Shindo</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Shindo</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="26">
+		<name>
+			<lang xml:lang="en">Seismic magnitude</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Сейсмическая магнитуда</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Local</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Локальная</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">Moment</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Моментальная</lang>
+		</scale>
+		<scale id="2">
+			<lang xml:lang="en">Surface wave</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Поверхностная волна</lang>
+		</scale>
+		<scale id="3">
+			<lang xml:lang="en">Body wave</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Объёмная волна</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="27">
+		<name>
+			<lang xml:lang="en">Ultraviolet</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Ультрафиолет</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">UV index</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Индекс УФ</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="28">
+		<name>
+			<lang xml:lang="en">Electrical resistivity</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Электрическое сопротивление</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Ωm</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Ом м</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="29">
+		<name>
+			<lang xml:lang="en">Electrical conductivity</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Электрическая проводимость</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">siemens per metre</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">сименс/м</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="30">
+		<name>
+			<lang xml:lang="en">Loudness</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Громкость</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Absolute loudness (dB)</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Абсолютная громкость (дБ)</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">A-weighted decibels (dBA)</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">А-взвешенные децибеллы (дБА)</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="31">
+		<name>
+			<lang xml:lang="en">Moisture</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Percentage value</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</scale>
+
+		<scale id="1">
+			<lang xml:lang="en">Volume water content (m3/m3)</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</scale>
+
+		<scale id="2">
+			<lang xml:lang="en">Impedance (kΩ)</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</scale>
+
+		<scale id="3">
+			<lang xml:lang="en">Water activity (aw)</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</scale>
+
+</SensorMultilevel>
+<SensorMultilevel id="32">
+		<name>
+			<lang xml:lang="en">Frequency</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Частота</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Hz</lang>
+			<lang xml:lang="de">Hz</lang>
+			<lang xml:lang="ru">Гц</lang>
+		</scale>
+
+		<scale id="1">
+			<lang xml:lang="en">kHz</lang>
+			<lang xml:lang="de">kHz</lang>
+			<lang xml:lang="ru">кГц</lang>
+		</scale>
+
+</SensorMultilevel>
+<SensorMultilevel id="33">
+		<name>
+			<lang xml:lang="en">Time</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Время</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">Seconds</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Секунды</lang>
+		</scale>
+</SensorMultilevel>
+<SensorMultilevel id="34">
+		<name>
+			<lang xml:lang="en">Target Temperature</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Температура назначения</lang>
+		</name>
+		<scale id="0">
+			<lang xml:lang="en">&#176;C</lang>
+			<lang xml:lang="de">&#176;C</lang>
+			<lang xml:lang="ru">&#176;C</lang>
+		</scale>
+		<scale id="1">
+			<lang xml:lang="en">&#176;F</lang>
+			<lang xml:lang="de">&#176;F</lang>
+			<lang xml:lang="ru">&#176;F</lang>
+		</scale>
+</SensorMultilevel>
+<SensorBinary id="1">
+		<name>
+			<lang xml:lang="en">General purpose</lang>
+			<lang xml:lang="de">General purpose</lang>
+			<lang xml:lang="ru">Общий</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="2">
+		<name>
+			<lang xml:lang="en">Smoke</lang>
+			<lang xml:lang="de">Smoke</lang>
+			<lang xml:lang="ru">Дым</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="3">
+		<name>
+			<lang xml:lang="en">CO</lang>
+			<lang xml:lang="de">CO</lang>
+			<lang xml:lang="ru">CO</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="4">
+		<name>
+			<lang xml:lang="en">CO2</lang>
+			<lang xml:lang="de">CO2</lang>
+			<lang xml:lang="ru">CO2</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="5">
+		<name>
+			<lang xml:lang="en">Heat</lang>
+			<lang xml:lang="de">Heat</lang>
+			<lang xml:lang="ru">Перегрев</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="6">
+		<name>
+			<lang xml:lang="en">Water</lang>
+			<lang xml:lang="de">Water</lang>
+			<lang xml:lang="ru">Протечка</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="7">
+		<name>
+			<lang xml:lang="en">Freeze</lang>
+			<lang xml:lang="de">Freeze</lang>
+			<lang xml:lang="ru">Замерзание</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="8">
+		<name>
+			<lang xml:lang="en">Tamper</lang>
+			<lang xml:lang="de">Tamper</lang>
+			<lang xml:lang="ru">Вмешательство</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="9">
+		<name>
+			<lang xml:lang="en">Aux</lang>
+			<lang xml:lang="de">Aux</lang>
+			<lang xml:lang="ru">Вспомогательный</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="10">
+		<name>
+			<lang xml:lang="en">Door/Window</lang>
+			<lang xml:lang="de">Door/Window</lang>
+			<lang xml:lang="ru">Окно/дверь</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="11">
+		<name>
+			<lang xml:lang="en">Tilt</lang>
+			<lang xml:lang="de">Tilt</lang>
+			<lang xml:lang="ru">Наклон</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="12">
+		<name>
+			<lang xml:lang="en">Motion</lang>
+			<lang xml:lang="de">Motion</lang>
+			<lang xml:lang="ru">Движение</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="13">
+		<name>
+			<lang xml:lang="en">Glass Break</lang>
+			<lang xml:lang="de">Glass Break</lang>
+			<lang xml:lang="ru">Разбитие стекла</lang>
+		</name>
+</SensorBinary>
+<SensorBinary id="255">
+		<name>
+			<lang xml:lang="en">First supported Sensor Type</lang>
+			<lang xml:lang="de">First supported Sensor Type</lang>
+			<lang xml:lang="ru">Первый поддерживаемый тип датчика</lang>
+		</name>
+</SensorBinary>
+</Scales>

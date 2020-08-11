@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<LockEvents>
+	<LockEvent id="1">
+		<name>
+			<lang xml:lang="en">Lock Command: Keypad access code verified lock command</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="2">
+		<name>
+			<lang xml:lang="en">Unlock Command: Keypad access code verified unlock command</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="3">
+		<name>
+			<lang xml:lang="en">Keypad lock button pressed</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Нажата кнопка закрытия</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="4">
+		<name>
+			<lang xml:lang="en">Unlock command: Keypad unlock button pressed</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Нажата кнопка открытия</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="5">
+		<name>
+			<lang xml:lang="en">Locked by keypad access code out of schedule</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Закрыт по коду вне расписания</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="6">
+		<name>
+			<lang xml:lang="en">Unlock by keypad access code out of schedule</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Открыт по коду вне расписания</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="7">
+		<name>
+			<lang xml:lang="en">Keypad illegal access code entered</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Введён неверный код</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="8">
+		<name>
+			<lang xml:lang="en">Key or latch operation locked</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Открыт ключом или защёлкой</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="9">
+		<name>
+			<lang xml:lang="en">Key or latch operation unlocked</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Закрыт ключом или защёлкой</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="10">
+		<name>
+			<lang xml:lang="en">Auto lock operation</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Автоматическое закрытие</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="11">
+		<name>
+			<lang xml:lang="en">Auto unlock operation</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Автоматическое открытие</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="12">
+		<name>
+			<lang xml:lang="en">Lock Command: Z-Wave access code verified</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="13">
+		<name>
+			<lang xml:lang="en">Unlock Command: Z-Wave access code verified</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="14">
+		<name>
+			<lang xml:lang="en">Lock by Z-Wave</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Закрыт по Z-Wave</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="15">
+		<name>
+			<lang xml:lang="en">Unlock by Z-Wave</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Открыт по Z-Wave</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="16">
+		<name>
+			<lang xml:lang="en">Lock Command: Z-Wave access code out of schedule</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="17">
+		<name>
+			<lang xml:lang="en">Unlock Command: Z-Wave access code out of schedule</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru"></lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="18">
+		<name>
+			<lang xml:lang="en">Z-Wave illegal access code entered</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Введён неверный Z-Wave код</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="19">
+		<name>
+			<lang xml:lang="en">Key or latch operation locked</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Закрыт ключом или защёлкой</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="20">
+		<name>
+			<lang xml:lang="en">Key or latch operation unlocked</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Открыт ключом или защёлкой</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="21">
+		<name>
+			<lang xml:lang="en">Lock secured</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Замок закрыт</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="22">
+		<name>
+			<lang xml:lang="en">Lock unsecured</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Замок откыт</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="23">
+		<name>
+			<lang xml:lang="en">User code added</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Добавлен пользовательский код</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="24">
+		<name>
+			<lang xml:lang="en">User code deleted</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Пользовательский код удалён</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="25">
+		<name>
+			<lang xml:lang="en">All user codes deleted</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Все пользовательские коды удалены</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="26">
+		<name>
+			<lang xml:lang="en">Master code changed</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Изменён главный код</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="27">
+		<name>
+			<lang xml:lang="en">User code changed</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Изменён пользовательский код</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="28">
+		<name>
+			<lang xml:lang="en">Lock reset</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Сброс замка</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="29">
+		<name>
+			<lang xml:lang="en">Configuration changed</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Изменены настройки</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="30">
+		<name>
+			<lang xml:lang="en">Low battery</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Низкий заряд батареек</lang>
+		</name>
+	</LockEvent>
+	<LockEvent id="31">
+		<name>
+			<lang xml:lang="en">New Battery installed</lang>
+			<lang xml:lang="de"></lang>
+			<lang xml:lang="ru">Вставлены новые батарейки</lang>
+		</name>
+	</LockEvent>
+</LockEvents>

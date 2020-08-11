@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<Alarms>
+	<Alarm id="0x00">
+		<name>
+			<lang xml:lang="en">General Purpose alarm</lang>
+			<lang xml:lang="de">General Purpose alarm</lang>
+			<lang xml:lang="ru">Общая тревога</lang>
+		</name>
+	</Alarm>
+	<Alarm id="0x01">
+		<name>
+			<lang xml:lang="en">Smoke</lang>
+			<lang xml:lang="de">Rauch</lang>
+			<lang xml:lang="ru">Дым</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Smoke detected</lang>
+				<lang xml:lang="de">Rauchmeldung</lang>
+				<lang xml:lang="ru">Обнаружен дым</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">Smoke detected, location unknown</lang>
+				<lang xml:lang="de">Rauchmeldung, unbekannter Ort</lang>
+				<lang xml:lang="ru">Обнаружен дым в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm>
+	<Alarm id="0x02">
+		<name>
+			<lang xml:lang="en">CO</lang>
+			<lang xml:lang="de">Kohlenmonoxid</lang>
+			<lang xml:lang="ru">Угарный газ</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">CO detected</lang>
+				<lang xml:lang="de">Kohlenmonoxid erkannt</lang>
+				<lang xml:lang="ru">Обнаружен угарный газ</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">CO detected, location unknown</lang>
+				<lang xml:lang="de">Kohlenmonoxid erkannt, unbekannter Ort</lang>
+				<lang xml:lang="ru">Обнаружен угарный газ в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm>
+	<Alarm id="0x03">
+		<name>
+			<lang xml:lang="en">CO2</lang>
+			<lang xml:lang="de">Kohlendioxid</lang>
+			<lang xml:lang="ru">Углекислый газ</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">CO2 detected</lang>
+				<lang xml:lang="de">Kohlendioxid erkannt</lang>
+				<lang xml:lang="ru">Обнаружен углекислый газ</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">CO2 detected, location unknown</lang>
+				<lang xml:lang="de">Kohlendioxid erkannt, unbekannter Ort</lang>
+				<lang xml:lang="ru">Обнаружен углекислый газ в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x04">
+		<name>
+			<lang xml:lang="en">Heat</lang>
+			<lang xml:lang="de">Heizung</lang>
+			<lang xml:lang="ru">Нагрев</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">overheat</lang>
+				<lang xml:lang="de">Überhitzung</lang>
+				<lang xml:lang="ru">Перегрев</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">overheat, location unknown</lang>
+				<lang xml:lang="de">Überhitzung, unbekannter Ort</lang>
+				<lang xml:lang="ru">Перегрев в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0x03">
+			<name>
+				<lang xml:lang="en">rapid temperature rise</lang>
+				<lang xml:lang="de">schneller Temperaturanstieg</lang>
+				<lang xml:lang="ru">Скачок температуры</lang>
+			</name>	
+		</Event>	
+		<Event id="0x04">
+			<name>
+				<lang xml:lang="en">rapid temperature rise, unknown location</lang>
+				<lang xml:lang="de">schneller Temperaturanstieg an unbekanntem Ort</lang>
+				<lang xml:lang="ru">Скачок температуры в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0x05">
+			<name>
+				<lang xml:lang="en">underhead</lang>
+				<lang xml:lang="de">Unterkühlung</lang>
+				<lang xml:lang="ru">Переохлаждение</lang>
+			</name>	
+		</Event>	
+		<Event id="0x06">
+			<name>
+				<lang xml:lang="en">underhead, unknown location</lang>
+				<lang xml:lang="de">Unterkühlung an unbekanntem Ort</lang>
+				<lang xml:lang="ru">Переохлаждение в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x05">
+		<name>
+			<lang xml:lang="en">Water</lang>
+			<lang xml:lang="de">Wasser</lang>
+			<lang xml:lang="ru">Утечка</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Leak detected</lang>
+				<lang xml:lang="de">Leck erkannt</lang>
+				<lang xml:lang="ru">Обнаружена утечка</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">Leak detected, location unknown</lang>
+				<lang xml:lang="de">Leck erkannt, unbekannter Ort</lang>
+				<lang xml:lang="ru">Обнаружена утечка в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0x03">
+			<name>
+				<lang xml:lang="en">Water level dropped</lang>
+				<lang xml:lang="de">Wasserstand fällt</lang>
+				<lang xml:lang="ru">Уровень воды упал</lang>
+			</name>	
+		</Event>
+		<Event id="0x04">
+			<name>
+				<lang xml:lang="en">Water level dropped, location unknown</lang>
+				<lang xml:lang="de">Wasserstand fällt, unbekannter Ort</lang>
+				<lang xml:lang="ru">Уровень воды упал в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x06">
+		<name>
+			<lang xml:lang="en">Access Control</lang>
+			<lang xml:lang="de">Zustrittssystem</lang>
+			<lang xml:lang="ru">Уровень доступа</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Manual Lock Operation</lang>
+				<lang xml:lang="de">Manuelle Schloßbetätigung</lang>
+				<lang xml:lang="ru">Ручное управление</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">Manual Lock Open Operation</lang>
+				<lang xml:lang="de">Manuelle Schloßöffnung</lang>
+				<lang xml:lang="ru">Открытие рукой</lang>
+			</name>	
+		</Event>	
+		<Event id="0x03">
+			<name>
+				<lang xml:lang="en">RF Lock Operation</lang>
+				<lang xml:lang="de">Drahtlose Schloßbetätigung</lang>
+				<lang xml:lang="ru">Радио управление</lang>
+			</name>	
+		</Event>
+		<Event id="0x04">
+			<name>
+				<lang xml:lang="en">RF Lock Open Operation</lang>
+				<lang xml:lang="de">Drahtlose Schloßöffnung</lang>
+				<lang xml:lang="ru">Открытие по радио</lang>
+			</name>	
+		</Event>			
+		<Event id="0x05">
+			<name>
+				<lang xml:lang="en">Keypad Lock Operation</lang>
+				<lang xml:lang="de">Betätigung des Zahlenschlosses</lang>
+				<lang xml:lang="ru">Управление с клавиатуры</lang>
+			</name>	
+		</Event>
+		<Event id="0x06">
+			<name>
+				<lang xml:lang="en">Keypad Lock Open Operation</lang>
+				<lang xml:lang="de">Öffnen des Zahlenschlosses</lang>
+				<lang xml:lang="ru">Открытие с клавиатуры</lang>
+			</name>	
+		</Event>			
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x07">
+		<name>
+			<lang xml:lang="en">Burglar</lang>
+			<lang xml:lang="de">Sicherheit</lang>
+			<lang xml:lang="ru">Проникновение</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Intrusion</lang>
+				<lang xml:lang="de">Einbruch</lang>
+				<lang xml:lang="ru">Проникновение</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">Intrusion, location unknown</lang>
+				<lang xml:lang="de">Einbruch an unbekanntem Ort</lang>
+				<lang xml:lang="ru">Проникновение в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0x03">
+			<name>
+				<lang xml:lang="en">Tampering, product cover removed</lang>
+				<lang xml:lang="de">Manipulationsversuch, Gehäuse geöffnet</lang>
+				<lang xml:lang="ru">Вмешательство, открыта крышка устройства</lang>
+			</name>	
+		</Event>	
+		<Event id="0x04">
+			<name>
+				<lang xml:lang="en">Tampering, invalid code</lang>
+				<lang xml:lang="de">Manipulationsversuch, ungültiger Zugangscode</lang>
+				<lang xml:lang="ru">Вмешательство, неизвестный код</lang>
+			</name>	
+		</Event>	
+		<Event id="0x05">
+			<name>
+				<lang xml:lang="en">Glass Breakage</lang>
+				<lang xml:lang="de">Glasbruch</lang>
+				<lang xml:lang="ru">Разбито стеколо</lang>
+			</name>	
+		</Event>
+		<Event id="0x06">
+			<name>
+				<lang xml:lang="en">Glass Breakage, location unknown</lang>
+				<lang xml:lang="de">Glasbruch an unbekanntem Ort</lang>
+				<lang xml:lang="ru">Разбито стеколо в неизвестном месте</lang>
+			</name>	
+		</Event>	
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x08">
+		<name>
+			<lang xml:lang="en">Power Management</lang>
+			<lang xml:lang="de">Energieversorgung</lang>
+			<lang xml:lang="ru">Упрвление питанием</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Power has been applied</lang>
+				<lang xml:lang="de">Strom wurde angeschlossen</lang>
+				<lang xml:lang="ru">Питание подключено</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">AC mains disconnected</lang>
+				<lang xml:lang="de">Stromversorgung unterbrochen</lang>
+				<lang xml:lang="ru">Основное питание отключено</lang>
+			</name>	
+		</Event>	
+		<Event id="0x03">
+			<name>
+				<lang xml:lang="en">AC mains resconnected</lang>
+				<lang xml:lang="de">Stromversorgung wiederhergestellt</lang>
+				<lang xml:lang="ru">Основное питание восстановленно</lang>
+			</name>	
+		</Event>	
+		<Event id="0x04">
+			<name>
+				<lang xml:lang="en">Surge Detection</lang>
+				<lang xml:lang="de">Überspannung</lang>
+				<lang xml:lang="ru">Обнаружен всплеск</lang>
+			</name>	
+		</Event>			
+		<Event id="0x05">
+			<name>
+				<lang xml:lang="en">Voltage Drop/Shift</lang>
+				<lang xml:lang="de">Spannungswechsel</lang>
+				<lang xml:lang="ru">Обнаружено падение напряжения</lang>
+			</name>	
+		</Event>		
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x09">
+		<name>
+			<lang xml:lang="en">System</lang>
+			<lang xml:lang="de">System</lang>
+			<lang xml:lang="ru">Системное</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Hardware failure</lang>
+				<lang xml:lang="de">Hardware-Ausfall</lang>
+				<lang xml:lang="ru">Аппаратная ошибка</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">Software failure</lang>
+				<lang xml:lang="de">Softwareproblem</lang>
+				<lang xml:lang="ru">Программная ошибка</lang>
+			</name>	
+		</Event>	
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x0A">
+		<name>
+			<lang xml:lang="en">Emergency</lang>
+			<lang xml:lang="de">Notfall</lang>
+			<lang xml:lang="ru">Чрезвычайный случай</lang>
+		</name>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Contact Police</lang>
+				<lang xml:lang="de">Polizei rufen</lang>
+				<lang xml:lang="ru">Вызов полиции</lang>
+			</name>	
+		</Event>
+		<Event id="0x02">
+			<name>
+				<lang xml:lang="en">Contact Fire Service</lang>
+				<lang xml:lang="de">Feuerwehr rufen</lang>
+				<lang xml:lang="ru">Вызов пожарной охраны</lang>
+			</name>	
+		</Event>
+		<Event id="0x03">
+			<name>
+				<lang xml:lang="en">Contact Mecical Service</lang>
+				<lang xml:lang="de">Rotes Kreuz rufen</lang>
+				<lang xml:lang="ru">Вызов медицинской помощи</lang>
+			</name>	
+		</Event>
+		<Event id="0xFE">
+			<name>
+				<lang xml:lang="en">unknown</lang>
+				<lang xml:lang="de">unbekannt</lang>
+				<lang xml:lang="ru">неизвестно</lang>
+			</name>	
+		</Event>	
+	</Alarm> 
+	<Alarm id="0x11">
+		<name>
+			<lang xml:lang="en">Alarm Clock</lang>
+			<lang xml:lang="de">Uhr</lang>
+			<lang xml:lang="ru">Будильник</lang>
+		</name>
+		<Event id="0x00">
+			<name>
+				<lang xml:lang="en">Reserved</lang>
+				<lang xml:lang="de">Reserviert</lang>
+				<lang xml:lang="ru">Зарезервированно</lang>
+			</name>	
+		</Event>
+		<Event id="0x01">
+			<name>
+				<lang xml:lang="en">Wakeup</lang>
+				<lang xml:lang="de">Weckzeit</lang>
+				<lang xml:lang="ru">Подъём</lang>
+			</name>	
+		</Event>	
+	</Alarm>
+</Alarms>

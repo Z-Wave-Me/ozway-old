@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<ThermostatModes>
+	<ThermostatMode id="0x00">
+		<name>
+			<lang xml:lang="en">Off</lang>
+			<lang xml:lang="de">Aus</lang>
+			<lang xml:lang="ru">Отключен</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x01">
+		<name>
+			<lang xml:lang="en">Heat</lang>
+			<lang xml:lang="de">Heizen</lang>
+			<lang xml:lang="ru">Обогрев</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x02">
+		<name>
+			<lang xml:lang="en">Cool</lang>
+			<lang xml:lang="de">Kühlen</lang>
+			<lang xml:lang="ru">Охлаждение</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x03">
+		<name>
+			<lang xml:lang="en">Auto</lang>
+			<lang xml:lang="de">Auto</lang>
+			<lang xml:lang="ru">Авто</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x04">
+		<name>
+			<lang xml:lang="en">Auxiliary</lang>
+			<lang xml:lang="de">Stand-By</lang>
+			<lang xml:lang="ru">Дополнительный</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x05">
+		<name>
+			<lang xml:lang="en">Resume</lang>
+			<lang xml:lang="de">Zurück</lang>
+			<lang xml:lang="ru">Продолжение</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x06">
+		<name>
+			<lang xml:lang="en">Fan Only</lang>
+			<lang xml:lang="de">Nur Lüftung</lang>
+			<lang xml:lang="ru">Только обдув</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x07">
+		<name>
+			<lang xml:lang="en">Furnace</lang>
+			<lang xml:lang="de">Ofen</lang>
+			<lang xml:lang="ru">Печка</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x08">
+		<name>
+			<lang xml:lang="en">Dry Air</lang>
+			<lang xml:lang="de">Trockenluft</lang>
+			<lang xml:lang="ru">Высушивание воздуха</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x09">
+		<name>
+			<lang xml:lang="en">Moist Air</lang>
+			<lang xml:lang="de">Feuchtluft</lang>
+			<lang xml:lang="ru">Увлажнение воздуха</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x0A">
+		<name>
+			<lang xml:lang="en">Auto Change Over</lang>
+			<lang xml:lang="de">Automatic</lang>
+			<lang xml:lang="ru">Автоматическая смена</lang>
+		</name>
+	</ThermostatMode>   
+	<ThermostatMode id="0x0B">
+		<name>
+			<lang xml:lang="en">Energy Save Heat</lang>
+			<lang xml:lang="de">Energiesparheizung</lang>
+			<lang xml:lang="ru">Энергосберегающий обогрев</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x0C">
+		<name>
+			<lang xml:lang="en">Energy Save Cool</lang>
+			<lang xml:lang="de">Energysparkühlung</lang>
+			<lang xml:lang="ru">Энергосберегающее охлаждение</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x0D">
+		<name>
+			<lang xml:lang="en">Away Heat</lang>
+			<lang xml:lang="de">Energiesparmodus Heizung</lang>
+			<lang xml:lang="ru">Не дома, обогрев</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x0E">
+		<name>
+			<lang xml:lang="en">Away Cool</lang>
+			<lang xml:lang="de">Energiesparmodus Kühlung</lang>
+			<lang xml:lang="ru">Не дома, охлаждение</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x0F">
+		<name>
+			<lang xml:lang="en">Full Power</lang>
+			<lang xml:lang="de">voller Leistung</lang>
+			<lang xml:lang="ru">Полная мощность</lang>
+		</name>
+	</ThermostatMode>
+	<ThermostatMode id="0x1F">
+		<name>
+			<lang xml:lang="en">Manufacturer Specific</lang>
+			<lang xml:lang="de">Herstellerspezifisch</lang>
+			<lang xml:lang="ru">Специфичный для произовдителя</lang>
+		</name>
+	</ThermostatMode>
+	
+	<ThermostatFanMode id="0x00">
+		<name>
+			<lang xml:lang="en">Auto Low</lang>
+			<lang xml:lang="de">Automatisch und langsam</lang>
+			<lang xml:lang="ru">Автоматический слабый</lang>
+		</name>
+	</ThermostatFanMode>
+	<ThermostatFanMode id="0x01">
+		<name>
+			<lang xml:lang="en">On Low</lang>
+			<lang xml:lang="de">Ein und langsam</lang>
+			<lang xml:lang="ru">Включен слабо</lang>
+		</name>
+	</ThermostatFanMode>
+	<ThermostatFanMode id="0x02">
+		<name>
+			<lang xml:lang="en">Auto High</lang>
+			<lang xml:lang="de">Automatisch und schnell</lang>
+			<lang xml:lang="ru">Автоматический быстрый</lang>
+		</name>
+	</ThermostatFanMode>
+	<ThermostatFanMode id="0x03">
+		<name>
+			<lang xml:lang="en">On High</lang>
+			<lang xml:lang="de">Ein und schnell</lang>
+			<lang xml:lang="ru">Включен быстро</lang>
+		</name>
+	</ThermostatFanMode>	
+	<ThermostatFanMode id="0x04">
+		<name>
+			<lang xml:lang="en">Auto Medium</lang>
+			<lang xml:lang="de">Automatisch und mittelschnell</lang>
+			<lang xml:lang="ru">Автоматический средний</lang>
+		</name>
+	</ThermostatFanMode>
+	<ThermostatFanMode id="0x05">
+		<name>
+			<lang xml:lang="en">On Medium</lang>
+			<lang xml:lang="de">Ein und mittelschnell</lang>
+			<lang xml:lang="ru">Включен средне</lang>
+		</name>
+	</ThermostatFanMode>
+	
+	<Setpoint id="0x01">
+		<name>
+			<lang xml:lang="en">Heating</lang>
+			<lang xml:lang="de">Heizung</lang>
+			<lang xml:lang="ru">Обогрев</lang>
+		</name>
+	</Setpoint>	
+	<Setpoint id="0x02">
+		<name>
+			<lang xml:lang="en">Cooling</lang>
+			<lang xml:lang="de">Kühlung</lang>
+			<lang xml:lang="ru">Охлаждение</lang>
+		</name>
+	</Setpoint>	
+	<Setpoint id="0x07">
+		<name>
+			<lang xml:lang="en">Furnace</lang>
+			<lang xml:lang="de">Ofen</lang>
+			<lang xml:lang="ru">Печка</lang>
+		</name>
+	</Setpoint>	
+	<Setpoint id="0x08">
+		<name>
+			<lang xml:lang="en">Dry Air</lang>
+			<lang xml:lang="de">Trockne Luft</lang>
+			<lang xml:lang="ru">Высушивание воздуха</lang>
+		</name>
+	</Setpoint>	
+	<Setpoint id="0x09">
+		<name>
+			<lang xml:lang="en">Moist Air</lang>
+			<lang xml:lang="de">Feuchte Luft</lang>
+			<lang xml:lang="ru">Увлажнение воздуха</lang>
+		</name>
+	</Setpoint>		
+	<Setpoint id="0x0A">
+		<name>
+			<lang xml:lang="en">Auto Change Over</lang>
+			<lang xml:lang="de">Automatic</lang>
+			<lang xml:lang="ru">Автоматическая смена</lang>
+		</name>
+	</Setpoint>		
+	<Setpoint id="0x0B">
+		<name>
+			<lang xml:lang="en">Energy Save Heating</lang>
+			<lang xml:lang="de">Heize energiesparend</lang>
+			<lang xml:lang="ru">Энергосберегающий обогрев</lang>
+		</name>
+	</Setpoint>		
+	<Setpoint id="0x0C">
+		<name>
+			<lang xml:lang="en">Energy Save Cooling</lang>
+			<lang xml:lang="de">Kühle energiesparend</lang>
+			<lang xml:lang="ru">Энергосберегающее охлаждение</lang>
+		</name>
+	</Setpoint>		
+	<Setpoint id="0x0D">
+		<name>
+			<lang xml:lang="en">Away Heating</lang>
+			<lang xml:lang="de">Energiesparmodus Heizung</lang>
+			<lang xml:lang="ru">Не дома, обогрев</lang>
+		</name>
+	</Setpoint>			 
+	<Setpoint id="0x0E">
+		<name>
+			<lang xml:lang="en">Away Cooling</lang>
+			<lang xml:lang="de">Energiesparmodus Kühlung</lang>
+			<lang xml:lang="ru">Не дома, охлаждение</lang>
+		</name>
+	</Setpoint>			 
+	<Setpoint id="0x0F">
+		<name>
+			<lang xml:lang="en">Full Power</lang>
+			<lang xml:lang="de">voller Leistung</lang>
+			<lang xml:lang="ru">Полная мощность</lang>
+		</name>
+	</Setpoint>			 
+</ThermostatModes>  

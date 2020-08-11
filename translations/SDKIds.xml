@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<SDKIds>
+	<SDK id='1.21'>3.20</SDK>
+	<SDK id='1.25'>3.21</SDK>
+	<SDK id='1.39'>3.22</SDK>
+	<SDK id='1.37'>3.30</SDK>
+	<SDK id='1.44'>3.31</SDK>
+	<SDK id='1.53'>3.40</SDK>
+	<SDK id='1.59'>4.00</SDK>
+	<SDK id='1.68'>4.01</SDK>
+	<SDK id='1.69'>4.02</SDK>
+	<SDK id='1.81'>4.03</SDK>
+	<SDK id='1.99'>4.04</SDK>
+	<SDK id='1.78'>4.10</SDK>
+	<SDK id='1.91'>4.11</SDK>
+	<SDK id='1.97'>4.20</SDK>
+	<SDK id='2.7'>4.05</SDK>
+	<SDK id='2.23'>4.06</SDK>
+	<SDK id='2.27'>4.07</SDK>
+	<SDK id='2.6'>4.21</SDK>
+	<SDK id='2.9'>4.22</SDK>
+	<SDK id='2.17'>4.23</SDK>
+	<SDK id='2.24'>4.24</SDK>
+	<SDK id='2.28'>4.24 pl1</SDK>
+	<SDK id='2.31'>4.25</SDK>
+	<SDK id='2.32'>4.26</SDK>
+	<SDK id='2.40'>4.27</SDK>
+	<SDK id='2.67'>4.28</SDK>
+
+	<SDK id='2.30'>4.30 beta</SDK>
+	<SDK id='2.74'>4.50 beta</SDK>
+
+	<SDK id='2.16'>5.00 beta</SDK>
+	<SDK id='2.22'>5.00 beta pl1</SDK>
+	<SDK id='2.36'>5.01</SDK>
+	<SDK id='2.48'>5.02</SDK>
+	<SDK id='2.51'>5.02 pl1</SDK>
+	<SDK id='2.64'>5.02 pl2</SDK>
+	<SDK id='2.78'>5.02 pl3</SDK>
+	<SDK id='3.28'>5.03</SDK>
+
+	<SDK id='2.97'>4.51</SDK>
+	<SDK id='3.20'>4.52.00</SDK>
+	<SDK id='3.22'>4.52.01</SDK>
+	<SDK id='3.34'>4.53.00</SDK>
+	<SDK id='3.36'>4.53.01</SDK>
+	<SDK id='3.40'>4.54.00</SDK>
+	<SDK id='3.42'>4.54.01</SDK>
+	<SDK id='3.52'>4.54.02</SDK>
+	<SDK id='3.67'>4.55.00</SDK>
+
+	<SDK id='2.96'>6.00 beta 1</SDK>
+	<SDK id='2.99'>6.00 beta 1 pl1</SDK>
+	<SDK id='3.03'>6.00 beta 1 pl2</SDK>
+	<SDK id='3.04'>6.00 beta 1 pl3</SDK>
+	<SDK id='3.6'>6.00.04 beta 1</SDK>
+	<SDK id='3.7'>6.00.05 beta 1</SDK>
+	<SDK id='3.10'>6.01.00</SDK>
+	<SDK id='3.26'>6.01.01 (2-ch)</SDK>
+	<SDK id='3.33'>6.01.02</SDK>
+	<SDK id='3.37'>6.01.03</SDK>
+	<SDK id='3.41'>6.02.00</SDK>
+	<SDK id='3.35'>6.10.00</SDK>
+	<SDK id='3.38'>6.10.01 (JP)</SDK>
+	<SDK id='3.45'>6.11.00 (JP)</SDK>
+	<SDK id='3.53'>6.11.01 (JP)</SDK>
+
+	<SDK id='3.71'>6.50.00 beta</SDK>
+	<SDK id='3.79'>6.50.01 beta</SDK>
+	<SDK id='3.83'>6.51.00</SDK>
+	<SDK id='3.92'>6.51.01</SDK>
+	<SDK id='3.95'>6.51.02</SDK>
+	<SDK id='3.99'>6.51.03</SDK>
+	<SDK id='3.??'>6.51.04</SDK>
+</SDKIds>

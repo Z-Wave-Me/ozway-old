@@ -1,0 +1,17 @@
+libopenzwave.so*
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+*.out
+ozway/.dep/*
+ozway/.lib/*
+ozway/cpp/src/vers.cpp
+ozway/MinOZW
+meta/*
+*.swp

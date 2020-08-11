@@ -1,0 +1,844 @@
+<?xml version="1.0"?>
+<Meters>
+	<Meter id="0x01">
+		<name>
+			<lang xml:lang="en">Single Electric </lang>
+			<lang xml:lang="de">EinphasenStromzähler</lang>
+			<lang xml:lang="ru">Счётчик электричества</lang>
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Total Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtprimärenergie (kWh)</lang>
+			<lang xml:lang="ru">Полная первичная активаная энергия (кВтЧ)</lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Total Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtprimär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru">??Полная первичная реактиваная энергия (кВАЧ)</lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Total Secondary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtsekundärenergie (kWh)</lang>
+			<lang xml:lang="ru">??Полная вторичная активаная энергия (кВтЧ)</lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Total Secondary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtsekundär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru">??Полная вторичная реактиваная энергия (кВАЧ)</lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Instantaneous Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Maximale Primärenergie (kWh)</lang>
+			<lang xml:lang="ru">??Мгновенное первичная активное потребление (кВтЧ)</lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Instanteneous Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Maximale Primär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru">???</lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Wirkleistung (kW)</lang>
+			<lang xml:lang="ru">???</lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Primary Rective Maxmimum Demand  (kVA)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Scheinleistung (kVA)</lang>
+			<lang xml:lang="ru">??</lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Cummulative Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Summierter primärer Wirkleistungsbedarf (kW)</lang>
+			<lang xml:lang="ru">??</lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Cummulative Primary Reactive Maxmimum Demand (kVA)</lang>
+			<lang xml:lang="de">Summierter primärer Scheinleistungsbedarf (kVA)</lang>
+			<lang xml:lang="ru">??</lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Voltage at Phase 1 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 1 (В)</lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Voltage at Phase 2 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 2 (В)</lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Voltage at Phase 3 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 3 (В)</lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Ampere at Phase 1 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Ток на Фазе 1 (А)</lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Ampere at Phase 2 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Ток на Фазе 2 (А)</lang>
+		</dataset>
+		<dataset id="16">
+			<lang xml:lang="en">Ampere at Phase 3 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Ток на Фазе 3 (А)</lang>
+		</dataset>
+		<dataset id="17">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählimpuls</lang>
+			<lang xml:lang="ru">Счётчик щелчков</lang>
+		</dataset>
+		<dataset id="18">
+			<lang xml:lang="en">Current Transformation Ratio</lang>
+			<lang xml:lang="de">Verhältnis zwischen Primär und Sekundärstrom</lang>
+			<lang xml:lang="ru">Текущий коэффициент трансформации</lang>
+		</dataset>
+		<dataset id="19">
+			<lang xml:lang="en">Power factor</lang>
+			<lang xml:lang="de">Leistungfaktor</lang>
+			<lang xml:lang="ru">Коэффициент мощности</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x02">
+		<name>
+			<lang xml:lang="en">Gas</lang>
+			<lang xml:lang="de">Gaszähler</lang>
+			<lang xml:lang="ru">Счётчик газа</lang>
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Accumulated Volume (m3)</lang>
+			<lang xml:lang="de">Gesamtvolumen 8 m3)</lang>
+			<lang xml:lang="ru">Суммарный объём (м3)</lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Current Flow (k/h, m3/h)</lang>
+			<lang xml:lang="de">Durchfluss (k/h, m3/h)</lang>
+			<lang xml:lang="ru">Текущий поток (л/ч, м3/ч)</lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Current Pressure (kPa)</lang>
+			<lang xml:lang="de">Aktueller Druck (kPa)</lang>
+			<lang xml:lang="ru">Текущее давление (кПа)</lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Peak Flow (l/h, m3/h)</lang>
+			<lang xml:lang="de">Maximale Flussgeschwindigkeit (l/h, m3/h)</lang>
+			<lang xml:lang="ru">Пиковый поток (л/ч, м3/ч)</lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Hour Counter (h)</lang>
+			<lang xml:lang="de">Stundenzähler</lang>
+			<lang xml:lang="ru">Счётчик часов (ч)</lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Input A (m3/h, kW,...)</lang>
+			<lang xml:lang="de">Eingang A (m3/h, kW,...)</lang>
+			<lang xml:lang="ru">Вход А (м3/ч, кВт, ...)</lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Input B (m3/h, kW,...)</lang>
+			<lang xml:lang="de">Eingang B (m3/h, kW,...)</lang>
+			<lang xml:lang="ru">Вход Б (м3/ч, кВт, ...)</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x03">
+		<name>
+			<lang xml:lang="en">Water</lang>
+			<lang xml:lang="de">Wasserzähler</lang>
+			<lang xml:lang="ru">Счётчик воды</lang>
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Accumulated Volume (m3)</lang>
+			<lang xml:lang="de">Gesamtvolumen (m3)</lang>
+			<lang xml:lang="ru">Суммарный объём (м3)</lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Current Flow (k/h, m3/h)</lang>
+			<lang xml:lang="de">Durchfluss (k/h, m3/h)</lang>
+			<lang xml:lang="ru">Текущий поток (л/ч, м3/ч)</lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Current Pressure (kPa)</lang>
+			<lang xml:lang="de">Aktueller Druck (kPa)</lang>
+			<lang xml:lang="ru">Текущее давление (кПа)</lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Peak Flow (l/h, m3/h)</lang>
+			<lang xml:lang="de">Maximale Flussgeschwindigkeit (l/h, m3/h)</lang>
+			<lang xml:lang="ru">Пиковый поток (л/ч, м3/ч)</lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Hour Counter (h)</lang>
+			<lang xml:lang="de">Stundenzähler</lang>
+			<lang xml:lang="ru">Счётчик часов (ч)</lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Input A (m3/h, kW,...)</lang>
+			<lang xml:lang="de">Eingang A (m3/h, kW,...)</lang>
+			<lang xml:lang="ru">Вход А (м3/ч, кВт, ...)</lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Input B (m3/h, kW,...)</lang>
+			<lang xml:lang="de">Eingang B (m3/h, kW,...)</lang>
+			<lang xml:lang="ru">Вход Б (м3/ч, кВт, ...)</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x04">
+		<name>
+			<lang xml:lang="en">Twin-E electric meter</lang>
+			<lang xml:lang="de">Doppel Elektrozähler</lang>
+			<lang xml:lang="ru">???</lang>
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Total Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtprimärenergie (kWh)</lang>
+			<lang xml:lang="ru">??</lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Total Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtprimär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru">??</lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Total Secondary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtsekundärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Total Secondary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtsekundär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Instantaneous Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">maximale Primärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Instanteneous Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">maximale Primär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Wirkleistung (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Primary Rective Maxmimum Demand  (kVA)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Scheinleistung (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Cummulative Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Summierter primärer Wirkleistungsbedarf (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Cummulative Primary Reactive Maxmimum Demand (kVA)</lang>
+			<lang xml:lang="de">Summierter primärer Scheinleistungsbedarf (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Voltage at Phase 1 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 1 (В)</lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Voltage at Phase 2 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 2 (В)</lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Voltage at Phase 3 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 3 (В)</lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Ampere at Phase 1 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 1 (А)</lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Ampere at Phase 2 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 2 (А)</lang>
+		</dataset>
+		<dataset id="16">
+			<lang xml:lang="en">Ampere at Phase 3 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 3 (А)</lang>
+		</dataset>
+		<dataset id="17">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählimpuls</lang>
+			<lang xml:lang="ru">Счётчик щелчков</lang>
+		</dataset>
+		<dataset id="18">
+			<lang xml:lang="en">Current Transformation Ratio</lang>
+			<lang xml:lang="de">Verhältnis zwischen Primär und Sekundärstrom</lang>
+			<lang xml:lang="ru">Текущий коэффициент трансформации</lang>
+		</dataset>
+		<dataset id="19">
+			<lang xml:lang="en">Power factor</lang>
+			<lang xml:lang="de">Leistungfaktor</lang>
+			<lang xml:lang="ru">Коэффициент мощности</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x05">
+		<name>
+			<lang xml:lang="en">3P Single Direct electric meter</lang>
+			<lang xml:lang="de">Dreiphasen Einzel Elektrozähler</lang>
+			<lang xml:lang="ru">??</lang>	
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Total Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtprimärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Total Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtprimär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Total Secondary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtsekundärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Total Secondary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtsekundär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Instantaneous Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">maximale Primärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Instanteneous Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">maximale Primär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Wirkleistung (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Primary Rective Maxmimum Demand  (kVA)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Scheinleistung (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Cummulative Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Summierter primärer Wirkleistungsbedarf (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Cummulative Primary Reactive Maxmimum Demand (kVA)</lang>
+			<lang xml:lang="de">Summierter primärer Scheinleistungsbedarf (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Voltage at Phase 1 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 1 (V)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Voltage at Phase 2 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 2 (V)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Voltage at Phase 3 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 3 (V)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Ampere at Phase 1 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 1 (V)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Ampere at Phase 2 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 2 (V)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="16">
+			<lang xml:lang="en">Ampere at Phase 3 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 3 (V)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="17">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählimpuls</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="18">
+			<lang xml:lang="en">Current Transformation Ratio</lang>
+			<lang xml:lang="de">Verhältnis zwischen Primär und Sekundärstrom</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="19">
+			<lang xml:lang="en">Power factor</lang>
+			<lang xml:lang="de">Leistungfaktor</lang>
+			<lang xml:lang="ru">Коэффициент мощности</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x06">
+		<name>
+			<lang xml:lang="en">3P Single ECT electric meter</lang>
+			<lang xml:lang="de">Dreiphasen ECT Elektrozähler</lang>
+			<lang xml:lang="ru">??</lang>	
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Total Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtprimärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Total Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtprimär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Total Secondary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtsekundärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Total Secondary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtsekundär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Instantaneous Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">maximale Primärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Instanteneous Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">maximale Primär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Wirkleistung (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Primary Rective Maxmimum Demand  (kVA)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Scheinleistung (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Cummulative Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Summierter primärer Wirkleistungsbedarf (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Cummulative Primary Reactive Maxmimum Demand (kVA)</lang>
+			<lang xml:lang="de">Summierter primärer Scheinleistungsbedarf (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Voltage at Phase 1 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 1 (В)</lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Voltage at Phase 2 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 2 (В)</lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Voltage at Phase 3 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 3 (В)</lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Ampere at Phase 1 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 1 (А)</lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Ampere at Phase 2 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 2 (А)</lang>
+		</dataset>
+		<dataset id="16">
+			<lang xml:lang="en">Ampere at Phase 3 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 3 (А)</lang>
+		</dataset>
+		<dataset id="17">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählimpuls</lang>
+			<lang xml:lang="ru">Счётчик щелчков</lang>
+		</dataset>
+		<dataset id="18">
+			<lang xml:lang="en">Current Transformation Ratio</lang>
+			<lang xml:lang="de">Verhältnis zwischen Primär und Sekundärstrom</lang>
+			<lang xml:lang="ru">Текущий коэффициент трансформации</lang>
+		</dataset>
+		<dataset id="19">
+			<lang xml:lang="en">Power factor</lang>
+			<lang xml:lang="de">Leistungfaktor</lang>
+			<lang xml:lang="ru">Коэффициент мощности</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x07">
+		<name>
+			<lang xml:lang="en">1P  Direct electric meter</lang>
+			<lang xml:lang="de">Einphasen direkter Elektrozähler</lang>
+			<lang xml:lang="ru">??</lang>
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Total Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtprimärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Total Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtprimär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Total Secondary Active Energy (kWh)</lang>
+			<lang xml:lang="de">Gesamtsekundärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Total Secondary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">Gesamtsekundär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Instantaneous Primary Active Energy (kWh)</lang>
+			<lang xml:lang="de">maximale Primärenergie (kWh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Instanteneous Primary Reactive Energy (kVAh)</lang>
+			<lang xml:lang="de">maximale Primär-Scheinenergie (kVAh)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Wirkleistung (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Primary Rective Maxmimum Demand  (kVA)</lang>
+			<lang xml:lang="de">Maximaler Primärenergiebedarf-Scheinleistung (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Cummulative Primary Active Maxmimum Demand (kW)</lang>
+			<lang xml:lang="de">Summierter primärer Wirkleistungsbedarf (kW)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Cummulative Primary Reactive Maxmimum Demand (kVA)</lang>
+			<lang xml:lang="de">Summierter primärer Scheinleistungsbedarf (kVA)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Voltage at Phase 1 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 1 (В)</lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Voltage at Phase 2 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 2 (В)</lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Voltage at Phase 3 (V)</lang>
+			<lang xml:lang="de">Spannung auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Напряжение на Фазе 3 (В)</lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Ampere at Phase 1 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 1 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 1 (А)</lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Ampere at Phase 2 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 2 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 2 (А)</lang>
+		</dataset>
+		<dataset id="16">
+			<lang xml:lang="en">Ampere at Phase 3 (V)</lang>
+			<lang xml:lang="de">Strom auf Phase 3 (V)</lang>
+			<lang xml:lang="ru">Ток на фазе 3 (А)</lang>
+		</dataset>
+		<dataset id="17">
+			<lang xml:lang="en">Pulse Count</lang>
+			<lang xml:lang="de">Zählimpuls</lang>
+			<lang xml:lang="ru">Счётчик щелчков</lang>
+		</dataset>
+		<dataset id="18">
+			<lang xml:lang="en">Current Transformation Ratio</lang>
+			<lang xml:lang="de">Verhältnis zwischen Primär und Sekundärstrom</lang>
+			<lang xml:lang="ru">Текущий коэффициент трансформации</lang>
+		</dataset>
+		<dataset id="19">
+			<lang xml:lang="en">Power factor</lang>
+			<lang xml:lang="de">Leistungfaktor</lang>
+			<lang xml:lang="ru">Коэффициент мощности</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x08">
+		<name>
+			<lang xml:lang="en">Heating Meter</lang>
+			<lang xml:lang="de">Heizkostenzähler</lang>
+			<lang xml:lang="ru">Измеритель нагрева</lang>	
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Heat Energy (m3)</lang>
+			<lang xml:lang="de">Gesamtvolumen (m3)</lang>
+			<lang xml:lang="ru">Энергия нагрева (??)</lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Cooling Energy (k/h, m3/h)</lang>
+			<lang xml:lang="de">Durchfluss (k/h, m3/h)</lang>
+			<lang xml:lang="ru">Энергия охлажжения (??)</lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Volume 1</lang>
+			<lang xml:lang="de">Volumen 1</lang>
+			<lang xml:lang="ru">Объём 1</lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Volume 2</lang>
+			<lang xml:lang="de">Volumen 2</lang>
+			<lang xml:lang="ru">Объём 2</lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Temperature 1 (Forward)</lang>
+			<lang xml:lang="de">Temperatur 1 (Vorlauf)</lang>
+			<lang xml:lang="ru">Температура 1 (Прямая)</lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Temperature 2 (Return)</lang>
+			<lang xml:lang="de">Temperatur 2 (Rücklauf)</lang>
+			<lang xml:lang="ru">Температура 2 (Обратная)</lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Temperature 3</lang>
+			<lang xml:lang="de">Temperatur 3</lang>
+			<lang xml:lang="ru">Температура 3</lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Actual Flow (Volume 1)</lang>
+			<lang xml:lang="de">Momentanflussmänge (Volume 1)</lang>
+			<lang xml:lang="ru">Текущий поток (Объём 1)</lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Actual Flow (Volume 2)</lang>
+			<lang xml:lang="de">Momentanflussmänge (Volume 2)</lang>
+			<lang xml:lang="ru">Текущий поток (Объём 2)</lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Actual Power</lang>
+			<lang xml:lang="de">Momentanleistung</lang>
+			<lang xml:lang="ru">Текущая мощность</lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Peak Flow</lang>
+			<lang xml:lang="de">Spitzendurchfluss</lang>
+			<lang xml:lang="ru">Пиковый поток</lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Peak Power</lang>
+			<lang xml:lang="de">Spitzenleistung</lang>
+			<lang xml:lang="ru">Пиковая мощность</lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Input A</lang>
+			<lang xml:lang="de">Eingang A</lang>
+			<lang xml:lang="ru">Вход А</lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Input B</lang>
+			<lang xml:lang="de">Eingang B</lang>
+			<lang xml:lang="ru">Вход Б</lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Hour Counter</lang>
+			<lang xml:lang="de">Stundenzähler</lang>
+			<lang xml:lang="ru">Счётчик часов</lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x09">
+		<name>
+			<lang xml:lang="en">Cooling Meter</lang>
+			<lang xml:lang="de">Kühlmengenzähler</lang>
+			<lang xml:lang="ru">??</lang>
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Heat Energy (m3)</lang>
+			<lang xml:lang="de">Gesamtvolumen (m3)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Cooling Energy (k/h, m3/h)</lang>
+			<lang xml:lang="de">Durchfluss (k/h, m3/h)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Volume 1 </lang>
+			<lang xml:lang="de">Volumen 1</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Volume 2 </lang>
+			<lang xml:lang="de">Volumen 2</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Temperature 1 (Forward)</lang>
+			<lang xml:lang="de">Temperatur 1 (Vorlauf)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Temperature 2 (Return)</lang>
+			<lang xml:lang="de">Temperatur 2 (Rücklauf)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Temperature 3</lang>
+			<lang xml:lang="de">Temperatur 3</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Actual Flow (Volume 1)</lang>
+			<lang xml:lang="de">Momentanflussmänge (Volume 1)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Actual Flow (Volume 2)</lang>
+			<lang xml:lang="de">Momentanflussmänge (Volume 2)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Actual Power</lang>
+			<lang xml:lang="de">Momentanleistung</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Peak Flow</lang>
+			<lang xml:lang="de">Spitzendurchfluss</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Peak Power</lang>
+			<lang xml:lang="de">Spitzenleistung</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Input A</lang>
+			<lang xml:lang="de">Eingang A</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Input B</lang>
+			<lang xml:lang="de">Eingang B</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Hour Counter</lang>
+			<lang xml:lang="de">Stundenzähler</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+	</Meter>
+	<Meter id="0x0a">
+		<name>
+			<lang xml:lang="en">Combined Heating and Cooling Meter</lang>
+			<lang xml:lang="de">Kombinierter Wärme- und Kältemengenzähler</lang>
+			<lang xml:lang="ru">??</lang>
+		</name>
+		<dataset id="1">
+			<lang xml:lang="en">Heat Energy (m3)</lang>
+			<lang xml:lang="de">Gesamtvolumen (m3)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="2">
+			<lang xml:lang="en">Cooling Energy (k/h, m3/h)</lang>
+			<lang xml:lang="de">Durchfluss (k/h, m3/h)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="3">
+			<lang xml:lang="en">Volume 1 </lang>
+			<lang xml:lang="de">Volumen 1</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="4">
+			<lang xml:lang="en">Volume 2 </lang>
+			<lang xml:lang="de">Volumen 2</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="5">
+			<lang xml:lang="en">Temperature 1 (Forward)</lang>
+			<lang xml:lang="de">Temperatur 1 (Vorlauf)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="6">
+			<lang xml:lang="en">Temperature 2 (Return)</lang>
+			<lang xml:lang="de">Temperatur 2 (Rücklauf)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="7">
+			<lang xml:lang="en">Temperature 3</lang>
+			<lang xml:lang="de">Temperatur 3</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="8">
+			<lang xml:lang="en">Actual Flow (Volume 1)</lang>
+			<lang xml:lang="de">Momentanflussmänge (Volume 1)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="9">
+			<lang xml:lang="en">Actual Flow (Volume 2)</lang>
+			<lang xml:lang="de">Momentanflussmänge (Volume 2)</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="10">
+			<lang xml:lang="en">Actual Power</lang>
+			<lang xml:lang="de">Momentanleistung</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="11">
+			<lang xml:lang="en">Peak Flow</lang>
+			<lang xml:lang="de">Spitzendurchfluss</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="12">
+			<lang xml:lang="en">Peak Power</lang>
+			<lang xml:lang="de">Spitzenleistung</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="13">
+			<lang xml:lang="en">Input A</lang>
+			<lang xml:lang="de">Eingang A</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="14">
+			<lang xml:lang="en">Input B</lang>
+			<lang xml:lang="de">Eingang B</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+		<dataset id="15">
+			<lang xml:lang="en">Hour Counter</lang>
+			<lang xml:lang="de">Stundenzähler</lang>
+			<lang xml:lang="ru"></lang>
+		</dataset>
+	</Meter>
+</Meters>
+ 
