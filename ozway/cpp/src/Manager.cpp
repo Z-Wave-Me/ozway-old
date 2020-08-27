@@ -72,7 +72,8 @@
 #include "ZDataExt.h"
 
 //TODO move defines to header, handle all zway functions' errors
-#define _NOT_YET_IMPLEMENTED_(zway) zway_log((zway), Error, "The method \"%s\" is not yet implemented, in %s, line %d\n", __func__,  __FILE__, __LINE__)
+#define _NOT_YET_IMPLEMENTED_ printf("The method \"%s\" is not yet implemented, in %s, line %d\n", __func__,  __FILE__, __LINE__);
+//#define _NOT_YET_IMPLEMENTED_(zway) zway_log((zway), Error, "The method \"%s\" is not yet implemented, in %s, line %d\n", __func__,  __FILE__, __LINE__)
 #define _NOT_SUPPORTED_(zway) zway_log((zway), Error, "The method \"%s\" is not supported, in %s, line %d\n", __func__,  __FILE__, __LINE__)
 // ZSA
 using namespace OpenZWave;
