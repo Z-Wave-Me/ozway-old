@@ -36,9 +36,10 @@
             <lang xml:lang="en">Triple press TMP button</lang>
             <lang xml:lang="ru">Тройное нажатие кнопки TMP</lang>
           </inclusionNote>
-            <productName>FIB_FGK-10x</productName>
+            <productName>Door/Window Sensor FGK-101 - 107</productName>
             <brandName>Fibaro</brandName>
-                    <productVersion>2.1</productVersion>
+                <productCode>FGK-101</productCode>
+            <productVersion>2.1</productVersion>
             <batteryType>ER14250 (1/2AA)</batteryType>
             <batteryCount>1</batteryCount>
             </deviceDescription>
@@ -236,7 +237,7 @@
             <name>
                 <lang xml:lang="de">Dimmer/Motorsteuerung Niveau bei Alarmsteuerung</lang>
                 <lang xml:lang="en">Value of the parameter specifying the forced level of dimming/opening roller blinds when “switch on”/”open” commands are sent to devices from association group no.1</lang>
-                <lang xml:lang="ru">ровень диммирования, отправляемый устройствам из группы 1</lang>
+                <lang xml:lang="ru">Уровень диммирования, отправляемый устройствам из группы 1</lang>
               </name>
                   <description>
                 <lang xml:lang="de"> Im Alarmfall wird eine Alarmmeldung ausgesendet und es kann ein Aktor geschaltet werden. Für Dimmer und Jalousiecontroller kann definiert werden, auf welches Dimmerniveau oder welche Motorposition der Aktor gesteuert werden soll</lang>

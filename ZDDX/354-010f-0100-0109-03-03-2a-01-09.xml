@@ -285,7 +285,7 @@ If devices state is checked before sending association then parameter 19 should 
         <configParam number="14" type="rangemapped" size="1" default="01">
             <name>
                 <lang xml:lang="en">Parameter no.14 - Switch Type</lang>
-                <lang xml:lang="ru">Параметр №14 - Режим переключения</lang>
+                <lang xml:lang="ru">Параметр №14 - Тип выключателя</lang>
               </name>
                   <description>
                 <lang xml:lang="en">Switch type. Choose between mono or bi- stable</lang>

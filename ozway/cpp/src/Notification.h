@@ -33,9 +33,16 @@
 #include "Defs.h"
 #include "value_classes/ValueID.h"
 
-#include "ZWayLib.h"
-#include "ZLogging.h"
+// ZSA
 
+#include "Wrapper.h"
+
+#include <ZWayLib.h>
+#include <ZLogging.h>
+
+// ZSA
+
+class Wrapper;
 namespace OpenZWave
 {
 	namespace Internal
@@ -64,6 +71,7 @@ namespace OpenZWave
 	 */
 	class OPENZWAVE_EXPORT Notification
 	{
+			friend class Wrapper;
 			friend class Manager;
 			friend class Driver;
 			friend class Node;

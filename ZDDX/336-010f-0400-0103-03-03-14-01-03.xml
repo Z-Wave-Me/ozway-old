@@ -150,7 +150,7 @@
                   </description>
               </value>
                 </configParam>
-        <configParam number="6" type="rangemapped" size="1" default="00">
+        <configParam number="6" type="constant" size="1" default="00">
             <name>
                 <lang xml:lang="de">Kommandos die an Assoziationsgruppe 1 gesendet werden</lang>
                 <lang xml:lang="en">Commands Sent to Association Group 1</lang>

@@ -47,6 +47,7 @@
           <xsd:field xpath="@number"/>
         </xsd:unique>
       </xsd:element>
+      <xsd:element name="alarmMappings" type="zwv:alarmMappings" minOccurs="0"/>
       <xsd:element name="resourceLinks" type="zwv:resourceLinks" minOccurs="0"/>
     </xsd:sequence>
     <xsd:attribute name="schemaVersion" type="xsd:unsignedInt" use="required" fixed="2"/>
@@ -136,6 +137,12 @@
     <xsd:attribute name="dynamicEndpoints" type="xsd:boolean" default="false"/>
   </xsd:complexType>
 
+  <xsd:complexType name="alarmMappings">
+    <xsd:sequence>
+      <xsd:element name="alarmMapping" type="zwv:alarmMappingType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
   <xsd:complexType name="resourceLinks">
     <xsd:sequence>
       <xsd:element name="deviceImage" type="zwv:deviceImageType" minOccurs="0"/>
@@ -217,6 +224,13 @@
     <xsd:attribute name="dynamic" type="xsd:boolean" default="false"/>
   </xsd:complexType>
   
+  <xsd:complexType name="alarmMappingType">
+    <xsd:attribute name="alarmTypeV1" type="zwv:hexByte" use="required"/>
+    <xsd:attribute name="alarmLevelV1" type="zwv:hexByte" use="required"/>
+    <xsd:attribute name="alarmTypeV2" type="zwv:hexByte" use="required"/>
+    <xsd:attribute name="alarmEventV2" type="zwv:hexByte" use="required"/>
+  </xsd:complexType>
+  
   <xsd:complexType name="resourceLinkType">
     <xsd:sequence>
       <xsd:element name="description" type="zwv:description" minOccurs="0">
@@ -240,7 +254,7 @@
     <xsd:attribute name="controlled" type="xsd:boolean" default="false"/>
     <xsd:attribute name="inNIF" type="xsd:boolean" default="true"/>
     <xsd:attribute name="secure" type="xsd:boolean" default="false"/>
-    <xsd:attribute name="nonsecure" type="xsd:boolean" default="true"/>
+    <xsd:attribute name="nonSecure" type="xsd:boolean" default="true"/>
   </xsd:complexType>
 
   <xsd:complexType name="description">
@@ -265,7 +279,18 @@
       <xsd:enumeration value="Hong Kong"/>
       <xsd:enumeration value="Malaysia"/>
       <xsd:enumeration value="Singapore"/>
-      <xsd:enumeration value="India"/>
+      <xsd:enumeration value="Indien"/>
+      <xsd:enumeration value="Russia"/>
+      <xsd:enumeration value="Japan (922-926 MHz)"/>
+      <xsd:enumeration value="Japan (951-956 MHz)"/>
+      <xsd:enumeration value="Brazil"/>
+      <xsd:enumeration value="Chile"/>
+      <xsd:enumeration value="China"/>
+      <xsd:enumeration value="Columbia"/>
+      <xsd:enumeration value="Israel"/>
+      <xsd:enumeration value="South Africa"/>
+      <xsd:enumeration value="South Korea"/>
+      <xsd:enumeration value="UAE"/>
     </xsd:restriction>
   </xsd:simpleType>
 

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0154"/>
+        <productType value="0005"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="26"/>
+    <appVersion value="01"/>
+    <appSubVersion value="05"/>
+        <basicClass value="04"/>
+            <genericClass value="40"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Electronic door opener controller</lang>
+            <lang xml:lang="ru">Реле для управления электромеханическим замком</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Click button one time</lang>
+            <lang xml:lang="ru">Один раз нажмите кнопку</lang>
+          </inclusionNote>
+            <productName>Electronic door opener controller</productName>
+            <brandName>Popp</brandName>
+                    <productVersion>1.5</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" version="0" controlled="true" inNIF="false" secure="true"/>
+        <commandClass id="0030" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0059" inNIF="false" secure="true"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2" secure="true"/>
+        <commandClass id="0062" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0070" inNIF="false" secure="true"/>
+        <commandClass id="0071" version="5" inNIF="false" secure="true"/>
+        <commandClass id="0072" version="2" secure="true"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0085" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0086" version="2" secure="true"/>
+        <commandClass id="0098" secure="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Action on External Dry Input</lang>
+                <lang xml:lang="ru">Действие при замыкании сухого контакта IN и GND</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Command when dry contact is opened</lang>
+                <lang xml:lang="ru">Команда при открытии сухого контакта</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The command that is sent to group 2 when the dry contact is opend.</lang>
+                <lang xml:lang="ru">Команда, которая отправляется во вторую группу, когда сухой контакт открыт.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Выключить</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">On</lang>
+                    <lang xml:lang="ru">Включить</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Dimming level</lang>
+                    <lang xml:lang="ru">Уровень диммирования</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Command when dry contact is closed</lang>
+                <lang xml:lang="ru">Команда при закрытии сухого контакта</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The command that is sent to group 2 when the dry contact is closed.</lang>
+                <lang xml:lang="ru">Команда, которая отправляется во вторую группу, когда сухой контакт закрыт.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Выключить</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">On</lang>
+                    <lang xml:lang="ru">Включить</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Dimming level</lang>
+                    <lang xml:lang="ru">Уровень диммирования</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Mode of operation relay</lang>
+                <lang xml:lang="ru">Режим работы реле</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">By default relay turned off after 3 seconds. For lighting control it can be disabled.</lang>
+                <lang xml:lang="ru">По умолчанию реле выключается, через 3 секунды. Но для упарвления освещением это можно отключить.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Enable AutoOff</lang>
+                    <lang xml:lang="ru">Автовыключение работает</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable AutoOff</lang>
+                    <lang xml:lang="ru">Автовыключение отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Automatically switch off</lang>
+                <lang xml:lang="ru">Авто выключение</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Automatically switch off after defined time.</lang>
+                <lang xml:lang="ru">Автоматически выключает реле после установленного времени.</lang>
+              </description>
+      
+                  <value from="00" to="3b">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/c3920adbf4a176026d05a6c2c9a4e96a61e3a98d.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

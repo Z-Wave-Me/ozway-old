@@ -279,13 +279,13 @@
               </value>
             <value from="01" to="01">
                 <description>
-                    <lang xml:lang="de"> Jalousie geht runter bei Alarm</lang>
+                    <lang xml:lang="de">Jalousie geht runter bei Alarm</lang>
                     <lang xml:lang="en"> Blind will go down in case of  alarm</lang>
                   </description>
               </value>
             <value from="02" to="02">
                 <description>
-                    <lang xml:lang="de"> Jalousie geht hoch bei Alarm</lang>
+                    <lang xml:lang="de">Jalousie geht hoch bei Alarm</lang>
                     <lang xml:lang="en"> Blind will go up in case of  alarm</lang>
                   </description>
               </value>

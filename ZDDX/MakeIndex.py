@@ -83,9 +83,25 @@ def CreateXMLIndex():
 			except:
 				deviceImage = "";
 
+			try:
+				manualUrl = GetSubTagAttribute(GetSubTagChilds(rootChilds, 'resourceLinks'), 'manualUrl', 'url')
+			except:
+				manualUrl = "";
+
+			try:
+				productCode = GetSubTagValue(deviceDescription, 'productCode')
+			except:
+				productCode = "";
+			
+			
 			
 			deviceData = GetSubTagChilds(rootChilds, 'deviceData')
 			
+			try:
+				rfFrequency = GetSubTagValue(deviceData, 'rfFrequency')
+			except:
+				rfFrequency = "";
+
 			# Z-Way relies on this order
 			fieldNames = [
 				'manufacturerId',
@@ -101,6 +117,9 @@ def CreateXMLIndex():
 				'brandName',
 				'productName',
 				'deviceImageURL',
+				'productCode',
+				'rfFrequency',
+				'manualUrl',
 				'filePath'
 			]
 			fields = [
@@ -117,6 +136,9 @@ def CreateXMLIndex():
 				brandName.encode('utf-8'),
 				productName.encode('utf-8'),
 				deviceImage.encode('utf-8'),
+				productCode.encode('utf-8'),
+				rfFrequency.encode('utf-8'),
+				manualUrl.encode('utf-8'),
 				zddxf.encode('utf-8'),
 			]
 			

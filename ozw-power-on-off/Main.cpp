@@ -71,7 +71,11 @@ void OnNotification
 	// Must do this inside a critical section to avoid conflicts with the main thread
 	// pthread_mutex_lock( &g_criticalSection );
 
-	cout << _notification->GetAsString() << endl;
+	printf("OnNotification: %s\n", _notification->GetAsString().c_str());
+	{
+		if (NodeInfo* nodeInfo = GetNodeInfo(_notification))
+			printf("\tnodeId: %d\n", nodeInfo->m_nodeId);
+	}
 
 	switch( _notification->GetType() )
 	{
@@ -81,6 +85,7 @@ void OnNotification
 			{
 				// Add the new value to our list
 				nodeInfo->m_values.push_back( _notification->GetValueID() );
+				printf("\tnodeInfo value added: %#2x\n", _notification->GetValueID().GetCommandClassId());
 			}
 			break;
 		}
@@ -108,7 +113,7 @@ void OnNotification
 			if( NodeInfo* nodeInfo = GetNodeInfo( _notification ) )
 			{
 				nodeInfo = nodeInfo;		// placeholder for real action
-				printf("hello\n");
+				printf("\thello\n");
 			}
 			break;
 		}
@@ -130,7 +135,7 @@ void OnNotification
 			nodeInfo->m_homeId = _notification->GetHomeId();
 			nodeInfo->m_nodeId = _notification->GetNodeId();
 			nodeInfo->m_polled = false;
-			printf("home: %d, node: %d\n", nodeInfo->m_homeId, nodeInfo->m_nodeId);
+			printf("\thome: %x, node: %d\n", nodeInfo->m_homeId, nodeInfo->m_nodeId);
 			g_nodes.push_back( nodeInfo );
 			break;
 		}
@@ -213,35 +218,41 @@ void OnNotification
 		}
 	}
 
+	printf("\n");
+
 	// pthread_mutex_unlock( &g_criticalSection );
 }
 
 void SetValue(bool value)
 {
-    int nodeid = 5;
+    int nodeid = 14;
     // pthread_mutex_lock( &g_criticalSection );
+	printf("SetValue begin\n");
     for( list<NodeInfo*>::iterator it = g_nodes.begin(); it != g_nodes.end(); ++it )
     {
 	NodeInfo* nodeInfo = *it;
+	printf("current node: %d\n", nodeInfo->m_nodeId);
 	if( nodeInfo->m_nodeId != nodeid ) continue;
+	printf("node found\n");
 	for( list<ValueID>::iterator it2 = nodeInfo->m_values.begin();
  it2 != nodeInfo->m_values.end(); ++it2 )
 	{
-	    ValueID v = *it2;
-	    if( v.GetCommandClassId() == 0x25)
-	    {
-		bool status;
-		printf("\n Setting Node %d to %s \n",
-		       nodeInfo->m_nodeId,
-		       value ? "On" : "Off");
-		Manager::Get()->SetValue(v, value);
-		sleep(1);
-		Manager::Get()->GetValueAsBool(v, &status);
-		printf("Node %d is now %s \n",
-		       nodeInfo->m_nodeId,
-		       status ? "ON" : "OFF");
-
-		break;
+		ValueID v = *it2;
+		printf("current CC id: %#2x\n", v.GetCommandClassId());
+		if( v.GetCommandClassId() == 0x25)
+		{
+			printf("CC found\n");
+			bool status;
+			printf("\n Setting Node %d to %s \n",
+					nodeInfo->m_nodeId,
+					value ? "On" : "Off");
+			Manager::Get()->SetValue(v, value);
+			sleep(10);
+			Manager::Get()->GetValueAsBool(v, &status);
+			printf("Node %d is now %s \n",
+					nodeInfo->m_nodeId,
+					status ? "ON" : "OFF");
+			break;
 	    }
 	}
     }

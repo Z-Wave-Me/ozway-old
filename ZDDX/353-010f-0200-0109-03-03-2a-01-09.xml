@@ -146,7 +146,7 @@ If manual override disabled, then after single button push the relay turns on an
                   </description>
               </value>
                 </configParam>
-        <configParam number="4" type="range" size="1" default="00">
+        <configParam number="4" type="range" size="2" default="0000">
             <name>
                 <lang xml:lang="de"></lang>
                 <lang xml:lang="en">Parameter no.4 - Auto off for relay 1.</lang>
@@ -158,14 +158,14 @@ If manual override disabled, then after single button push the relay turns on an
                 <lang xml:lang="ru">Если не 0, автоматически отключает реле №1 через определенное время. [1-65535](0,1 c - 6553,5 c)</lang>
               </description>
       
-                  <value from="00" to="00">
+                  <value from="0000" to="0000">
                 <description>
                     <lang xml:lang="de"></lang>
                     <lang xml:lang="en">Disabled</lang>
                     <lang xml:lang="ru">Отключено</lang>
                   </description>
               </value>
-            <value from="01" to="ff">
+            <value from="0001" to="ffff">
                 <description>
                     <lang xml:lang="de"></lang>
                     <lang xml:lang="en">10 = 1 sec</lang>

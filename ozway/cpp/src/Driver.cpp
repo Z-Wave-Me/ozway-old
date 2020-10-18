@@ -80,8 +80,12 @@
 #include <sstream>
 #include <iomanip>
 
-#include "ZWayLib.h"
-#include "ZLogging.h"
+// ZSA
+
+#include <ZWayLib.h>
+#include <ZLogging.h>
+
+// ZSA
 
 using namespace OpenZWave;
 
@@ -175,8 +179,10 @@ Driver::Driver(string const& _controllerPath, ControllerInterface const& _interf
 	// ZSA begin
 	// TODO exceptions
 	ZWError r;
-	// printf("%p\n", Manager::Get()->m_logger);
-	r = zway_init(&zway, ZSTR(_controllerPath.c_str()), NULL, NULL, NULL, NULL, Manager::Get()->m_logger);
+	//printf("%p\n", Manager::Get()->m_logger);
+	FILE *file = fopen("/home/k1zerx/workspace/ozway/zlog", "w");
+	ZWLog log = zlog_create(file, Debug);
+	r = zway_init(&zway, ZSTR(_controllerPath.c_str()), NULL, NULL, NULL, NULL, log);
 	if (r != NoError)
     {
 		printf(">> Adding driver error: %s\n", zstrerror(r));

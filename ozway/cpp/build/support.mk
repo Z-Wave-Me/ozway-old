@@ -153,9 +153,11 @@ endif
 LIBZWAY = $(top_builddir)/libzway
 LDFLAGS += -L$(LIBZWAY)
 CFLAGS += -I$(LIBZWAY)
+CPPFLAGS += -I$(LIBZWAY)
 LIBS += -lzway -lzcommons -lpthread -lxml2 -lz -lzs2 -lm -lcrypto -larchive
 
 $(OBJDIR)/%.o : %.cpp
+	echo "$(LIBZWAY)"
 	@echo "Building $(<:$(top_builddir)/cpp/%=%)"
 	@$(CXX) -MM $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< > $(DEPDIR)/$*.d
 	@mv -f $(DEPDIR)/$*.d $(DEPDIR)/$*.d.tmp

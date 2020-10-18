@@ -35,9 +35,9 @@
             <lang xml:lang="de">Taster hinter Gehäuseaussparung 5 Sekunden gedrückt halten</lang>
             <lang xml:lang="en">Push Button behind hole for 5 Seconds</lang>
           </inclusionNote>
-            <productName>StellaZ</productName>
-            <brandName>StellaZ</brandName>
-                <productCode>StellaZ</productCode>
+            <productName>Stella Z</productName>
+            <brandName>Eurotronic</brandName>
+                <productCode>Stella Z</productCode>
                 <batteryType>AA</batteryType>
             <batteryCount>2</batteryCount>
             </deviceDescription>
@@ -59,6 +59,10 @@
   
     
   
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/c6530c0ac075d00903147410e51ad8d084cc577d.png" />
+      </resourceLinks>
     
   </ZWaveDevice>
 

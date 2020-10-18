@@ -40,9 +40,16 @@
 #include "Group.h"
 #include "value_classes/ValueID.h"
 
-#include "ZWayLib.h"
-#include "ZLogging.h"
+// ZSA
 
+#include "Wrapper.h"
+
+#include <ZWayLib.h>
+#include <ZLogging.h>
+
+// ZSA
+
+class Wrapper;
 namespace OpenZWave
 {
 	namespace Internal
@@ -110,6 +117,7 @@ namespace OpenZWave
 	 */
 	class OPENZWAVE_EXPORT Manager
 	{
+			friend class Wrapper;
 			friend class Driver;
 			friend class Internal::CC::CommandClass;
 			friend class Group;
@@ -123,8 +131,6 @@ namespace OpenZWave
 			//-----------------------------------------------------------------------------
 		private:
 			// ZSA begin
-			static void z_switch_binary_watcher(const ZDataRootObject root, ZWDataChangeType type, ZDataHolder data, void *arg);
-			static void z_watcher(const ZWay zway, ZWDeviceChangeType type, ZWBYTE node_id, ZWBYTE instance_id, ZWBYTE command_id, void *arg);
 			ZWLog m_logger;
 			// ZSA end
 		public:

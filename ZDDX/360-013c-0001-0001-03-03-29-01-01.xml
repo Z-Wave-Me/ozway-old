@@ -28,7 +28,7 @@
   <deviceDescription>
                 <description>
             <lang xml:lang="de">Funkstecker für Steckdosen mit Zähler-Funktionalität</lang>
-            <lang xml:lang="en">Plugin Switch with meter functionality</lang>
+            <lang xml:lang="en">Plugin Switch with meter functionality PAN11-1</lang>
           </description>
             <wakeupNote>
             <lang xml:lang="de"></lang>
@@ -38,7 +38,7 @@
             <lang xml:lang="de">Drücken Sie den An/Aus Schalter dreimal innerhalb von 1,5 Sekunden</lang>
             <lang xml:lang="en">Press On/Off button three times within 1.5 seconds</lang>
           </inclusionNote>
-            <productName>Smart Energy Plug In Switch</productName>
+            <productName>Smart Energy Plug In Switch PAN11-1</productName>
             <brandName>Philio</brandName>
             <productLine>Philio Z-wave Products</productLine>
             <productCode>PAN11-1</productCode>
@@ -68,7 +68,7 @@
     <configParams>
         <configParam number="1" type="range" size="2" default="02d0">
             <name>
-                <lang xml:lang="de">Watt Meter Report Period</lang>
+                <lang xml:lang="de">Zeitinterval für einen automatischen Report des Stromverbrauches</lang>
                 <lang xml:lang="en">Watt Meter Report Period</lang>
               </name>
                   <description>
@@ -89,7 +89,7 @@ Unit: 5 seconds</lang>
                 </configParam>
         <configParam number="2" type="range" size="2" default="0006">
             <name>
-                <lang xml:lang="de">KWH Meter Report Period</lang>
+                <lang xml:lang="de">Zeitinterval für einen automatischenReport der elektr. Arbeit (kWh)</lang>
                 <lang xml:lang="en">KWH Meter Report  Period</lang>
               </name>
                   <description>
@@ -126,7 +126,7 @@ will send a warning alarm command to the controller.</lang>
                 </configParam>
         <configParam number="4" type="range" size="2" default="2710">
             <name>
-                <lang xml:lang="de">Threshold of KWh for Load caution</lang>
+                <lang xml:lang="de">Schwellwert zum Erkennen der Überlastsituation</lang>
                 <lang xml:lang="en">Threshold of KWh for Load caution</lang>
               </name>
                   <description>

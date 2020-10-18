@@ -36,7 +36,8 @@
             <lang xml:lang="en">Hit internal button</lang>
           </inclusionNote>
             <productName>ZS6101EU 2013</productName>
-                            <batteryType>CR123A</batteryType>
+            <brandName>Vision Security</brandName>
+                        <batteryType>CR123A</batteryType>
             <batteryCount>1</batteryCount>
             </deviceDescription>
 

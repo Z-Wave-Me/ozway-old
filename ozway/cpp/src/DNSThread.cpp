@@ -1,5 +1,4 @@
-
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */-----
+//-----------------------------------------------------------------------------
 //
 //	DNSThread.h
 //

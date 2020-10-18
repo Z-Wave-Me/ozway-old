@@ -365,12 +365,12 @@ Double click tamper switch for Network Wide Inclusion.</lang>
         <configParam number="12" type="range" size="1" default="0a">
             <name>
                 <lang xml:lang="de">Schwellwert für Temperaturalarm</lang>
-                <lang xml:lang="en">Treshold for temperature alarm</lang>
+                <lang xml:lang="en">Treshold for temperature report</lang>
                 <lang xml:lang="ru"></lang>
               </name>
                   <description>
                 <lang xml:lang="de">Definiert den Temperaturschwellwert, bei dem ein Temperaturalarm ausgelöst wird.</lang>
-                <lang xml:lang="en">Alarm off treshold temperature value</lang>
+                <lang xml:lang="en">Temperature report if the temperature has changed</lang>
                 <lang xml:lang="ru"></lang>
               </description>
       

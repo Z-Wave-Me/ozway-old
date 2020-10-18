@@ -26,7 +26,7 @@
                 <description>
             <lang xml:lang="de">Zwischenstecker Dimmer</lang>
             <lang xml:lang="en">Plug-in Dimmer</lang>
-            <lang xml:lang="ru">Диммер с одной клавишей</lang>
+            <lang xml:lang="ru">Диммер в розетку</lang>
           </description>
             <wakeupNote>
             <lang xml:lang="de"></lang>
@@ -36,7 +36,7 @@
             <inclusionNote>
             <lang xml:lang="de">Dreifach-Klick Taste</lang>
             <lang xml:lang="en">Button triple press</lang>
-            <lang xml:lang="ru">Тройное нажатие на одну из кнопок</lang>
+            <lang xml:lang="ru">Тройное нажатие на кнопку</lang>
           </inclusionNote>
             <productName>Dimmer Plug v1.0</productName>
             <brandName>Z-Wave.Me</brandName>
@@ -214,7 +214,7 @@
                   <description>
                 <lang xml:lang="de">Definiert die Dimm-Geschwindigkeit beim direkten Setzens eines Dimmerniveaus, entweder per Funk oder durch kurzem Klick auf die Taste</lang>
                 <lang xml:lang="en">Time to dim on button presses and Set command (if it has no duration specified). If not 0, dimming will be done smoothly to preserv bulb life.</lang>
-                <lang xml:lang="ru">Время димирования при нажатии на кнопки и при получении команды Set (если она не содержит времени включения). Если не 0, то диммирование будет плавным, что сбережёт лампочку дольше.</lang>
+                <lang xml:lang="ru">Время димирования при нажатии на кнопку и при получении команды Set (если она не содержит времени включения). Если не 0, то диммирование будет плавным, что сбережёт лампочку дольше.</lang>
               </description>
       
                   <value from="00" to="00">
@@ -241,7 +241,7 @@
                   <description>
                 <lang xml:lang="de">Zeit bei manuellen Dimmeen (Drücken der Taste) bzw. Funksteuerung zum langsamen Dimmen</lang>
                 <lang xml:lang="en">Time to dim on button holds and StartLevelChange command (if it has no duration specified).</lang>
-                <lang xml:lang="ru">Время димирования при удержании кнопок и при получении команды StartLevelChange (начать изменение яркости; если она не содержит времени включения).</lang>
+                <lang xml:lang="ru">Время димирования при удержании кнопки и при получении команды StartLevelChange (начать изменение яркости; если она не содержит времени включения).</lang>
               </description>
       
                   <value from="01" to="ff">
@@ -300,7 +300,7 @@
                 <lang xml:lang="de">Ein Doppel-Klick aktiviert die Kinderschlaf-Funktion. Hier bei wird die Leuchte über einen längeren definierbaren
 		Zeitraum langsam heruntergedimmt, um dem Kind das Einschlafen zu erleichtern.</lang>
                 <lang xml:lang="en">		Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action. If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands </lang>
-                <lang xml:lang="ru">		Время димирования при двойном нажатии на кнопку выключения для функции Баю-бай. Данная функция работает только если нагрузка управляется одинарным нажатием или удержанием кнопок. Если включено, устройство будет ждать характерное время нажатия второго нажатия. Данная функция приведёт к небольшой задержке при одинарном нажати 
+                <lang xml:lang="ru">		Время димирования при двойном нажатии на кнопку выключения для функции Баю-бай. Данная функция работает только если нагрузка управляется одинарным нажатием или удержанием кнопки. Если включено, устройство будет ждать характерное время нажатия второго нажатия. Данная функция приведёт к небольшой задержке при одинарном нажати 
 		</lang>
               </description>
       
@@ -416,7 +416,7 @@
                   <description>
                 <lang xml:lang="de">definiert das Dimmerverhalten beim Einschaltkkommando (Switch Binary On oder Basic On).</lang>
                 <lang xml:lang="en">defines how the dimmer hall react on a simple ON Command.</lang>
-                <lang xml:lang="ru">Эта функция работает, только если в параметре &quot;Устанавливать максимальный уровень яркости при включении&quot; выбрано &quot;Нет&quot; или &quot;Если уже включен&quot;, иначе этот параметр игнорируется и свет всегда будет включаться на 100%</lang>
+                <lang xml:lang="ru">Эта функция работает, только если в параметре №7 выбрано &quot;Нет&quot; или &quot;Если уже включен&quot;, иначе этот параметр игнорируется и свет всегда будет включаться на 100%</lang>
               </description>
       
                   <value from="00" to="00">
@@ -442,9 +442,8 @@
               </name>
                   <description>
                 <lang xml:lang="de">Achtung: Dieser Wert darf nur bei genauer Kenntnis des Dimmerverhaltens 
-	geändert werden. Eine Fehlkonfiguration kann zur Zerstörung des Dimmers und/oder der angeschlossenen Last führen. Bei dimmbaren Energiesparlampen oder LED-Leuchten mti Bypass kann ein Wert von 1 verwendet werden. Für normale
-	Leichten wird der Standardwert empfohlen.</lang>
-                <lang xml:lang="en">	NB: Do not touch these settings if you are not sure what they mean! For dimmable LEDs and CFL with bypass use value 1. For other bulbs use default value.</lang>
+geändert werden. Eine Fehlkonfiguration kann zur Zerstörung des Dimmers und/oder der angeschlossenen Last führen. Bei dimmbaren Energiesparlampen oder LED-Leuchten mit Bypass kann ein Wert von 10 verwendet werden. Für normale Leuchten wird der Standardwert empfohlen.</lang>
+                <lang xml:lang="en">	NB: Do not touch these settings if you are not sure what they mean! For dimmable LEDs and CFL with bypass use value 10. For other bulbs use default value.</lang>
                 <lang xml:lang="ru">	Важно: не трогайте эти параметры, если вы не уверены, что они значат! Для диммируемых светодиодных и энергосберегающих газоразрядных ламп используйте значение по умолчанию.</lang>
               </description>
       

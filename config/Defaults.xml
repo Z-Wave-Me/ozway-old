@@ -4,10 +4,16 @@
 	<DeepInterview>1</DeepInterview><!-- Assume Interview done only after all Reports received from the CC -->
 	<SaveDataAfterInterviewSteps>1</SaveDataAfterInterviewSteps><!-- Save data to xxxxxxxx-DeviceData.xml after each Interview steps. Set to 0 on slow devices to fast up interview -->
 	<TryToBecomeSIS>1</TryToBecomeSIS><!-- Shall Z-Way try to become SIS -->
+	<SecureInterviewAcceptedWithoutSchemeInherit>0</SecureInterviewAcceptedWithoutSchemeInherit><!-- If 1 - Z-Way will not fail secure inteview as secondary/inclusion controller if Scheme Inherit is not received, if 0 - fail interview as by Z-Wave protocol -->
+	<SecureAllCCs>0</SecureAllCCs><!-- Always use Security if possible (even for CCs allowed as non-secure) -->
+	<DeviceReplyTimeout>2</DeviceReplyTimeout><!-- Delay to wait (in seconds) for a device to reply with a REPORT on a GET command -->
+	<DeviceRelaxDelay>3</DeviceRelaxDelay><!-- Delay between two subsequent packets sent to one device, measured in ticks (~10 ms). Some slow devices might need about 10 to respond correctly to burst of packets -->
+	<SerialAPITimeout>0.0</SerialAPITimeout><!-- Extra time to be added to Serial API timouts. Set up to 1.0-3.0 sec in case of slow channel toward Z-Wave chip -->
 
 	<CommandClass><!-- Default CC settings for devices -->
 		<Wakeup>
-			<WakeupInterval>300</WakeupInterval><!-- Default Wakeup Interval to set during AutoConfiguration -->
+			<WakeupInterval>3600</WakeupInterval><!-- Default Wakeup Interval to set during AutoConfiguration. Value 0 means to use default value from the device -->
+			<KeepMeInformedInsteadOfSIS>1</KeepMeInformedInsteadOfSIS><!-- Set to 1 to assign Wakeup Notification to ourself or 0 to use SIS node instead as according to the protocol protocol -->
 		</Wakeup>
 		<SceneActuatorConf>
 			<MaxScenes>16</MaxScenes><!-- Maximum number of scenes to use -->
@@ -26,9 +32,72 @@
 	 	</ThermostatSetPoint>
 	 	<SwitchAll>
 	 		<Mode>0</Mode><!-- Default SwichAll Mode to set during AutoConfiguration -->
-	 	</SwitchAll>
+		</SwitchAll>
+		<MultiCmd>
+			<MaxNum>3</MaxNum><!-- Maximum number of commands per MultiCmd -->
+		</MultiCmd>
+		<FirmwareUpdate>
+			<FragmentSize>32</FragmentSize><!-- Fragment size on 3rd gen RaZberry and Z-Stick can not be more than 32 (max packet size was 37, with possible CRC it gives 32). On UZB and new 5gen it can be up to 40 bytes -->
+		</FirmwareUpdate>
 	</CommandClass>
 	<Controller>
+		<!-- Certified version -->
+		<NodeInformationFrame>
+			"ZWavePlusInfo"
+			"Version"
+			"MultiCmd"
+			"Security"
+			"SecurityS2"
+			"Supervision"
+			"ManufacturerSpecific"
+			"NodeNaming"
+			"ApplicationStatus"
+			"CRC16"
+			"PowerLevel"
+			"Association"
+			"AssociationGroupInformation"
+			"MultiChannelAssociation"
+			"DeviceResetLocally"
+			"TransportService"
+			"InclusionController"
+		</NodeInformationFrame>
+		<SecureNodeInformationFrame>
+			"Version"
+			"MultiCmd"
+			"ManufacturerSpecific"
+			"NodeNaming"
+			"ApplicationStatus"
+			"CRC16"
+			"PowerLevel"
+			"Association"
+			"AssociationGroupInformation"
+			"MultiChannelAssociation"
+			"DeviceResetLocally"
+			"InclusionController"
+		</SecureNodeInformationFrame>
+		<SecureS2NodeInformationFrame>
+			"Version"
+			"MultiCmd"
+			"ManufacturerSpecific"
+			"NodeNaming"
+			"ApplicationStatus"
+			"CRC16"
+			"PowerLevel"
+			"Association"
+			"AssociationGroupInformation"
+			"MultiChannelAssociation"
+			"DeviceResetLocally"
+			"InclusionController"
+		</SecureS2NodeInformationFrame>
+		<SettersCommandClassesList>
+			"SwitchBinary"
+			"SwitchMultilevel"
+			"SceneActivation"
+		</SettersCommandClassesList>
+
+		<!-- Below legacy NIF -->
+		<!-- Duplicate of tags are ignored in the code so we can keep legacy below the current --> 
+		
 		<!-- Make sure to list more important first in case broken stick is used that support only 6 Command Classes -->
 		<!-- Controllers own NIF -->
 		<NodeInformationFrame>
@@ -37,22 +106,25 @@
 			"MultiChannel"
 			"MultiCmd"
 			"Clock" <!-- for Danfoss must be in first 6 in case broken Sigma dongle is used -->
-			"ClimateControlSchedule" <!-- for Danfoss must be in first 6 in case broken Sigma dongle is used -->
+			<!-- deprecated enable only if you need it "ClimateControlSchedule" --> <!-- for Danfoss must be in first 6 in case broken Sigma dongle is used -->
 			"Security"
+			"SecurityS2"
+			"Supervision"
 			"SwitchMultilevel"
 			"SwitchBinary"
 			"ManufacturerSpecific"
 			"Time"
 			"SceneActivation"
 			"NodeNaming"
-			"Basic"
 			"ApplicationStatus"
-			"CentralScene"
 			"CRC16"
 			"PowerLevel"
 			"Association"
 			"AssociationGroupInformation"
+			"MultiChannelAssociation"
 			"DeviceResetLocally"
+			"TransportService"
+			"InclusionController"
 		</NodeInformationFrame>
 		<!-- Controllers own NIF reported under Security -->
 		<!-- CCs inside Secure NIF MUST be in ordinary NIF too -->
@@ -60,44 +132,72 @@
 		<SecureNodeInformationFrame>
 			"MultiChannel"
 			"Clock"
-			"MultiCmd"
 			"SwitchMultilevel"
 			"SwitchBinary"
+			"SceneActivation"
+			"Version"
+			"ManufacturerSpecific"
+			"Association"
+			"MultiChannelAssociation"
+		</SecureNodeInformationFrame>
+		<SecureS2NodeInformationFrame>
+			"Version"
+			"MultiChannel"
+			"MultiCmd"
+			"Clock"
+			<!-- deprecated enable only if you need it "ClimateControlSchedule" --><!-- Danfoss is only to use it and do not support S2 anyway -->
+			"SwitchMultilevel"
+			"SwitchBinary"
+			"ManufacturerSpecific"
 			"Time"
 			"SceneActivation"
-			"Basic"
+			"NodeNaming"
 			"ApplicationStatus"
-			"CentralScene"
-		</SecureNodeInformationFrame>
-
+			"CRC16"
+			"PowerLevel"
+			"Association"
+			"AssociationGroupInformation"
+			"MultiChannelAssociation"
+			"DeviceResetLocally"
+			"InclusionController"
+		</SecureS2NodeInformationFrame>
+		
+		
+		<!-- End of legacy NIF -->
+		
 		<CommandClassSupportedVersion>
-			<Basic>1</Basic>
+			<Basic>1</Basic> 
 			<ApplicationStatus>1</ApplicationStatus>
-			<SwitchBinary>1</SwitchBinary>
-			<SwitchMultilevel>1</SwitchMultilevel>
-			<ManufacturerSpecific>1</ManufacturerSpecific>
-			<Clock>1</Clock>
-			<MultiChannel>3</MultiChannel>
+			 <SwitchBinary>1</SwitchBinary> 
+			 <SwitchMultilevel>1</SwitchMultilevel> 
+			<ManufacturerSpecific>2</ManufacturerSpecific>
+			 <Clock>1</Clock> 
+			 <MultiChannel>4</MultiChannel> 
 			<Version>2</Version>
 			<MultiCmd>1</MultiCmd>
 			<NodeNaming>1</NodeNaming>
-			<Time>2</Time>
-			<SceneActivation>1</SceneActivation>
-			<ClimateControlSchedule>1</ClimateControlSchedule>
-			<CentralScene>1</CentralScene>
+			 <Time>2</Time> 
+			 <SceneActivation>1</SceneActivation> 
+			 <ClimateControlSchedule>1</ClimateControlSchedule> 
+			 <CentralScene>1</CentralScene> 
 			<ZWavePlusInfo>2</ZWavePlusInfo>
 			<Security>1</Security>
+			<SecurityS2>1</SecurityS2>
+			<Supervision>1</Supervision>
 			<CRC16>1</CRC16>
 			<Association>2</Association>
 			<AssociationGroupInformation>1</AssociationGroupInformation>
+			<MultiChannelAssociation>3</MultiChannelAssociation>
 			<PowerLevel>1</PowerLevel>
 			<DeviceResetLocally>1</DeviceResetLocally>
+			<TransportService>2</TransportService>
+			<InclusionController>1</InclusionController>
 		</CommandClassSupportedVersion>
 
 		<Name>Gateway</Name><!-- Default Node Name of Controller -->
 		<Location>Main Room</Location><!-- Default Node Location of Controller -->
 		<AppVersion><!-- Version of Z-Way reported by Version CC -->
-			<Major>2</Major>
+			<Major>3</Major>
 			<Minor>0</Minor>
 		</AppVersion>
 		<HardwareVersion>1</HardwareVersion>
@@ -119,10 +219,10 @@
 			<Number>16</Number><!-- Number of Channels simulated for event handling -->
 			<!-- Controllers instances capabilities -->
 			<NodeInformationFrame>
-				"Basic"
 				"SwitchBinary"
 				"SwitchMultilevel"
 				"SceneActivation"
+				"CentralScene"
 			</NodeInformationFrame>
 			<GenericDeviceClass>17</GenericDeviceClass><!-- Generic Device Class of simulated Channel -->
 			<SpecificDeviceClass>1</SpecificDeviceClass><!-- Specific Device Class of simulated Channel -->

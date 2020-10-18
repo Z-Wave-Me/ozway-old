@@ -7,9 +7,9 @@ Small examples for openzwave
 
 ### Linux
 
-These examples require an installation of [openzwave](https://code.google.com/p/open-zwave/source/checkout) just run `make` and then `sudo make install` on the library.
+These project require an installation of [Z-Way](https://z-wave.me/z-way/download-z-way/), follow the instructions.
 
-From there, you can compile the examples. Simply navigate to an example and run `make`. Then run the example with `./<example_name>`
+When Z-Way is ready to go, just run 'make' and then 'sudo make install' in the cloned repository.
 
 ## Examples
 

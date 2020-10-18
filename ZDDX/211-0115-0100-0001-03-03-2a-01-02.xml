@@ -204,7 +204,7 @@
                 <description>
                     <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
                     <lang xml:lang="en">Switch All</lang>
-                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
                   </description>
               </value>
             <value from="04" to="04">
@@ -266,7 +266,7 @@
                 <description>
                     <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
                     <lang xml:lang="en">Switch All</lang>
-                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
                   </description>
               </value>
             <value from="04" to="04">
@@ -328,7 +328,7 @@
                 <description>
                     <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
                     <lang xml:lang="en">Switch All</lang>
-                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
                   </description>
               </value>
             <value from="04" to="04">
@@ -390,7 +390,7 @@
                 <description>
                     <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
                     <lang xml:lang="en">Switch All</lang>
-                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
                   </description>
               </value>
             <value from="04" to="04">
@@ -427,7 +427,7 @@
                 <lang xml:lang="ru">Харакерное время для отличия нажатия, удержания и двойного нажатий</lang>
               </description>
       
-                  <value from="01" to="64" unit="ms">
+                  <value from="0a" to="64" unit="ms">
                 <description>
                     <lang xml:lang="de">in 10ms Schritten</lang>
                     <lang xml:lang="en">in 10ms units</lang>

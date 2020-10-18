@@ -1,0 +1,61 @@
+<ZWaveDevice schemaVersion="2">
+<descriptorVersion>1</descriptorVersion>
+<deviceData>
+<manufacturerId value="0260"/>
+<productType value="8006"/>
+<productId value="1000"/>
+<libType value="06"/>
+<protoVersion value="04"/>
+<protoSubVersion value="22"/>
+<appVersion value="01"/>
+<appSubVersion value="06"/>
+<basicClass value="04"/>
+<genericClass value="10"/>
+<specificClass value="01"/>
+<optional value="true"/>
+<listening value="true"/>
+<routing value="true"/>
+<beamSensor>0</beamSensor>
+</deviceData>
+<deviceDescription>
+<description>
+<lang xml:lang="en"/>
+</description>
+<wakeupNote>
+<lang xml:lang="en"/>
+</wakeupNote>
+<inclusionNote>
+<lang xml:lang="en"/>
+</inclusionNote>
+<productName/>
+<brandName/>
+<productVersion>1.6</productVersion>
+</deviceDescription>
+<commandClasses>
+<commandClass id="0020" version="1" supported="true" controlled="false" secure="false" inNIF="false"/>
+<commandClass id="0025" version="1" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0027" version="1" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0032" version="4" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0059" version="1" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="005a" version="1" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="005e" version="2" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0070" version="4" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0071" version="7" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0072" version="2" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0073" version="1" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0085" version="2" supported="true" controlled="false" secure="false" inNIF="true"/>
+<commandClass id="0086" version="2" supported="true" controlled="false" secure="false" inNIF="true"/>
+</commandClasses>
+<assocGroups>
+<assocGroup number="1" maxNodes="1">
+<description>
+<lang xml:lang="en">Group 1</lang>
+</description>
+</assocGroup>
+<assocGroup number="2" maxNodes="5">
+<description>
+<lang xml:lang="en">Group 2</lang>
+</description>
+</assocGroup>
+</assocGroups>
+</ZWaveDevice>

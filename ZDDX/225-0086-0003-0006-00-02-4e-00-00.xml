@@ -165,7 +165,7 @@ size 2 bytes).</lang>
               </description>
       
           </configParam>
-        <configParam number="92" type="constant" size="1" default="0a">
+        <configParam number="92" type="range" size="1" default="0a">
             <name>
                 <lang xml:lang="en">Minimum change in wattage (%)</lang>
               </name>
@@ -185,7 +185,7 @@ sent (default 10%, size 1 byte).</lang>
               </description>
       
           </configParam>
-        <configParam number="101" type="range" size="4" default="00000008">
+        <configParam number="101" type="bitset" size="4" default="00000008">
             <name>
                 <lang xml:lang="en">Reports group 1</lang>
               </name>
@@ -193,23 +193,33 @@ sent (default 10%, size 1 byte).</lang>
                 <lang xml:lang="en">Which reports need to send in Report group1</lang>
               </description>
       
-                  <value from="00000002" to="00000002">
+                  <value from="00000000" to="00000000" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
                 <description>
                     <lang xml:lang="en">MultiSensor Report</lang>
                   </description>
               </value>
-            <value from="00000004" to="00000004">
+            <value from="00000002" to="00000002">
                 <description>
                     <lang xml:lang="en">Meter Report for Watt</lang>
                   </description>
               </value>
-            <value from="00000008" to="00000008">
+            <value from="00000003" to="00000003">
                 <description>
                     <lang xml:lang="en">Meter Report for kWh</lang>
                   </description>
               </value>
+            <value from="00000004" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
                 </configParam>
-        <configParam number="102" type="constant" size="4" default="00000000">
+        <configParam number="102" type="bitset" size="4" default="00000000">
             <name>
                 <lang xml:lang="en">Report group 2</lang>
               </name>
@@ -217,23 +227,33 @@ sent (default 10%, size 1 byte).</lang>
                 <lang xml:lang="en">Which reports need to send in Report group2</lang>
               </description>
       
-                  <value from="00000002" to="00000002">
+                  <value from="00000000" to="00000000" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
                 <description>
                     <lang xml:lang="en">MultiSensor Report</lang>
                   </description>
               </value>
-            <value from="00000004" to="00000004">
+            <value from="00000002" to="00000002">
                 <description>
                     <lang xml:lang="en">Meter Report for Watt</lang>
                   </description>
               </value>
-            <value from="00000008" to="00000008">
+            <value from="00000003" to="00000003">
                 <description>
                     <lang xml:lang="en">Meter Report for kWh</lang>
                   </description>
               </value>
+            <value from="00000004" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
                 </configParam>
-        <configParam number="103" type="constant" size="4" default="00000000">
+        <configParam number="103" type="bitset" size="4" default="00000000">
             <name>
                 <lang xml:lang="en">Report group 3</lang>
               </name>
@@ -241,19 +261,29 @@ sent (default 10%, size 1 byte).</lang>
                 <lang xml:lang="en">Which reports need to send in Report group3</lang>
               </description>
       
-                  <value from="00000002" to="00000002">
+                  <value from="00000000" to="00000000" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
                 <description>
                     <lang xml:lang="en">MultiSensor Report</lang>
                   </description>
               </value>
-            <value from="00000004" to="00000004">
+            <value from="00000002" to="00000002">
                 <description>
                     <lang xml:lang="en">Meter Report for Watt</lang>
                   </description>
               </value>
-            <value from="00000008" to="00000008">
+            <value from="00000003" to="00000003">
                 <description>
                     <lang xml:lang="en">Meter Report for kWh</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
                   </description>
               </value>
                 </configParam>

@@ -39,7 +39,8 @@
             <productLine>EVERSPRING Z-WAVE PRODUCTS</productLine>
             <productCode>SE812-ANZ</productCode>
             <productVersion>1.4</productVersion>
-                    </deviceDescription>
+            <batteryType>4 * LR14</batteryType>
+                </deviceDescription>
 
     <commandClasses>
         <commandClass id="0071"/>

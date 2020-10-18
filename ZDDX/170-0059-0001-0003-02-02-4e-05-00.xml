@@ -28,15 +28,18 @@
   <deviceDescription>
                 <description>
             <lang xml:lang="en">Thermostat</lang>
+            <lang xml:lang="ru">Термостат на батарейках с дисплеем</lang>
           </description>
             <wakeupNote>
             <lang xml:lang="en"></lang>
+            <lang xml:lang="ru">DIL переключатель 1 переведите в положение On, выберите &quot;n&quot; с помощью диска и нажмите на него</lang>
           </wakeupNote>
             <inclusionNote>
             <lang xml:lang="en">Using the dial find ‘L’ and press it to select the function.</lang>
+            <lang xml:lang="ru">DIL переключатель 1 переведите в положение On, выберите &quot;L&quot; с помощью диска и нажмите на него</lang>
           </inclusionNote>
             <productName>HRT4-ZW</productName>
-            <brandName>HRT4-ZW</brandName>
+            <brandName>Horstmann (Secure)</brandName>
             <productLine>HRT4</productLine>
             <productCode>NU690401000</productCode>
             <productVersion>1</productVersion>
@@ -61,26 +64,31 @@
         <assocGroup number="5" maxNodes="4">
             <description>
                 <lang xml:lang="en">Nodes to receive unsolicited Multilevel Sensor Reports</lang>
+                <lang xml:lang="ru">Автоматический отчет температуры</lang>
               </description>
           </assocGroup>
         <assocGroup number="4" maxNodes="4">
             <description>
                 <lang xml:lang="en">Nodes to receive Thermostat Set Point Reports</lang>
+                <lang xml:lang="ru">Устройствам отправляется заданная температура Thermostat Set Point Reports</lang>
               </description>
           </assocGroup>
         <assocGroup number="3" maxNodes="4">
             <description>
                 <lang xml:lang="en">Nodes to receive unsolicited Battery Level Reports or Low Battery Warnings</lang>
+                <lang xml:lang="ru">Автоматический отчет о уровне батареи</lang>
               </description>
           </assocGroup>
         <assocGroup number="2" maxNodes="4">
             <description>
-                <lang xml:lang="en">Nodes controlled by Binary Switch SET command</lang>
+                <lang xml:lang="en">Nodes controlled by Switch Binary SET command</lang>
+                <lang xml:lang="ru">Устройствам отправляется команда Switch Binary On или Off</lang>
               </description>
           </assocGroup>
         <assocGroup number="1" maxNodes="4">
             <description>
                 <lang xml:lang="en">Nodes controlled by Thermostat Mode SET command</lang>
+                <lang xml:lang="ru">Устройствам отправляется команда Thermostat Mode Heat или Off</lang>
               </description>
           </assocGroup>
       </assocGroups>
@@ -88,41 +96,68 @@
     <configParams>
         <configParam number="1" type="rangemapped" size="1" default="ff">
             <name>
-                <lang xml:lang="en">Enables Temperature Sensor</lang>
+                <lang xml:lang="en">Enable Temperature Sensor</lang>
+                <lang xml:lang="ru">Включен ли датчик температуры</lang>
               </name>
                   <description>
                 <lang xml:lang="en">Controls the use of the temperature sensor on the device.</lang>
+                <lang xml:lang="ru">При отключенном датчике температуры экономится батарейка, но на контроллере не будет отображаться температура.</lang>
               </description>
       
                   <value from="00" to="7f">
                 <description>
-                    <lang xml:lang="en">Disables temperature sensor</lang>
+                    <lang xml:lang="en">Disable temperature sensor</lang>
+                    <lang xml:lang="ru">Отключен</lang>
                   </description>
               </value>
             <value from="80" to="ff">
                 <description>
-                    <lang xml:lang="en">Enables temperature sensor</lang>
+                    <lang xml:lang="en">Enable temperature sensor</lang>
+                    <lang xml:lang="ru">Включен</lang>
                   </description>
               </value>
                 </configParam>
         <configParam number="2" type="rangemapped" size="1" default="00">
             <name>
-                <lang xml:lang="en">Temperature Scale</lang>
+                <lang xml:lang="en">Temperature unit</lang>
+                <lang xml:lang="ru">Температурная единица</lang>
               </name>
                   <description>
                 <lang xml:lang="en">Sensor will report temperature in this scale.</lang>
+                <lang xml:lang="ru"></lang>
               </description>
       
-          </configParam>
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Celsius
+</lang>
+                    <lang xml:lang="ru">Градусы Цельсия</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Kelvin</lang>
+                    <lang xml:lang="ru">Градусы Кельвины</lang>
+                  </description>
+              </value>
+                </configParam>
         <configParam number="3" type="range" size="1" default="0a">
             <name>
                 <lang xml:lang="en">Delta T</lang>
+                <lang xml:lang="ru">Шаг измерения температуры</lang>
               </name>
                   <description>
-                <lang xml:lang="en">Defines the temperature steps of the heating control value is 0.1 K.</lang>
+                <lang xml:lang="en">Defines the temperature steps of the heating control value is 0.1 °С.</lang>
+                <lang xml:lang="ru">С каким шагом измерять температуру, 1 = 0.1 °С.</lang>
               </description>
       
-          </configParam>
+                  <value from="01" to="64" unit="0.1  ̊C / ̊F">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
       </configParams>
   
     

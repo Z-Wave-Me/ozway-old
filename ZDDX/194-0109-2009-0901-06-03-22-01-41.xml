@@ -40,7 +40,9 @@
             <productLine>Home Security</productLine>
             <productCode>09</productCode>
             <productVersion>01</productVersion>
-                    </deviceDescription>
+            <batteryType>rechargeable Battery Pack</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
 
     <commandClasses>
         <commandClass id="0020"/>

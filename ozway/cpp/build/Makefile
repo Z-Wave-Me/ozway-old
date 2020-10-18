@@ -205,6 +205,9 @@ $(LIBDIR)/$(SHARED_LIB_NAME):	$(patsubst %.cpp,$(OBJDIR)/%.o,$(tinyxml)) \
 			$(patsubst %.cpp,$(OBJDIR)/%.o,$(indep)) \
 			$(OBJDIR)/vers.o
 	@echo "**********************"
+	@echo  "$(LIBDIR)/$(SHARED_LIB_NAME) $(DESTDIR)/$(instlibdir)/$(SHARED_LIB_NAME)"
+	@echo "-sf $(SHARED_LIB_NAME) $(DESTDIR)/$(instlibdir)/$(SHARED_LIB_UNVERSIONED)"
+	@echo $(OBJDIR)
 	@echo $(LDFLAGS)
 	@echo $(LIBS)
 	@echo "**********************"

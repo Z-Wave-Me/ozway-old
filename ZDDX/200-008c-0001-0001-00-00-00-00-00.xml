@@ -27,20 +27,25 @@
 
   <deviceDescription>
                 <description>
+            <lang xml:lang="de">Gateway</lang>
             <lang xml:lang="en">Home Gateway</lang>
           </description>
             <wakeupNote>
+            <lang xml:lang="de"></lang>
             <lang xml:lang="en"></lang>
           </wakeupNote>
             <inclusionNote>
-            <lang xml:lang="en">Go to 192.168.81.1, then slect &quot;ZWave device&quot;, &quot;Advanced&quot; and click on &quot;Copy Z-Wave network from a foreign master&quot;</lang>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en">Go to 192.168.81.1, then select &quot;ZWave device&quot;, &quot;Advanced&quot; and click on &quot;Copy Z-Wave network from a foreign master&quot;</lang>
           </inclusionNote>
             <productName>Vera</productName>
             <brandName>Vera</brandName>
             <productLine>Vera</productLine>
             <productCode>Vera</productCode>
             <productVersion>1.0</productVersion>
-                    </deviceDescription>
+            <batteryType>optional Battery Pack: External, rechargeable</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
 
     <commandClasses>
         <commandClass id="0020" controlled="true" inNIF="false" secure="true"/>

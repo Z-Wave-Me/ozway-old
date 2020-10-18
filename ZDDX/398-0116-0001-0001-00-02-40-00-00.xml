@@ -61,7 +61,7 @@
                 <lang xml:lang="en">Target for Alarm Report to inform the receiving device that the Unit is powered up, for Sensor Binary Report to inform there is an intrusion event and target for Low Battery Report.</lang>
               </description>
           </assocGroup>
-        <assocGroup number="1" maxNodes="3">
+        <assocGroup number="2" maxNodes="3">
             <description>
                 <lang xml:lang="de">Wird der Sensor ausgelöst, so sendet der Bewegungsmelder ein Basic Set an alle Knoten in dieser Gruppe.</lang>
                 <lang xml:lang="en">When the detector is triggered, the unit will send a Basic Set command to associated devices.</lang>

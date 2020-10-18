@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0029"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="26"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Plugin Switch with meter functionality PAN16-RU</lang>
+            <lang xml:lang="ru">Розеточный модуль с измерением энергопотребления PAN16-RU</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press On/Off button three times within 1.5 seconds</lang>
+            <lang xml:lang="ru">Трижды нажмите кнопку Вкл/Выкл</lang>
+          </inclusionNote>
+            <productName>Smart Energy Plug In Switch PAN16-RU</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-wave Products</productLine>
+            <productCode>PAN16-RU</productCode>
+            <productVersion>1.3</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false" secure="true"/>
+        <commandClass id="0025" inNIF="false" secure="true"/>
+        <commandClass id="0027" inNIF="false" secure="true"/>
+        <commandClass id="0032" version="3" inNIF="false" secure="true"/>
+        <commandClass id="0059" inNIF="false" secure="true"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0070" inNIF="false" secure="true"/>
+        <commandClass id="0071" inNIF="false" secure="true"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075" version="2" inNIF="false" secure="true"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0085" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0098" secure="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">When the power consumption of load vary over 5%, the PAN16-RU will send a Meter Report. When &quot;on&quot; or &quot;off&quot; state has been changed, it will send Binary Switch Report.</lang>
+                <lang xml:lang="ru">При изменении потребляемой мощности на 5% отправляется отчет. При изменении состояния (вкл/выкл) отправляется Binary Switch Report.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="en">Watt Meter Report Period</lang>
+                <lang xml:lang="ru">Период отчета о мощности (Вт)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">If the setting is configured for 1hour (set value =720), the PAN16 will report its instant power consumption every 1 hour to Group1 node. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr).  Unit: 5 seconds</lang>
+                <lang xml:lang="ru">Если установлено 1 час (значение = 720), то PAN16-RU будет отправлять отчеты о энергопотреблении раз в 1 час. Значение 1 = 5 секунд.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff">
+                <description>
+                    <lang xml:lang="en">720 * 5s = 3600s = 1 hour</lang>
+                    <lang xml:lang="ru">720 * 5с = 3600с = 1 час</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0006">
+            <name>
+                <lang xml:lang="en">KWH Meter Report Period</lang>
+                <lang xml:lang="ru">Период отчета о энергопотреблении (КВт*Ч)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">If the setting is configured for 1hour (set value =6), the PAN16 will report its Accumulated Power Consumption (KW/h) every 1 hour to Group1 node. The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days). Unit: 10 min</lang>
+                <lang xml:lang="ru">Если установлено 1 час (значение = 6), то PAN16-RU будет отправлять отчет о суммарном энергопотреблении за весь период использования (КВт*Ч) раз в 1 час. Значение 1 = 10 минут.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff">
+                <description>
+                    <lang xml:lang="en">6 * 10min = 1 hour</lang>
+                    <lang xml:lang="ru">6 * 10мин = 1 час</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0514">
+            <name>
+                <lang xml:lang="en">Threshold of Watt for Load caution</lang>
+                <lang xml:lang="ru">Отчет при превышении мощности (Вт)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This is a warning when the current of load over the preset threshold value, if the setting value is 1300, when the load current of Relay1 over this value, PAN16 will send current meter report to warn the Group1 node, the Range of the setting value is from 10 to 1300,and the default value is 1300. </lang>
+                <lang xml:lang="ru">Если мощность превысит заданное значение, то PAN16-RU отправит в группу 1 отчет о мощности.</lang>
+              </description>
+      
+                  <value from="000a" to="0514" unit="Watt">
+                <description>
+                    <lang xml:lang="en">wattage threshold value</lang>
+                    <lang xml:lang="ru">Мощность (Вт)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="en">Threshold of KWh for Load caution</lang>
+                <lang xml:lang="ru">Отчет при превышении энергопотребления (КВт*Ч)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This is a warning when the KWh of load over the preset threshold value, If the setting value is 10000, when the Accumulated Power Consumption of Relay1 over this value, PAN16 will send KWH meter report to warn the Group1 node, minimum value is 1KWh and default value is 10000 kWh.</lang>
+                <lang xml:lang="ru">Если суммарное энергопотребление за весь период использования (КВт*Ч) превысит указанное значение, на контроллер отправится команда Alarm.</lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="KWh">
+                <description>
+                    <lang xml:lang="en">KWh threshold value</lang>
+                    <lang xml:lang="ru">Энергопотребление (КВт*Ч)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Restore switch state mode</lang>
+                <lang xml:lang="ru">Восстанавливать состояние реле после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever the AC power return from lost, PAN16 will restore the switch state which could be SWITCH OFF/LAST SWITCH STATE/SWITCH ON. The default setting is LAST SWITCH STATE. </lang>
+                <lang xml:lang="ru">Параметр определяет в каком состоянии должнен быть модуль после подачи питания</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch off</lang>
+                    <lang xml:lang="ru">Выключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Last switch state</lang>
+                    <lang xml:lang="ru">Последнее состояние</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch on</lang>
+                    <lang xml:lang="ru">Включено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Mode of Switch Off function</lang>
+                <lang xml:lang="ru">Заблокировать работу кнопки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">When the mode of switch On/Off is set to 0, any command of switch off will be disabled and the On/Off function of include button will be disabled. The default setting is enable mode. When manual On/Off function is disabled, the RF command can only switch On but not Off. This is useful function for keeping the device in switch on state.</lang>
+                <lang xml:lang="ru">When the mode of switch On/Off is set to 0, any command of switch off will be disabled and the On/Off function of include button will be disabled. The default setting is enable mode. When manual On/Off function is disabled, the RF command can only switch On but not Off. This is useful function for keeping the device in switch on state.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Кнопка заблокирована</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable</lang>
+                    <lang xml:lang="ru">Кнопка работает</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED indication mode</lang>
+                <lang xml:lang="ru">LED индикация</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Show Switch State：When switch is on, LED is on. When switch is off, LED is off. The default setting is Show Switch State. Show Night mode：When switch is on, LED is off. When switch is off, LED is on. One Flash mode：When the state of switch changes, LED will be on only one second, then LED keeps off.</lang>
+                <lang xml:lang="ru">Show Switch State：When switch is on, LED is on. When switch is off, LED is off. The default setting is Show Switch State. Show Night mode：When switch is on, LED is off. When switch is off, LED is on. One Flash mode：When the state of switch changes, LED will be on only one second, then LED keeps off.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Show switch state</lang>
+                    <lang xml:lang="ru">Отображать состояние модуля</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Show night mode</lang>
+                    <lang xml:lang="ru">Ночной режим</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">One flash mode</lang>
+                    <lang xml:lang="ru">Мигнет один раз</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Auto off timer</lang>
+                <lang xml:lang="ru">Автовыключение</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever PAN16 switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0.</lang>
+                <lang xml:lang="ru">Whenever PAN16 switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disable auto off function</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define an auto off interval.</lang>
+                    <lang xml:lang="ru">Секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">RF off command mode</lang>
+                <lang xml:lang="ru">Действие при получении радиокоманды выключения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever a switch off command, BASIC_SET/BINARY_SWITCH_SET/SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands. Switch Off：It switches to OFF state. The default setting is Switch Off. Ignore：The switch off command will be ignored. Switch Toggle：It switches to the inverse of current state. Switch On：It switches to ON state.</lang>
+                <lang xml:lang="ru">Whenever a switch off command, BASIC_SET/BINARY_SWITCH_SET/SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands. Switch Off：It switches to OFF state. The default setting is Switch Off. Ignore：The switch off command will be ignored. Switch Toggle：It switches to the inverse of current state. Switch On：It switches to ON state.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch off</lang>
+                    <lang xml:lang="ru">Выключить</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Ignore</lang>
+                    <lang xml:lang="ru">Игнорировать</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch toggle</lang>
+                    <lang xml:lang="ru">Переключить в противоположное состояние</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Switch on</lang>
+                    <lang xml:lang="ru">Включить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Manual Switch Report mode</lang>
+                <lang xml:lang="ru">Отчет при включении с кнопки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever PAN16 manually switch on or off, it will send BINARY_SWITCH_
+REPORT to the node of group1. The default setting is Enable the function.</lang>
+                <lang xml:lang="ru">Whenever PAN16 manually switch on or off, it will send BINARY_SWITCH_
+REPORT to the node of group1. The default setting is Enable the function.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Не отправлять</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable</lang>
+                    <lang xml:lang="ru">Отправлять</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Auto Report after Reset</lang>
+                <lang xml:lang="ru">Отчет при подаче питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">After power recovery, PAN16 send report, that it is alive.</lang>
+                <lang xml:lang="ru">При подаче питания, PAN16 отправит отчет, что он находится в рабочем состоянии.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Не отправлять</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable</lang>
+                    <lang xml:lang="ru">Отправлять</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="2" default="05aa">
+            <name>
+                <lang xml:lang="en">Adjustable Overload</lang>
+                <lang xml:lang="ru">Отключение при превышении максимальной мощность (0.01А)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">При превышении заданного тока розетка отключится, по умолчанию 1450*0.01А=14.5А. Максимальная мощность расчитывается по формуле: P=U*I, например, 220В*14.5А=3190Вт.</lang>
+              </description>
+      
+                  <value from="01c2" to="05aa" unit="0.01A">
+                <description>
+                    <lang xml:lang="en">Maximum current (0.01A)</lang>
+                    <lang xml:lang="ru">Максимальный ток (0.01A)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/de465b215a715e89def8f635654bea62b52c0686.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -65,6 +65,19 @@
           </assocGroup>
       </assocGroups>
   
+    <configParams>
+        <configParam number="1" size="0" default="">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+      </configParams>
   
     
   

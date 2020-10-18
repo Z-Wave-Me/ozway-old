@@ -1,6 +1,7 @@
-PROJECTS = ozw-power-on-off     \
+#PROJECTS = ozw-power-on-off     \
            ozw-pir-power-switch \
            ozw-pir-active
+PROJECTS = ozw-power-on-off
 OUT      = $(addsuffix .out,$(PROJECTS))
 OBJ      = $(addsuffix .o,$(PROJECTS))
 OZWAY    = ozway
@@ -10,20 +11,26 @@ IFLAGS   = -I $(OZWAY)/cpp/src                \
            -I $(OZWAY)/cpp/src/platform        \
            -I $(OZWAY)/cpp/src/value_classes   \
            -I $(OZWAY)/libzway
-LIBS     = -lopenzwave \
-	   -lzway \
+LIBS     = -lzway \
 	   -lzcommons \
 	   -lzs2 \
-           -lpthread
-LDFLAGS  = -L/usr/local/lib -Wl,-R/usr/local/lib '-Wl,-R$$ORIGIN' -L./$(OZWAY) -L./$(OZWAY)/libzway/
+           -lpthread \
+           -lxml2 \
+           -larchive \
+           -lcrypto \
+           -lopenzwave
+LDFLAGS  += -Lozway
+LDFLAGS  += -Wl,-R/usr/local/lib
+LDFLAGS  += '-Wl,-R$$ORIGIN'
+LDFLAGS  += -L./$(OZWAY)
+#LDFLAGS  += -L./$(OZWAY)/libzway/
 CFLAGS   = -std=c++11
-LIBFILE  = libopenzwave.so.1.6
 
 all: ozway_lib $(OUT)
 
 $(OUT): %.out: %.o
 	echo "making out"
-	$(CC) $(LDFLAGS) $< $(LIBS) -o $@
+	$(CC) $(LDFLAGS) $< $(LIBS) -o run_$@
 
 $(OBJ): %.o: %/Main.cpp
 	echo "making obj"
@@ -32,7 +39,6 @@ $(OBJ): %.o: %/Main.cpp
 ozway_lib:
 	echo "making lib"
 	$(MAKE) -C $(OZWAY)
-	cp $(OZWAY)/$(LIBFILE) ./
 
 clean:
 	rm -rf *.o *.out

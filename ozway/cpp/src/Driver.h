@@ -43,8 +43,9 @@
 #include "aes/aescpp.h"
 
 //ZSA
-#include "ZWayLib.h"
-#include "ZLogging.h"
+
+#include <ZWayLib.h>
+#include <ZLogging.h>
 /*
 typedef struct _SwitchBinaryArg SwitchBinaryArg;
 
@@ -55,6 +56,7 @@ struct		_SwitchBinaryArg
 	void	*arg;
 };
 */
+
 //ZSA
 
 namespace OpenZWave
