@@ -105,7 +105,7 @@ void Manager::z_switch_binary_watcher(const ZDataRootObject root, ZWDataChangeTy
 //			QueueNotification(notification);
 			break;
 		}
-		case PhantomUpdate | Updated:
+		case PhantomUpdate:
 		{
 			notification = new Notification(Notification::Type_ValueRefreshed);
 //			notification->SetHomeAndNodeIds(swBinArg.home_id, swBinArg.node_id);
