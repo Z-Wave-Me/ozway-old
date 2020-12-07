@@ -102,345 +102,345 @@ namespace OpenZWave
 
 		CompatOptionManager::~CompatOptionManager()
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
+
 //		
 }
 
 		void CompatOptionManager::EnableFlag(CompatOptionFlags flag, uint32_t defaultval)
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			for (uint32_t i = 0; i < m_availableFlagsCount; i++)
-//			{
-//				if (m_availableFlags[i].flag == flag)
-//				{
-//					m_enabledCompatFlags[m_availableFlags[i].name] = flag;
-//					m_CompatVals[flag].type = m_availableFlags[i].type;
-//					m_CompatVals[flag].changed = false;
-//					switch (m_availableFlags[i].type)
-//					{
-//						case COMPAT_FLAG_TYPE_BOOL:
-//						case COMPAT_FLAG_TYPE_BOOL_ARRAY:
-//							if (defaultval > 2)
-//							{
-//								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is not a Bool", m_availableFlags[i].name.c_str());
-//								defaultval = 0;
-//							}
-//							m_CompatVals[flag].valBool = (defaultval == 0 ? false : true);
-//							break;
-//						case COMPAT_FLAG_TYPE_BYTE:
-//						case COMPAT_FLAG_TYPE_BYTE_ARRAY:
-//							if (defaultval > UINT8_MAX)
-//							{
-//								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is larger than a byte", m_availableFlags[i].name.c_str());
-//								defaultval = 0;
-//							}
-//							m_CompatVals[flag].valByte = defaultval;
-//							break;
-//						case COMPAT_FLAG_TYPE_SHORT:
-//						case COMPAT_FLAG_TYPE_SHORT_ARRAY:
-//							if (defaultval > UINT16_MAX)
-//							{
-//								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is larger than a short", m_availableFlags[i].name.c_str());
-//								defaultval = 0;
-//							}
-//							m_CompatVals[flag].valShort = defaultval;
-//							break;
-//						case COMPAT_FLAG_TYPE_INT:
-//						case COMPAT_FLAG_TYPE_INT_ARRAY:
-//							if (defaultval > UINT32_MAX)
-//							{
-//								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is larger than a int", m_availableFlags[i].name.c_str());
-//								defaultval = 0;
-//							}
-//							m_CompatVals[flag].valInt = defaultval;
-//							break;
-//					}
-//				}
-//			}
-//		
+
+			for (uint32_t i = 0; i < m_availableFlagsCount; i++)
+			{
+				if (m_availableFlags[i].flag == flag)
+				{
+					m_enabledCompatFlags[m_availableFlags[i].name] = flag;
+					m_CompatVals[flag].type = m_availableFlags[i].type;
+					m_CompatVals[flag].changed = false;
+					switch (m_availableFlags[i].type)
+					{
+						case COMPAT_FLAG_TYPE_BOOL:
+						case COMPAT_FLAG_TYPE_BOOL_ARRAY:
+							if (defaultval > 2)
+							{
+								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is not a Bool", m_availableFlags[i].name.c_str());
+								defaultval = 0;
+							}
+							m_CompatVals[flag].valBool = (defaultval == 0 ? false : true);
+							break;
+						case COMPAT_FLAG_TYPE_BYTE:
+						case COMPAT_FLAG_TYPE_BYTE_ARRAY:
+							if (defaultval > UINT8_MAX)
+							{
+								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is larger than a byte", m_availableFlags[i].name.c_str());
+								defaultval = 0;
+							}
+							m_CompatVals[flag].valByte = defaultval;
+							break;
+						case COMPAT_FLAG_TYPE_SHORT:
+						case COMPAT_FLAG_TYPE_SHORT_ARRAY:
+							if (defaultval > UINT16_MAX)
+							{
+								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is larger than a short", m_availableFlags[i].name.c_str());
+								defaultval = 0;
+							}
+							m_CompatVals[flag].valShort = defaultval;
+							break;
+						case COMPAT_FLAG_TYPE_INT:
+						case COMPAT_FLAG_TYPE_INT_ARRAY:
+							if (defaultval > UINT32_MAX)
+							{
+								Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "EnableFlag: Default Value for %s is larger than a int", m_availableFlags[i].name.c_str());
+								defaultval = 0;
+							}
+							m_CompatVals[flag].valInt = defaultval;
+							break;
+					}
+				}
+			}
+		
 }
 
 		void CompatOptionManager::ReadXML(TiXmlElement const* _ccElement)
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			TiXmlElement const *compatElement = _ccElement->FirstChildElement(GetXMLTagName().c_str());
-//
-//			if (compatElement)
-//			{
-//				map<string, CompatOptionFlags>::iterator it;
-//				string value;
-//				for (it = m_enabledCompatFlags.begin(); it != m_enabledCompatFlags.end(); it++)
-//				{
-//					TiXmlElement const *valElement = compatElement->FirstChildElement(it->first.c_str());
-//					if (valElement)
-//					{
-//						value = valElement->GetText();
-//						char* pStopChar;
-//						uint32_t val = strtol(value.c_str(), &pStopChar, 10);
-//						switch (m_CompatVals[it->second].type)
-//						{
-//							case COMPAT_FLAG_TYPE_BOOL:
-//								if (m_CompatVals[it->second].valBool != !strcmp(value.c_str(), "true"))
-//								{
-//									m_CompatVals[it->second].valBool = !strcmp(value.c_str(), "true");
-//									m_CompatVals[it->second].changed = true;
-//								}
-//								break;
-//							case COMPAT_FLAG_TYPE_BOOL_ARRAY:
-//								{
-//									if (m_CompatVals[it->second].valBool != !strcmp(value.c_str(), "true"))
-//									{
-//										string indexVal = valElement->Attribute("index");
-//										uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
-//										m_CompatVals[it->second].valBoolArray.insert(std::pair<uint32, bool>(index, !strcmp(value.c_str(), "true")));
-//										m_CompatVals[it->second].changed = true;
-//									}
-//									break;
-//								}
-//							case COMPAT_FLAG_TYPE_BYTE:
-//								if (val > UINT8_MAX)
-//								{
-//									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a byte", m_owner->GetCommandClassName().c_str(), it->first.c_str());
-//									val = 0;
-//								}
-//								if (m_CompatVals[it->second].valByte != val)
-//								{
-//									m_CompatVals[it->second].valByte = val;
-//									m_CompatVals[it->second].changed = true;
-//								}
-//								break;
-//							case COMPAT_FLAG_TYPE_BYTE_ARRAY:
-//								if (val > UINT8_MAX)
-//								{
-//									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a byte", m_owner->GetCommandClassName().c_str(), it->first.c_str());
-//									val = 0;
-//								}
-//								if (m_CompatVals[it->second].valByte != val)
-//								{
-//									string indexVal = valElement->Attribute("index");
-//									uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
-//									m_CompatVals[it->second].valByteArray.insert(std::pair<uint32_t, uint8_t>(index, val));
-//									m_CompatVals[it->second].changed = true;
-//								}
-//								break;
-//
-//							case COMPAT_FLAG_TYPE_SHORT:
-//								if (val > UINT16_MAX)
-//								{
-//									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a short", m_owner->GetCommandClassName().c_str(), it->first.c_str());
-//									val = 0;
-//								}
-//								if (m_CompatVals[it->second].valShort != val)
-//								{
-//									m_CompatVals[it->second].valShort = val;
-//									m_CompatVals[it->second].changed = true;
-//								}
-//								break;
-//							case COMPAT_FLAG_TYPE_SHORT_ARRAY:
-//								if (val > UINT16_MAX)
-//								{
-//									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a short", m_owner->GetCommandClassName().c_str(), it->first.c_str());
-//									val = 0;
-//								}
-//								if (m_CompatVals[it->second].valShort != val)
-//								{
-//									string indexVal = valElement->Attribute("index");
-//									uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
-//									m_CompatVals[it->second].valShortArray.insert(std::pair<uint32_t, uint16_t>(index, val));
-//									m_CompatVals[it->second].changed = true;
-//								}
-//								break;
-//							case COMPAT_FLAG_TYPE_INT:
-//								if (val > UINT32_MAX)
-//								{
-//									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a int", m_owner->GetCommandClassName().c_str(), it->first.c_str());
-//									val = 0;
-//								}
-//								if (m_CompatVals[it->second].valInt != val)
-//								{
-//									m_CompatVals[it->second].valInt = val;
-//									m_CompatVals[it->second].changed = true;
-//								}
-//								break;
-//							case COMPAT_FLAG_TYPE_INT_ARRAY:
-//								if (val > UINT32_MAX)
-//								{
-//									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a int", m_owner->GetCommandClassName().c_str(), it->first.c_str());
-//									val = 0;
-//								}
-//								if (m_CompatVals[it->second].valInt != val)
-//								{
-//									string indexVal = valElement->Attribute("index");
-//									uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
-//									m_CompatVals[it->second].valIntArray.insert(std::pair<uint32_t, uint32_t>(index, val));
-//									m_CompatVals[it->second].changed = true;
-//								}
-//								break;
-//
-//						}
-//					}
-//				}
-//			}
-//			{
-//				map<string, CompatOptionFlags>::iterator it;
-//				Log::Write(LogLevel_Info, m_owner->GetNodeId(), "(%d - %s) - %s Flags:", m_owner->GetCommandClassId(), m_owner->GetCommandClassName().c_str(), GetXMLTagName().c_str());
-//				for (it = m_enabledCompatFlags.begin(); it != m_enabledCompatFlags.end(); it++)
-//				{
-//					if (m_CompatVals[it->second].changed)
-//					{
-//						switch (m_CompatVals[it->second].type)
-//						{
-//							case COMPAT_FLAG_TYPE_BOOL:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %s", it->first.c_str(), m_CompatVals[it->second].valBool ? "true" : "false");
-//								break;
-//							case COMPAT_FLAG_TYPE_BOOL_ARRAY:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %s", it->first.c_str(), m_CompatVals[it->second].valBool ? "true" : "false");
-//								for (std::map<uint32_t, bool>::iterator it2 = m_CompatVals[it->second].valBoolArray.begin(); it2 != m_CompatVals[it->second].valBoolArray.end(); it2++)
-//									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %s", it->first.c_str(), it2->first, it2->second ? "true" : "false");
-//								break;
-//							case COMPAT_FLAG_TYPE_BYTE:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %d", it->first.c_str(), m_CompatVals[it->second].valByte);
-//								break;
-//							case COMPAT_FLAG_TYPE_BYTE_ARRAY:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %d", it->first.c_str(), m_CompatVals[it->second].valByte);
-//								for (std::map<uint32_t, uint8_t>::iterator it2 = m_CompatVals[it->second].valByteArray.begin(); it2 != m_CompatVals[it->second].valByteArray.end(); it2++)
-//									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %d", it->first.c_str(), it2->first, it2->second );
-//								break;
-//							case COMPAT_FLAG_TYPE_SHORT:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %d", it->first.c_str(), m_CompatVals[it->second].valShort);
-//								break;
-//							case COMPAT_FLAG_TYPE_SHORT_ARRAY:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %d", it->first.c_str(), m_CompatVals[it->second].valShort);
-//								for (std::map<uint32_t, uint16_t>::iterator it2 = m_CompatVals[it->second].valShortArray.begin(); it2 != m_CompatVals[it->second].valShortArray.end(); it2++)
-//									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %d", it->first.c_str(), it2->first, it2->second );
-//								break;
-//							case COMPAT_FLAG_TYPE_INT:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %d", it->first.c_str(), m_CompatVals[it->second].valInt);
-//								break;
-//							case COMPAT_FLAG_TYPE_INT_ARRAY:
-//								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %d", it->first.c_str(), m_CompatVals[it->second].valShort);
-//								for (std::map<uint32_t, uint32_t>::iterator it2 = m_CompatVals[it->second].valIntArray.begin(); it2 != m_CompatVals[it->second].valIntArray.end(); it2++)
-//									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %d", it->first.c_str(), it2->first, it2->second );
-//								break;
-//
-//						}
-//					}
-//				}
-//			}
-//
-//		
+
+			TiXmlElement const *compatElement = _ccElement->FirstChildElement(GetXMLTagName().c_str());
+
+			if (compatElement)
+			{
+				map<string, CompatOptionFlags>::iterator it;
+				string value;
+				for (it = m_enabledCompatFlags.begin(); it != m_enabledCompatFlags.end(); it++)
+				{
+					TiXmlElement const *valElement = compatElement->FirstChildElement(it->first.c_str());
+					if (valElement)
+					{
+						value = valElement->GetText();
+						char* pStopChar;
+						uint32_t val = strtol(value.c_str(), &pStopChar, 10);
+						switch (m_CompatVals[it->second].type)
+						{
+							case COMPAT_FLAG_TYPE_BOOL:
+								if (m_CompatVals[it->second].valBool != !strcmp(value.c_str(), "true"))
+								{
+									m_CompatVals[it->second].valBool = !strcmp(value.c_str(), "true");
+									m_CompatVals[it->second].changed = true;
+								}
+								break;
+							case COMPAT_FLAG_TYPE_BOOL_ARRAY:
+								{
+									if (m_CompatVals[it->second].valBool != !strcmp(value.c_str(), "true"))
+									{
+										string indexVal = valElement->Attribute("index");
+										uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
+										m_CompatVals[it->second].valBoolArray.insert(std::pair<uint32, bool>(index, !strcmp(value.c_str(), "true")));
+										m_CompatVals[it->second].changed = true;
+									}
+									break;
+								}
+							case COMPAT_FLAG_TYPE_BYTE:
+								if (val > UINT8_MAX)
+								{
+									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a byte", m_owner->GetCommandClassName().c_str(), it->first.c_str());
+									val = 0;
+								}
+								if (m_CompatVals[it->second].valByte != val)
+								{
+									m_CompatVals[it->second].valByte = val;
+									m_CompatVals[it->second].changed = true;
+								}
+								break;
+							case COMPAT_FLAG_TYPE_BYTE_ARRAY:
+								if (val > UINT8_MAX)
+								{
+									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a byte", m_owner->GetCommandClassName().c_str(), it->first.c_str());
+									val = 0;
+								}
+								if (m_CompatVals[it->second].valByte != val)
+								{
+									string indexVal = valElement->Attribute("index");
+									uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
+									m_CompatVals[it->second].valByteArray.insert(std::pair<uint32_t, uint8_t>(index, val));
+									m_CompatVals[it->second].changed = true;
+								}
+								break;
+
+							case COMPAT_FLAG_TYPE_SHORT:
+								if (val > UINT16_MAX)
+								{
+									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a short", m_owner->GetCommandClassName().c_str(), it->first.c_str());
+									val = 0;
+								}
+								if (m_CompatVals[it->second].valShort != val)
+								{
+									m_CompatVals[it->second].valShort = val;
+									m_CompatVals[it->second].changed = true;
+								}
+								break;
+							case COMPAT_FLAG_TYPE_SHORT_ARRAY:
+								if (val > UINT16_MAX)
+								{
+									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a short", m_owner->GetCommandClassName().c_str(), it->first.c_str());
+									val = 0;
+								}
+								if (m_CompatVals[it->second].valShort != val)
+								{
+									string indexVal = valElement->Attribute("index");
+									uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
+									m_CompatVals[it->second].valShortArray.insert(std::pair<uint32_t, uint16_t>(index, val));
+									m_CompatVals[it->second].changed = true;
+								}
+								break;
+							case COMPAT_FLAG_TYPE_INT:
+								if (val > UINT32_MAX)
+								{
+									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a int", m_owner->GetCommandClassName().c_str(), it->first.c_str());
+									val = 0;
+								}
+								if (m_CompatVals[it->second].valInt != val)
+								{
+									m_CompatVals[it->second].valInt = val;
+									m_CompatVals[it->second].changed = true;
+								}
+								break;
+							case COMPAT_FLAG_TYPE_INT_ARRAY:
+								if (val > UINT32_MAX)
+								{
+									Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "ReadXML: (%s) - Value for %s is larger than a int", m_owner->GetCommandClassName().c_str(), it->first.c_str());
+									val = 0;
+								}
+								if (m_CompatVals[it->second].valInt != val)
+								{
+									string indexVal = valElement->Attribute("index");
+									uint32 index = strtol(indexVal.c_str(), &pStopChar, 10);
+									m_CompatVals[it->second].valIntArray.insert(std::pair<uint32_t, uint32_t>(index, val));
+									m_CompatVals[it->second].changed = true;
+								}
+								break;
+
+						}
+					}
+				}
+			}
+			{
+				map<string, CompatOptionFlags>::iterator it;
+				Log::Write(LogLevel_Info, m_owner->GetNodeId(), "(%d - %s) - %s Flags:", m_owner->GetCommandClassId(), m_owner->GetCommandClassName().c_str(), GetXMLTagName().c_str());
+				for (it = m_enabledCompatFlags.begin(); it != m_enabledCompatFlags.end(); it++)
+				{
+					if (m_CompatVals[it->second].changed)
+					{
+						switch (m_CompatVals[it->second].type)
+						{
+							case COMPAT_FLAG_TYPE_BOOL:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %s", it->first.c_str(), m_CompatVals[it->second].valBool ? "true" : "false");
+								break;
+							case COMPAT_FLAG_TYPE_BOOL_ARRAY:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %s", it->first.c_str(), m_CompatVals[it->second].valBool ? "true" : "false");
+								for (std::map<uint32_t, bool>::iterator it2 = m_CompatVals[it->second].valBoolArray.begin(); it2 != m_CompatVals[it->second].valBoolArray.end(); it2++)
+									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %s", it->first.c_str(), it2->first, it2->second ? "true" : "false");
+								break;
+							case COMPAT_FLAG_TYPE_BYTE:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %d", it->first.c_str(), m_CompatVals[it->second].valByte);
+								break;
+							case COMPAT_FLAG_TYPE_BYTE_ARRAY:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %d", it->first.c_str(), m_CompatVals[it->second].valByte);
+								for (std::map<uint32_t, uint8_t>::iterator it2 = m_CompatVals[it->second].valByteArray.begin(); it2 != m_CompatVals[it->second].valByteArray.end(); it2++)
+									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %d", it->first.c_str(), it2->first, it2->second );
+								break;
+							case COMPAT_FLAG_TYPE_SHORT:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %d", it->first.c_str(), m_CompatVals[it->second].valShort);
+								break;
+							case COMPAT_FLAG_TYPE_SHORT_ARRAY:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %d", it->first.c_str(), m_CompatVals[it->second].valShort);
+								for (std::map<uint32_t, uint16_t>::iterator it2 = m_CompatVals[it->second].valShortArray.begin(); it2 != m_CompatVals[it->second].valShortArray.end(); it2++)
+									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %d", it->first.c_str(), it2->first, it2->second );
+								break;
+							case COMPAT_FLAG_TYPE_INT:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s: %d", it->first.c_str(), m_CompatVals[it->second].valInt);
+								break;
+							case COMPAT_FLAG_TYPE_INT_ARRAY:
+								Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t %s (Default): %d", it->first.c_str(), m_CompatVals[it->second].valShort);
+								for (std::map<uint32_t, uint32_t>::iterator it2 = m_CompatVals[it->second].valIntArray.begin(); it2 != m_CompatVals[it->second].valIntArray.end(); it2++)
+									Log::Write(LogLevel_Info, m_owner->GetNodeId(), "\t\t %s - %d: %d", it->first.c_str(), it2->first, it2->second );
+								break;
+						}
+					}
+				}
+			}
+
+		
 }
 
 		void CompatOptionManager::WriteXML(TiXmlElement * _ccElement)
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			TiXmlElement* compatElement = new TiXmlElement(GetXMLTagName().c_str());
-//
-//			map<string, CompatOptionFlags>::iterator it;
-//			string value;
-//			for (it = m_enabledCompatFlags.begin(); it != m_enabledCompatFlags.end(); it++)
-//			{
-//				if (m_CompatVals[it->second].changed == false)
-//				{
-//					/* skip writing out default values */
-//					continue;
-//				}
-//				char str[32];
-//				switch (m_CompatVals[it->second].type)
-//				{
-//					case COMPAT_FLAG_TYPE_BOOL:
-//					{
-//						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//						TiXmlText *text = new TiXmlText(m_CompatVals[it->second].valBool == true ? "true" : "false");
-//						valElement->LinkEndChild(text);
-//						compatElement->LinkEndChild(valElement);
-//						break;
-//					}
-//					case COMPAT_FLAG_TYPE_BOOL_ARRAY:
-//					{
-//						for (std::map<uint32_t, bool>::iterator it2 = m_CompatVals[it->second].valBoolArray.begin(); it2 != m_CompatVals[it->second].valBoolArray.end(); it2++) {
-//							if (it2->second != m_CompatVals[it->second].valBool) {
-//								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//								valElement->SetAttribute("index", it2->first);
-//								TiXmlText *text = new TiXmlText(it2->second == true ? "true" : "false");
-//								valElement->LinkEndChild(text);
-//								compatElement->LinkEndChild(valElement);
-//							}
-//						}
-//						break;
-//					}
-//					case COMPAT_FLAG_TYPE_BYTE:
-//					{
-//						snprintf(str, sizeof(str), "%d", m_CompatVals[it->second].valByte);
-//						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//						TiXmlText *text = new TiXmlText(str);
-//						valElement->LinkEndChild(text);
-//						compatElement->LinkEndChild(valElement);
-//						break;
-//					}
-//					case COMPAT_FLAG_TYPE_BYTE_ARRAY:
-//					{
-//						for (std::map<uint32_t, uint8_t>::iterator it2 = m_CompatVals[it->second].valByteArray.begin(); it2 != m_CompatVals[it->second].valByteArray.end(); it2++) {
-//							if (it2->second != m_CompatVals[it->second].valByte) {
-//								snprintf(str, sizeof(str), "%d", it2->second);
-//								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//								valElement->SetAttribute("index", it2->first);
-//								TiXmlText *text = new TiXmlText(str);
-//								valElement->LinkEndChild(text);
-//								compatElement->LinkEndChild(valElement);
-//							}
-//						}
-//						break;
-//					}
-//					case COMPAT_FLAG_TYPE_SHORT:
-//					{
-//						snprintf(str, sizeof(str), "%d", m_CompatVals[it->second].valShort);
-//						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//						TiXmlText *text = new TiXmlText(str);
-//						valElement->LinkEndChild(text);
-//						compatElement->LinkEndChild(valElement);
-//						break;
-//					}
-//					case COMPAT_FLAG_TYPE_SHORT_ARRAY:
-//					{
-//						for (std::map<uint32_t, uint16_t>::iterator it2 = m_CompatVals[it->second].valShortArray.begin(); it2 != m_CompatVals[it->second].valShortArray.end(); it2++) {
-//							if (it2->second != m_CompatVals[it->second].valShort) {
-//								snprintf(str, sizeof(str), "%d", it2->second);
-//								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//								valElement->SetAttribute("index", it2->first);
-//								TiXmlText *text = new TiXmlText(str);
-//								valElement->LinkEndChild(text);
-//								compatElement->LinkEndChild(valElement);
-//							}
-//						}
-//						break;
-//					}
-//					case COMPAT_FLAG_TYPE_INT:
-//					{
-//						snprintf(str, sizeof(str), "%d", m_CompatVals[it->second].valInt);
-//						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//						TiXmlText *text = new TiXmlText(str);
-//						valElement->LinkEndChild(text);
-//						compatElement->LinkEndChild(valElement);
-//						break;
-//					}
-//					case COMPAT_FLAG_TYPE_INT_ARRAY:
-//					{
-//						for (std::map<uint32_t, uint32_t>::iterator it2 = m_CompatVals[it->second].valIntArray.begin(); it2 != m_CompatVals[it->second].valIntArray.end(); it2++) {
-//							if (it2->second != m_CompatVals[it->second].valInt) {
-//								snprintf(str, sizeof(str), "%d", it2->second);
-//								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
-//								valElement->SetAttribute("index", it2->first);
-//								TiXmlText *text = new TiXmlText(str);
-//								valElement->LinkEndChild(text);
-//								compatElement->LinkEndChild(valElement);
-//							}
-//						}
-//						break;
-//					}
-//				}
-//			}
-//			_ccElement->LinkEndChild(compatElement);
+
+			TiXmlElement* compatElement = new TiXmlElement(GetXMLTagName().c_str());
+
+			map<string, CompatOptionFlags>::iterator it;
+			string value;
+			for (it = m_enabledCompatFlags.begin(); it != m_enabledCompatFlags.end(); it++)
+			{
+				if (m_CompatVals[it->second].changed == false)
+				{
+					/* skip writing out default values */
+					continue;
+				}
+				char str[32];
+				switch (m_CompatVals[it->second].type)
+				{
+					case COMPAT_FLAG_TYPE_BOOL:
+					{
+						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+						TiXmlText *text = new TiXmlText(m_CompatVals[it->second].valBool == true ? "true" : "false");
+						valElement->LinkEndChild(text);
+						compatElement->LinkEndChild(valElement);
+						break;
+					}
+					case COMPAT_FLAG_TYPE_BOOL_ARRAY:
+					{
+						for (std::map<uint32_t, bool>::iterator it2 = m_CompatVals[it->second].valBoolArray.begin(); it2 != m_CompatVals[it->second].valBoolArray.end(); it2++) {
+							if (it2->second != m_CompatVals[it->second].valBool) {
+								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+								valElement->SetAttribute("index", it2->first);
+								TiXmlText *text = new TiXmlText(it2->second == true ? "true" : "false");
+								valElement->LinkEndChild(text);
+								compatElement->LinkEndChild(valElement);
+							}
+						}
+						break;
+					}
+					case COMPAT_FLAG_TYPE_BYTE:
+					{
+						snprintf(str, sizeof(str), "%d", m_CompatVals[it->second].valByte);
+						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+						TiXmlText *text = new TiXmlText(str);
+						valElement->LinkEndChild(text);
+						compatElement->LinkEndChild(valElement);
+						break;
+					}
+					case COMPAT_FLAG_TYPE_BYTE_ARRAY:
+					{
+						for (std::map<uint32_t, uint8_t>::iterator it2 = m_CompatVals[it->second].valByteArray.begin(); it2 != m_CompatVals[it->second].valByteArray.end(); it2++) {
+							if (it2->second != m_CompatVals[it->second].valByte) {
+								snprintf(str, sizeof(str), "%d", it2->second);
+								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+								valElement->SetAttribute("index", it2->first);
+								TiXmlText *text = new TiXmlText(str);
+								valElement->LinkEndChild(text);
+								compatElement->LinkEndChild(valElement);
+							}
+						}
+						break;
+					}
+					case COMPAT_FLAG_TYPE_SHORT:
+					{
+						snprintf(str, sizeof(str), "%d", m_CompatVals[it->second].valShort);
+						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+						TiXmlText *text = new TiXmlText(str);
+						valElement->LinkEndChild(text);
+						compatElement->LinkEndChild(valElement);
+						break;
+					}
+					case COMPAT_FLAG_TYPE_SHORT_ARRAY:
+					{
+						for (std::map<uint32_t, uint16_t>::iterator it2 = m_CompatVals[it->second].valShortArray.begin(); it2 != m_CompatVals[it->second].valShortArray.end(); it2++) 
+						{
+								if (it2->second != m_CompatVals[it->second].valShort) {
+								snprintf(str, sizeof(str), "%d", it2->second);
+								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+								valElement->SetAttribute("index", it2->first);
+								TiXmlText *text = new TiXmlText(str);
+								valElement->LinkEndChild(text);
+								compatElement->LinkEndChild(valElement);
+							}
+						}
+						break;
+					}
+					case COMPAT_FLAG_TYPE_INT:
+					{
+						snprintf(str, sizeof(str), "%d", m_CompatVals[it->second].valInt);
+						TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+						TiXmlText *text = new TiXmlText(str);
+						valElement->LinkEndChild(text);
+						compatElement->LinkEndChild(valElement);
+						break;
+					}
+					case COMPAT_FLAG_TYPE_INT_ARRAY:
+					{
+						for (std::map<uint32_t, uint32_t>::iterator it2 = m_CompatVals[it->second].valIntArray.begin(); it2 != m_CompatVals[it->second].valIntArray.end(); it2++) {
+							if (it2->second != m_CompatVals[it->second].valInt) {
+								snprintf(str, sizeof(str), "%d", it2->second);
+								TiXmlElement* valElement = new TiXmlElement(it->first.c_str());
+								valElement->SetAttribute("index", it2->first);
+								TiXmlText *text = new TiXmlText(str);
+								valElement->LinkEndChild(text);
+								compatElement->LinkEndChild(valElement);
+							}
+						}
+						break;
+					}
+				}
+			}
+			_ccElement->LinkEndChild(compatElement);
 //		
 }
 
@@ -448,28 +448,28 @@ namespace OpenZWave
 		{
 			if (m_CompatVals.count(flag) == 0)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagBool: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return false;
+
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagBool: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return false;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BOOL)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				return m_CompatVals.at(flag).valBool;
+
+				return m_CompatVals.at(flag).valBool;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BOOL_ARRAY)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagBool: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return m_CompatVals.at(flag).valBool;
-//				}
-//				if (m_CompatVals.at(flag).valBoolArray.count(index))
-//					return m_CompatVals.at(flag).valBoolArray.at(index);
-//				/* Return our Default */
-//				return m_CompatVals.at(flag).valBool;
+
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagBool: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return m_CompatVals.at(flag).valBool;
+				}
+				if (m_CompatVals.at(flag).valBoolArray.count(index))
+					return m_CompatVals.at(flag).valBoolArray.at(index);
+				/* Return our Default */
+				return m_CompatVals.at(flag).valBool;
 //			
 }
 			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagBool: (%s) - Flag %s Not a Boolean Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
@@ -481,28 +481,28 @@ namespace OpenZWave
 		{
 			if (m_CompatVals.count(flag) == 0)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagByte: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return 0;
+
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagByte: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return 0;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BYTE)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				return m_CompatVals.at(flag).valByte;
+
+				return m_CompatVals.at(flag).valByte;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BYTE_ARRAY)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagByte: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return m_CompatVals.at(flag).valByte;
-//				}
-//				if (m_CompatVals.at(flag).valByteArray.count(index))
-//					return m_CompatVals.at(flag).valByteArray.at(index);
-//				/* Return our Default */
-//				return m_CompatVals.at(flag).valByte;
+
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagByte: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return m_CompatVals.at(flag).valByte;
+				}
+				if (m_CompatVals.at(flag).valByteArray.count(index))
+					return m_CompatVals.at(flag).valByteArray.at(index);
+				/* Return our Default */
+				return m_CompatVals.at(flag).valByte;
 //
 //			
 }
@@ -515,28 +515,28 @@ namespace OpenZWave
 		{
 			if (m_CompatVals.count(flag) == 0)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagShort: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return 0;
+
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagShort: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return 0;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_SHORT)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				return m_CompatVals.at(flag).valShort;
+
+				return m_CompatVals.at(flag).valShort;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_SHORT_ARRAY)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagShort: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return m_CompatVals.at(flag).valShort;
-//				}
-//				if (m_CompatVals.at(flag).valShortArray.count(index))
-//					return m_CompatVals.at(flag).valShortArray.at(index);
-//				/* Return our Default */
-//				return m_CompatVals.at(flag).valShort;
+
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagShort: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return m_CompatVals.at(flag).valShort;
+				}
+				if (m_CompatVals.at(flag).valShortArray.count(index))
+					return m_CompatVals.at(flag).valShortArray.at(index);
+				/* Return our Default */
+				return m_CompatVals.at(flag).valShort;
 //			
 }
 
@@ -549,28 +549,28 @@ namespace OpenZWave
 		{
 			if (m_CompatVals.count(flag) == 0)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagInt: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return 0;
+
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagInt: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return 0;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_INT)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				return m_CompatVals.at(flag).valInt;
+
+				return m_CompatVals.at(flag).valInt;
 //			
 }
 			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_INT_ARRAY)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagInt: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return m_CompatVals.at(flag).valInt;
-//				}
-//				if (m_CompatVals.at(flag).valIntArray.count(index))
-//					return m_CompatVals.at(flag).valIntArray.at(index);
-//				/* Return our Default */
-//				return m_CompatVals.at(flag).valInt;
+
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "GetFlagInt: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return m_CompatVals.at(flag).valInt;
+				}
+				if (m_CompatVals.at(flag).valIntArray.count(index))
+					return m_CompatVals.at(flag).valIntArray.at(index);
+				/* Return our Default */
+				return m_CompatVals.at(flag).valInt;
 //			
 }
 
@@ -581,137 +581,137 @@ namespace OpenZWave
 
 		bool CompatOptionManager::SetFlagBool(CompatOptionFlags flag, bool value, uint32_t index)
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			if (m_CompatVals.count(flag) == 0)
-//			{
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagBool: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return false;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BOOL)
-//			{
-//				m_CompatVals.at(flag).valBool = value;
-//				m_CompatVals.at(flag).changed = true;
-//				return true;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BOOL_ARRAY)
-//			{
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagBool: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return false;
-//				}
-//				m_CompatVals.at(flag).changed = true;
-//				if (m_CompatVals.at(flag).valBoolArray.count(index)) {
-//					m_CompatVals.at(flag).valBoolArray.at(index) = value;
-//					return true;
-//				} else {
-//					m_CompatVals.at(flag).valBoolArray.insert(std::pair<uint32_t, bool>(index, value));
-//					return true;
-//				}
-//			}
-//			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagBool: (%s) - Flag %s Not a Bool Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//			return false;
+
+			if (m_CompatVals.count(flag) == 0)
+			{
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagBool: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return false;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BOOL)
+			{
+				m_CompatVals.at(flag).valBool = value;
+				m_CompatVals.at(flag).changed = true;
+				return true;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BOOL_ARRAY)
+			{
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagBool: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return false;
+				}
+				m_CompatVals.at(flag).changed = true;
+				if (m_CompatVals.at(flag).valBoolArray.count(index)) {
+					m_CompatVals.at(flag).valBoolArray.at(index) = value;
+					return true;
+				} else {
+					m_CompatVals.at(flag).valBoolArray.insert(std::pair<uint32_t, bool>(index, value));
+					return true;
+				}
+			}
+			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagBool: (%s) - Flag %s Not a Bool Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+			return false;
 //		
 }
 
 		bool CompatOptionManager::SetFlagByte(CompatOptionFlags flag, uint8_t value, uint32_t index)
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			if (m_CompatVals.count(flag) == 0)
-//			{
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagByte: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return false;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BYTE)
-//			{
-//				m_CompatVals.at(flag).valByte = value;
-//				m_CompatVals.at(flag).changed = true;
-//				return true;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BYTE_ARRAY)
-//			{
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagByte: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return false;
-//				}
-//				m_CompatVals.at(flag).changed = true;
-//				if (m_CompatVals.at(flag).valByteArray.count(index)) {
-//					m_CompatVals.at(flag).valByteArray.at(index) = value;
-//					return true;
-//				} else {
-//					m_CompatVals.at(flag).valByteArray.insert(std::pair<uint32_t, uint8_t>(index, value));
-//					return true;
-//				}
-//			}
-//			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagByte: (%s) - Flag %s Not a Byte Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//			return false;
+
+			if (m_CompatVals.count(flag) == 0)
+			{
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagByte: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return false;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BYTE)
+			{
+				m_CompatVals.at(flag).valByte = value;
+				m_CompatVals.at(flag).changed = true;
+				return true;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_BYTE_ARRAY)
+			{
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagByte: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return false;
+				}
+				m_CompatVals.at(flag).changed = true;
+				if (m_CompatVals.at(flag).valByteArray.count(index)) {
+					m_CompatVals.at(flag).valByteArray.at(index) = value;
+					return true;
+				} else {
+					m_CompatVals.at(flag).valByteArray.insert(std::pair<uint32_t, uint8_t>(index, value));
+					return true;
+				}
+			}
+			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagByte: (%s) - Flag %s Not a Byte Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+			return false;
 //		
 }
 
 		bool CompatOptionManager::SetFlagShort(CompatOptionFlags flag, uint16_t value, uint32_t index)
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			if (m_CompatVals.count(flag) == 0)
-//			{
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagShort: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return false;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_SHORT)
-//			{
-//				m_CompatVals.at(flag).valShort = value;
-//				m_CompatVals.at(flag).changed = true;
-//				return true;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_SHORT_ARRAY)
-//			{
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagShort: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return false;
-//				}
-//				m_CompatVals.at(flag).changed = true;
-//				if (m_CompatVals.at(flag).valShortArray.count(index)) {
-//					m_CompatVals.at(flag).valShortArray.at(index) = value;
-//					return true;
-//				} else {
-//					m_CompatVals.at(flag).valShortArray.insert(std::pair<uint32_t, uint16_t>(index, value));
-//					return true;
-//				}
-//			}
-//			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagShort: (%s) - Flag %s Not a Short Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//			return false;
+
+			if (m_CompatVals.count(flag) == 0)
+			{
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagShort: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return false;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_SHORT)
+			{
+				m_CompatVals.at(flag).valShort = value;
+				m_CompatVals.at(flag).changed = true;
+				return true;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_SHORT_ARRAY)
+			{
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagShort: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return false;
+				}
+				m_CompatVals.at(flag).changed = true;
+				if (m_CompatVals.at(flag).valShortArray.count(index)) {
+					m_CompatVals.at(flag).valShortArray.at(index) = value;
+					return true;
+				} else {
+					m_CompatVals.at(flag).valShortArray.insert(std::pair<uint32_t, uint16_t>(index, value));
+					return true;
+				}
+			}
+			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagShort: (%s) - Flag %s Not a Short Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+			return false;
 //		
 }
 
 		bool CompatOptionManager::SetFlagInt(CompatOptionFlags flag, uint32_t value, uint32_t index)
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			if (m_CompatVals.count(flag) == 0)
-//			{
-//				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagInt: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//				return false;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_INT)
-//			{
-//				m_CompatVals.at(flag).valInt = value;
-//				m_CompatVals.at(flag).changed = true;
-//				return true;
-//			}
-//			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_INT_ARRAY)
-//			{
-//				if (index == (uint32_t)-1) {
-//					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagInt: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//					return false;
-//				}
-//				m_CompatVals.at(flag).changed = true;
-//				if (m_CompatVals.at(flag).valIntArray.count(index)) {
-//					m_CompatVals.at(flag).valIntArray.at(index) = value;
-//					return true;
-//				} else {
-//					m_CompatVals.at(flag).valIntArray.insert(std::pair<uint32_t, uint32_t>(index, value));
-//					return true;
-//				}
-//			}
-//			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagInt: (%s) - Flag %s Not a Int Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
-//			return false;
+
+			if (m_CompatVals.count(flag) == 0)
+			{
+				Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagInt: (%s) - Flag %s Not Enabled!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+				return false;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_INT)
+			{
+				m_CompatVals.at(flag).valInt = value;
+				m_CompatVals.at(flag).changed = true;
+				return true;
+			}
+			if (m_CompatVals.at(flag).type == COMPAT_FLAG_TYPE_INT_ARRAY)
+			{
+				if (index == (uint32_t)-1) {
+					Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagInt: (%s) - Flag %s had Invalid Index", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+					return false;
+				}
+				m_CompatVals.at(flag).changed = true;
+				if (m_CompatVals.at(flag).valIntArray.count(index)) {
+					m_CompatVals.at(flag).valIntArray.at(index) = value;
+					return true;
+				} else {
+					m_CompatVals.at(flag).valIntArray.insert(std::pair<uint32_t, uint32_t>(index, value));
+					return true;
+				}
+			}
+			Log::Write(LogLevel_Warning, m_owner->GetNodeId(), "SetFlagInt: (%s) - Flag %s Not a Int Value!", m_owner->GetCommandClassName().c_str(), GetFlagName(flag).c_str());
+			return false;
 //		
 }
 
@@ -719,27 +719,27 @@ namespace OpenZWave
 		{
 			for (uint32_t i = 0; i < m_availableFlagsCount; i++)
 			{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//				if (m_availableFlags[i].flag == flag)
-//				{
-//					return m_availableFlags[i].name;
-//				}
+
+				if (m_availableFlags[i].flag == flag)
+				{
+					return m_availableFlags[i].name;
+				}
 //			
 }
 			return "Unknown";
 		}
 		string CompatOptionManager::GetXMLTagName()
 		{
-/* zway not implemented */_NOT_YET_IMPLEMENTED_/* zway not implemented */
-//			switch (m_comtype)
-//			{
-//				case CompatOptionType_Compatibility:
-//					return "Compatibility";
-//				case CompatOptionType_Discovery:
-//					return "State";
-//			}
-//			assert(0);
-//			return "Unknown";
+
+			switch (m_comtype)
+			{
+				case CompatOptionType_Compatibility:
+					return "Compatibility";
+				case CompatOptionType_Discovery:
+					return "State";
+			}
+			assert(0);
+			return "Unknown";
 //		
 }
 	} // namespace Internal
