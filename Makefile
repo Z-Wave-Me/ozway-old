@@ -33,10 +33,12 @@ ozway_lib:
 	echo "making lib"
 	$(MAKE) -C $(OZWAY)
 	cp $(OZWAY)/$(LIBFILE) ./
+	cp $(OZWAY)/libopenzwave.a ./
 
 clean:
 	rm -rf *.o *.out
 	rm -f $(LIBFILE)
+	rm -f libopenzwave.a
 	$(MAKE) -C $(OZWAY) clean
 
 re: clean all
