@@ -476,8 +476,8 @@ bool Manager::AddDriver(string const& _controllerPath, Driver::ControllerInterfa
 	// if (!driver->Start(_controllerPath))
 	// 	return false;
 	// ZSA begin
-    zway_device_add_callback(driver->zway, DeviceAdded | DeviceRemoved | InstanceAdded | InstanceRemoved | CommandAdded | CommandRemoved | EnumerateExisting, /*SumClass::*/z_watcher, NULL);
-    // ZSA end
+	zway_device_add_callback(driver->zway, DeviceAdded | DeviceRemoved | InstanceAdded | InstanceRemoved | CommandAdded | CommandRemoved | EnumerateExisting, /*SumClass::*/z_watcher, NULL);
+	// ZSA end
 	Log::Write(LogLevel_Info, "mgr,     Added driver for controller %s", _controllerPath.c_str());
 	return true;
 }
