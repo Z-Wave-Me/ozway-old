@@ -379,7 +379,6 @@ namespace OpenZWave
 			//	Receiving Z-Wave messages
 			//-----------------------------------------------------------------------------
 		private:
-			bool ReadMsg();
 			void ProcessMsg(uint8* _data, uint8 _length);
 
 			void HandleGetVersionResponse(uint8* _data);
@@ -951,16 +950,11 @@ namespace OpenZWave
 			//	Security Command Class Related (Version 1.1)
 			//-----------------------------------------------------------------------------
 		public:
-			aes_encrypt_ctx *GetAuthKey();
-			aes_encrypt_ctx *GetEncKey();
 			bool isNetworkKeySet();
 
 		private:
-			bool initNetworkKeys(bool newnode);
 			uint8 *GetNetworkKey();
-			bool SendEncryptedMessage();
 			bool SendNonceRequest(string logmsg);
-			void SendNonceKey(uint8 nodeId, uint8 *nonce);
 			aes_encrypt_ctx *AuthKey;
 			aes_encrypt_ctx *EncryptKey;
 			uint8 m_nonceReportSent;

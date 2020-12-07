@@ -43,7 +43,6 @@ namespace OpenZWave
 			 */
 			class Event: public Wait
 			{
-					friend class SerialControllerImpl;
 					friend class Wait;
 
 				public:

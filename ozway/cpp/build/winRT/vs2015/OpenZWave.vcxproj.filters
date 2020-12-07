@@ -241,9 +241,6 @@
     <ClInclude Include="..\..\..\src\ZWSecurity.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\platform\winRT\HidControllerWinRT.h">
-      <Filter>Platform\WinRT</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\platform\Controller.h">
       <Filter>Platform</Filter>
     </ClInclude>
@@ -260,9 +257,6 @@
       <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\platform\Ref.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\platform\SerialController.h">
       <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\platform\Stream.h">
@@ -363,9 +357,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\command_classes\SimpleAV.h">
       <Filter>Command Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\platform\HidController.h">
-      <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\platform\winRT\FileOpsImpl.h">
       <Filter>Platform\WinRT</Filter>
@@ -585,9 +576,6 @@
     <ClCompile Include="..\..\..\src\platform\Mutex.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\platform\SerialController.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\platform\Stream.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
@@ -694,9 +682,6 @@
     <ClCompile Include="..\..\..\src\command_classes\SimpleAVCommandItem.cpp">
       <Filter>Command Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\platform\HidController.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\platform\winRT\DNSImpl.cpp">
       <Filter>Platform\WinRT</Filter>
     </ClCompile>
@@ -706,16 +691,10 @@
     <ClCompile Include="..\..\..\src\platform\winRT\FileOpsImpl.cpp">
       <Filter>Platform\WinRT</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\platform\winRT\HidControllerWinRT.cpp">
-      <Filter>Platform\WinRT</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\platform\winRT\LogImpl.cpp">
       <Filter>Platform\WinRT</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\platform\winRT\MutexImpl.cpp">
-      <Filter>Platform\WinRT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\platform\winRT\SerialControllerImpl.cpp">
       <Filter>Platform\WinRT</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\platform\winRT\ThreadImpl.cpp">

@@ -37,7 +37,6 @@
 #include "ManufacturerSpecificDB.h"
 #include "Notification.h"
 #include "Msg.h"
-#include "ZWSecurity.h"
 #include "platform/Log.h"
 #include "platform/Mutex.h"
 #include "Utils.h"
@@ -205,10 +204,25 @@ void Node::AdvanceQueries()
 				// determines, among other things, whether this node is a listener, its maximum baud rate and its device classes
 				if (!ProtocolInfoReceived())
 				{
+					TODO(driver is not ready while loading and GetDriver aborts the app. Fix it in future);
+					break;
+					
 					Log::Write(LogLevel_Detail, m_nodeId, "QueryStage_ProtocolInfo");
-					Internal::Msg* msg = new Internal::Msg("Get Node Protocol Info", m_nodeId, REQUEST, FUNC_ID_ZW_GET_NODE_PROTOCOL_INFO, false);
-					msg->Append(m_nodeId);
-					GetDriver()->SendMsg(msg, Driver::MsgQueue_Query);
+					Driver* driver = GetDriver();
+					if (driver != NULL)
+					{
+						TODO(Add LOG_ERR wrapper)
+						(void)zway_fc_request_node_information(driver->zway, m_nodeId, NULL, NULL, NULL);
+					}
+					else
+					{
+						Log::Write(LogLevel_Detail, m_nodeId, "driver is not ready");
+					}
+					
+					// ZSA: remove this code and all related internal m_* variables.
+					//Internal::Msg* msg = new Internal::Msg("Get Node Protocol Info", m_nodeId, REQUEST, FUNC_ID_ZW_GET_NODE_PROTOCOL_INFO, false);
+					//msg->Append(m_nodeId);
+					//GetDriver()->SendMsg(msg, Driver::MsgQueue_Query);
 					m_queryPending = true;
 					addQSC = true;
 				}
@@ -1665,7 +1679,7 @@ void Node::SetSecuredClasses(uint8 const* _data, uint8 const _length, uint32 con
 			if (pCommandClass->IsInNIF())
 			{
 				/* if the CC Supports Security and our SecurityStrategy says we should encrypt it, then mark it as encrypted */
-				if (pCommandClass->IsSecureSupported() && (Internal::ShouldSecureCommandClass(_data[i]) == Internal::SecurityStrategy_Supported))
+				if (pCommandClass->IsSecureSupported() && 1) // TODO(check this code - may be delete full function) (Internal::ShouldSecureCommandClass(_data[i]) == Internal::SecurityStrategy_Supported))
 				{
 					pCommandClass->SetSecured();
 					Log::Write(LogLevel_Info, m_nodeId, "    %s (Secured) - %s", pCommandClass->GetCommandClassName().c_str(), pCommandClass->IsInNIF() ? "InNIF" : "NotInNIF");

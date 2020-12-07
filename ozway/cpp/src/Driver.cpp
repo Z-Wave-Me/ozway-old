@@ -33,7 +33,6 @@
 #include "Msg.h"
 #include "Notification.h"
 #include "Scene.h"
-#include "ZWSecurity.h"
 #include "DNSThread.h"
 #include "TimerThread.h"
 #include "Http.h"
@@ -41,14 +40,6 @@
 
 #include "platform/Event.h"
 #include "platform/Mutex.h"
-#include "platform/SerialController.h"
-#ifdef USE_HID
-#ifdef WINRT
-#include "platform/winRT/HidControllerWinRT.h"
-#else
-#include "platform/HidController.h"
-#endif
-#endif
 #include "platform/Thread.h"
 #include "platform/Log.h"
 #include "platform/TimeStamp.h"
@@ -125,14 +116,14 @@ static char const* c_sendQueueNames[] =
 // Constructor
 //-----------------------------------------------------------------------------
 Driver::Driver(string const& _controllerPath, ControllerInterface const& _interface) :
-		m_driverThread(new Internal::Platform::Thread("driver")), m_dns(new Internal::DNSThread(this)), m_dnsThread(new Internal::Platform::Thread("dns")), m_initMutex(new Internal::Platform::Mutex()), m_exit(false), m_init(false), m_awakeNodesQueried(false), m_allNodesQueried(false), m_notifytransactions(false), m_timer(new Internal::TimerThread(this)), m_timerThread(new Internal::Platform::Thread("timer")), m_controllerInterfaceType(_interface), m_controllerPath(_controllerPath), m_controller(
-				NULL), m_homeId(0), m_libraryVersion(""), m_libraryTypeName(""), m_libraryType(0), m_manufacturerId(0), m_productType(0), m_productId(0), m_initVersion(0), m_initCaps(0), m_controllerCaps(0), m_Controller_nodeId(0), m_nodeMutex(new Internal::Platform::Mutex()), m_controllerReplication( NULL), m_transmitOptions( TRANSMIT_OPTION_ACK | TRANSMIT_OPTION_AUTO_ROUTE | TRANSMIT_OPTION_EXPLORE), m_waitingForAck(false), m_expectedCallbackId(0), m_expectedReply(0), m_expectedCommandClassId(
+		m_driverThread(new Internal::Platform::Thread("driver")), m_dns(new Internal::DNSThread(this)), m_dnsThread(new Internal::Platform::Thread("dns")), m_initMutex(new Internal::Platform::Mutex()), m_exit(false), m_init(false), m_awakeNodesQueried(false), m_allNodesQueried(false), m_notifytransactions(false), m_timer(new Internal::TimerThread(this)), m_timerThread(new Internal::Platform::Thread("timer")), m_controllerInterfaceType(_interface), m_controllerPath(_controllerPath),
+		m_homeId(0), m_libraryVersion(""), m_libraryTypeName(""), m_libraryType(0), m_manufacturerId(0), m_productType(0), m_productId(0), m_initVersion(0), m_initCaps(0), m_controllerCaps(0), m_Controller_nodeId(0), m_nodeMutex(new Internal::Platform::Mutex()), m_controllerReplication( NULL), m_transmitOptions( TRANSMIT_OPTION_ACK | TRANSMIT_OPTION_AUTO_ROUTE | TRANSMIT_OPTION_EXPLORE), m_waitingForAck(false), m_expectedCallbackId(0), m_expectedReply(0), m_expectedCommandClassId(
 				0), m_expectedNodeId(0), m_pollThread(new Internal::Platform::Thread("poll")), m_pollMutex(new Internal::Platform::Mutex()), m_pollInterval(0), m_bIntervalBetweenPolls(false),				// if set to true (via SetPollInterval), the pollInterval will be interspersed between each poll (so a much smaller m_pollInterval like 100, 500, or 1,000 may be appropriate)
 		m_currentControllerCommand( NULL), m_SUCNodeId(0), m_controllerResetEvent( NULL), m_sendMutex(new Internal::Platform::Mutex()), m_currentMsg( NULL), m_virtualNeighborsReceived(false), m_notificationsEvent(new Internal::Platform::Event()), m_SOFCnt(0), m_ACKWaiting(0), m_readAborts(0), m_badChecksum(0), m_readCnt(0), m_writeCnt(0), m_CANCnt(0), m_NAKCnt(0), m_ACKCnt(0), m_OOFCnt(0), m_dropped(0), m_retries(0), m_callbacks(0), m_badroutes(0), m_noack(0), m_netbusy(0), m_notidle(0), m_txverified(
 				0), m_nondelivery(0), m_routedbusy(0), m_broadcastReadCnt(0), m_broadcastWriteCnt(0), AuthKey(0), EncryptKey(0), m_nonceReportSent(0), m_nonceReportSentAttempt(0), m_queueMsgEvent(new Internal::Platform::Event()), m_eventMutex(new Internal::Platform::Mutex())
 {
-// 	// set a timestamp to indicate when this driver started
-// 	Internal::Platform::TimeStamp m_startTime;
+ 	// set a timestamp to indicate when this driver started
+ 	Internal::Platform::TimeStamp m_startTime;
 
 // 	// Create the message queue events
 // 	for (int32 i = 0; i < MsgQueue_Count; ++i)
@@ -140,36 +131,20 @@ Driver::Driver(string const& _controllerPath, ControllerInterface const& _interf
 // 		m_queueEvent[i] = new Internal::Platform::Event();
 // 	}
 
-// 	// Clear the nodes array
-// 	memset(m_nodes, 0, sizeof(Node*) * 256);
+ 	// Clear the nodes array
+ 	memset(m_nodes, 0, sizeof(Node*) * 256);
 
 // 	// Clear the virtual neighbors array
 // 	memset(m_virtualNeighbors, 0, NUM_NODE_BITFIELD_BYTES);
 
 // 	// Initialize the Network Keys
 
-// 	initNetworkKeys(false);
-
-// #ifdef USE_HID
-// 	if( ControllerInterface_Hid == _interface )
-// 	{
-// 		m_controller = new Internal::Platform::HidController();
-// 	}
-// 	else
-// #endif
-// 	{
-// 		m_controller = new Internal::Platform::SerialController();
-// 	}
-// 	m_controller->SetSignalThreshold(1);
-
 // 	Options::Get()->GetOptionAsBool("NotifyTransactions", &m_notifytransactions);
 // 	Options::Get()->GetOptionAsInt("PollInterval", &m_pollInterval);
 // 	Options::Get()->GetOptionAsBool("IntervalBetweenPolls", &m_bIntervalBetweenPolls);
 
-// 	m_httpClient = new Internal::HttpClient(this);
-
+	// TODO remove those funcitons from the project If public, make dummies
 // 	m_mfs = Internal::ManufacturerSpecificDB::Create();
-
 // 	CheckMFSConfigRevision();
 
 	// ZSA begin
@@ -178,27 +153,76 @@ Driver::Driver(string const& _controllerPath, ControllerInterface const& _interf
 	// printf("%p\n", Manager::Get()->m_logger);
 	r = zway_init(&zway, ZSTR(_controllerPath.c_str()), NULL, NULL, NULL, NULL, Manager::Get()->m_logger);
 	if (r != NoError)
-    {
+	{
 		printf(">> Adding driver error: %s\n", zstrerror(r));
 		return;
-    }
-    r = zway_start(zway, print_zway_terminated, NULL);
-    if (r != NoError)
-    {
+	}
+	r = zway_start(zway, print_zway_terminated, NULL);
+	if (r != NoError)
+	{
 		printf(">> Driver starting error: %s\n", zstrerror(r));
 		return;
-    }
-    r = zway_discover(zway);
-    if (r != NoError)
-    {
+	}
+	r = zway_discover(zway);
+	if (r != NoError)
+	{
 		printf(">> Driver discovering error: %s\n", zstrerror(r));
 		return;
-    }
+	}
 
 	// Getting HomeID 
 	zdata_acquire_lock(ZDataRoot(zway));
 	zdata_get_integer(zway_find_controller_data(zway, "homeId"), (int *)&m_homeId);
 	zdata_release_lock(ZDataRoot(zway));
+
+	Manager::Get()->SetDriverReady(this, true);
+	ReadCache();
+
+	m_initVersion = 0; // TODO(set this field as _data[2] of SerialAPIInit reply)
+	m_initCaps = 0; // TODO(set this field as _data[3] of SerialAPIInit reply)
+
+	zdata_acquire_lock(ZDataRoot(zway));
+	for (uint8 nodeId = 1; nodeId <= 232; ++nodeId)
+	{
+		if (zway_find_device_data(zway, nodeId, "") != NULL)
+		{
+			if (IsVirtualNode(nodeId))
+			{
+				Log::Write(LogLevel_Info, GetNodeNumber(m_currentMsg), "    Node %.3d - Virtual (ignored)", nodeId);
+			}
+			else
+			{
+				Internal::LockGuard LG(m_nodeMutex);
+				Node* node = GetNode(nodeId);
+				if (node)
+				{
+					Log::Write(LogLevel_Info, GetNodeNumber(m_currentMsg), "    Node %.3d - Known", nodeId);
+					if (!m_init)
+					{
+						// The node was read in from the config, so we
+						// only need to get its current state
+						node->SetQueryStage(Node::QueryStage_CacheLoad);
+					}
+
+				}
+				else
+				{
+					// This node is new
+					Log::Write(LogLevel_Info, GetNodeNumber(m_currentMsg), "    Node %.3d - New", nodeId);
+					Notification* notification = new Notification(Notification::Type_NodeNew);
+					notification->SetHomeAndNodeIds(m_homeId, nodeId);
+					QueueNotification(notification);
+
+					// Create the node and request its info
+					InitNode(nodeId);
+					node = GetNode(nodeId);
+				}
+				m_nodes[nodeId] = node;
+			}
+		}
+	}
+	zdata_release_lock(ZDataRoot(zway));
+
 	//ZSA end
 }
 
@@ -251,9 +275,6 @@ Driver::~Driver()
 	delete m_timer;
 
 	m_sendMutex->Release();
-
-	m_controller->Close();
-	m_controller->Release();
 
 	m_initMutex->Release();
 
@@ -392,7 +413,7 @@ void Driver::DriverThreadProc(Internal::Platform::Event* _exitEvent)
 			waitObjects[1] = m_notificationsEvent;				// Notifications waiting to be sent.
 			waitObjects[2] = m_queueMsgEvent;
 			;					// a DNS and HTTP Event
-			waitObjects[3] = m_controller;					    // Controller has received data.
+			// TODO waitObjects[3] = m_controller;					    // Controller has received data.
 			waitObjects[4] = m_queueEvent[MsgQueue_Command];	// A controller command is in progress.
 			waitObjects[5] = m_queueEvent[MsgQueue_NoOp];		// Send device probes and diagnostics messages
 			waitObjects[6] = m_queueEvent[MsgQueue_Controller];	// A multi-part controller command is in progress
@@ -484,7 +505,7 @@ void Driver::DriverThreadProc(Internal::Platform::Event* _exitEvent)
 					case 3:
 					{
 						// Data has been received
-						ReadMsg();
+						// ReadMsg();
 						break;
 					}
 					default:
@@ -549,30 +570,8 @@ bool Driver::Init(uint32 _attempts)
 	m_Controller_nodeId = -1;
 	m_waitingForAck = false;
 
-	// Open the controller
-	Log::Write(LogLevel_Info, "  Opening controller %s", m_controllerPath.c_str());
-
-	if (!m_controller->Open(m_controllerPath))
-	{
-		Log::Write(LogLevel_Warning, "WARNING: Failed to init the controller (attempt %d)", _attempts);
-		m_initMutex->Unlock();
-		return false;
-	}
-
 	// Controller opened successfully, so we need to start all the worker threads
 	m_pollThread->Start(Driver::PollThreadEntryPoint, this);
-
-	// Send a NAK to the ZWave device
-	uint8 nak = NAK;
-	m_controller->Write(&nak, 1);
-
-	// Get/set ZWave controller information in its preferred initialization order
-	m_controller->PlayInitSequence(this);
-
-	//If we ever want promiscuous mode uncomment this code.
-	//Msg* msg = new Msg( "FUNC_ID_ZW_SET_PROMISCUOUS_MODE", 0xff, REQUEST, FUNC_ID_ZW_SET_PROMISCUOUS_MODE, false, false );
-	//msg->Append( 0xff );
-	//SendMsg( msg );
 
 	m_initMutex->Unlock();
 
@@ -1157,126 +1156,10 @@ bool Driver::WriteNextMsg(MsgQueue const _queue)
 //-----------------------------------------------------------------------------
 bool Driver::WriteMsg(string const &msg)
 {
-	if (!m_currentMsg)
-	{
-		Log::Write(LogLevel_Detail, GetNodeNumber(m_currentMsg), "WriteMsg %s m_currentMsg=%08x", msg.c_str(), m_currentMsg);
-		// We try not to hang when this happenes
-		m_expectedCallbackId = 0;
-		m_expectedCommandClassId = 0;
-		m_expectedNodeId = 0;
-		m_expectedReply = 0;
-		m_waitingForAck = false;
-		return false;
-	}
-	/* if this is called with m_nonceReportSent > 0 it means that we have
-	 * tried to send a NONCE report and it timed out or was NAK'd
-	 *
-	 */
-	uint8 attempts;
-	uint8 nodeId;
-	if (m_nonceReportSent > 0)
-	{
-		attempts = m_nonceReportSentAttempt++;
-		nodeId = m_nonceReportSent;
-	}
-	else
-	{
-		attempts = m_currentMsg->GetSendAttempts();
-		nodeId = m_currentMsg->GetTargetNodeId();
-	}
-	Internal::LockGuard LG(m_nodeMutex);
-	Node* node = GetNode(nodeId);
-	if (attempts >= m_currentMsg->GetMaxSendAttempts() || (node != NULL && !node->IsNodeAlive() && !m_currentMsg->IsNoOperation()))
-	{
-		if (node != NULL && !node->IsNodeAlive())
+		TODO(in case of zway terminate fire this notification)
+		/*
 		{
-			Log::Write(LogLevel_Error, nodeId, "ERROR: Dropping command because node is presumed dead");
-		}
-		else
-		{
-			// That's it - already tried to send GetMaxSendAttempt() times.
-			Log::Write(LogLevel_Error, nodeId, "ERROR: Dropping command, expected response not received after %d attempt(s)", m_currentMsg->GetMaxSendAttempts());
-		}
-		if (m_currentControllerCommand != NULL)
-		{
-			/* its a ControllerCommand that is failed */
-			UpdateControllerState(ControllerState_Error, ControllerError_Failed);
-
-		}
-
-		RemoveCurrentMsg();
-		m_dropped++;
-		return false;
-	}
-
-	if ((attempts != 0) && (m_nonceReportSent == 0))
-	{
-		// this is not the first attempt, so increment the callback id before sending
-		m_currentMsg->UpdateCallbackId();
-	}
-
-	/* XXX TODO: Minor Bug - Due to the post increament of the SendAttempts, it means our final NONCE_GET will go though
-	 * but the subsequent MSG send will fail (as the counter is incremented only upon a successful NONCE_GET, and Not a Send
-	 *
-	 */
-
-	if (m_nonceReportSent == 0)
-	{
-		if (m_currentMsg->isEncrypted() && !m_currentMsg->isNonceRecieved())
-		{
-			m_currentMsg->SetSendAttempts(++attempts);
-		}
-		else if (!m_currentMsg->isEncrypted())
-		{
-			m_currentMsg->SetSendAttempts(++attempts);
-		}
-		m_expectedCallbackId = m_currentMsg->GetCallbackId();
-		m_expectedCommandClassId = m_currentMsg->GetExpectedCommandClassId();
-		m_expectedNodeId = m_currentMsg->GetTargetNodeId();
-		m_expectedReply = m_currentMsg->GetExpectedReply();
-		m_waitingForAck = true;
-	}
-	string attemptsstr = "";
-	if (attempts > 1)
-	{
-		char buf[15];
-		snprintf(buf, sizeof(buf), "Attempt %d, ", attempts);
-		attemptsstr = buf;
-		m_retries++;
-		if (node != NULL)
-		{
-			node->m_retries++;
-		}
-	}
-
-	Log::Write(LogLevel_Detail, "");
-
-	if (m_nonceReportSent > 0 && node != NULL)
-	{
-		/* send a new NONCE report */
-		SendNonceKey(m_nonceReportSent, node->GenerateNonceKey());
-	}
-	else if (m_currentMsg->isEncrypted())
-	{
-		if (m_currentMsg->isNonceRecieved())
-		{
-			Log::Write(LogLevel_Info, nodeId, "Processing (%s) Encrypted message (%sCallback ID=0x%.2x, Expected Reply=0x%.2x) - %s", c_sendQueueNames[m_currentMsgQueueSource], attemptsstr.c_str(), m_expectedCallbackId, m_expectedReply, m_currentMsg->GetAsString().c_str());
-			SendEncryptedMessage();
-		}
-		else
-		{
-			Log::Write(LogLevel_Info, nodeId, "Processing (%s) Nonce Request message (%sCallback ID=0x%.2x, Expected Reply=0x%.2x)", c_sendQueueNames[m_currentMsgQueueSource], attemptsstr.c_str(), m_expectedCallbackId, m_expectedReply);
-			SendNonceRequest(m_currentMsg->GetLogText());
-		}
-	}
-	else
-	{
-		Log::Write(LogLevel_Info, nodeId, "Sending (%s) message (%sCallback ID=0x%.2x, Expected Reply=0x%.2x) - %s", c_sendQueueNames[m_currentMsgQueueSource], attemptsstr.c_str(), m_expectedCallbackId, m_expectedReply, m_currentMsg->GetAsString().c_str());
-		uint32 bytesWritten = m_controller->Write(m_currentMsg->GetBuffer(), m_currentMsg->GetLength());
-
-		if (bytesWritten == 0)
-		{
-			//0 will be returned when the port is closed or something bad happened
+			// will be returned when the port is closed or something bad happened
 			//so send notification
 			Notification* notification = new Notification(Notification::Type_DriverFailed);
 			notification->SetHomeAndNodeIds(m_homeId, m_currentMsg->GetTargetNodeId());
@@ -1287,29 +1170,7 @@ bool Driver::WriteMsg(string const &msg)
 			m_driverThread->Stop();
 			return false;
 		}
-	}
-	m_writeCnt++;
-
-	if (nodeId == 0xff)
-	{
-		m_broadcastWriteCnt++; // not accurate since library uses 0xff for the controller too
-	}
-	else
-	{
-		if (node != NULL)
-		{
-			node->m_sentCnt++;
-			node->m_sentTS.SetTime();
-			if (m_expectedReply == FUNC_ID_APPLICATION_COMMAND_HANDLER)
-			{
-				Internal::CC::CommandClass *cc = node->GetCommandClass(m_expectedCommandClassId);
-				if (cc != NULL)
-				{
-					cc->SentCntIncr();
-				}
-			}
-		}
-	}
+		*/
 	return true;
 }
 
@@ -1647,172 +1508,6 @@ bool Driver::IsExpectedReply(const uint8 _nodeId)
 //	Receiving Z-Wave messages
 //-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-// <Driver::ReadMsg>
-// Read data from the serial port
-//-----------------------------------------------------------------------------
-bool Driver::ReadMsg()
-{
-	uint8 buffer[1024];
-
-	memset(buffer, 0, sizeof(uint8) * 1024);
-
-	if (!m_controller->Read(buffer, 1))
-	{
-		// Nothing to read
-		return false;
-	}
-
-	switch (buffer[0])
-	{
-		case SOF:
-		{
-			m_SOFCnt++;
-			if (m_waitingForAck)
-			{
-				// This can happen on any normal network when a transmission overlaps an unexpected
-				// reception and the data in the buffer doesn't contain the ACK. The controller will
-				// notice and send us a CAN to retransmit.
-				Log::Write(LogLevel_Detail, "Unsolicited message received while waiting for ACK.");
-				m_ACKWaiting++;
-			}
-
-			// Read the length byte.  Keep trying until we get it.
-			m_controller->SetSignalThreshold(1);
-			int32 response = Internal::Platform::Wait::Single(m_controller, 50);
-			if (response < 0)
-			{
-				Log::Write(LogLevel_Warning, "WARNING: 50ms passed without finding the length byte...aborting frame read");
-				m_readAborts++;
-				break;
-			}
-
-			m_controller->Read(&buffer[1], 1);
-			m_controller->SetSignalThreshold(buffer[1]);
-			if (Internal::Platform::Wait::Single(m_controller, 500) < 0)
-			{
-				Log::Write(LogLevel_Warning, "WARNING: 500ms passed without reading the rest of the frame...aborting frame read");
-				m_readAborts++;
-				m_controller->SetSignalThreshold(1);
-				break;
-			}
-
-			m_controller->Read(&buffer[2], buffer[1]);
-			m_controller->SetSignalThreshold(1);
-
-			uint32 length = buffer[1] + 2;
-
-			// Log the data
-			string str = "";
-			for (uint32 i = 0; i < length; ++i)
-			{
-				if (i)
-				{
-					str += ", ";
-				}
-
-				char byteStr[8];
-				snprintf(byteStr, sizeof(byteStr), "0x%.2x", buffer[i]);
-				str += byteStr;
-			}
-			uint8 nodeId = NodeFromMessage(buffer);
-			if (nodeId == 0)
-			{
-				nodeId = GetNodeNumber(m_currentMsg);
-			}
-			Log::Write(LogLevel_Detail, nodeId, "  Received: %s", str.c_str());
-
-			// Verify checksum
-			uint8 checksum = 0xff;
-			for (uint32 i = 1; i < (length - 1); ++i)
-			{
-				checksum ^= buffer[i];
-			}
-
-			if (buffer[length - 1] == checksum)
-			{
-				// Checksum correct - send ACK
-				uint8 ack = ACK;
-				m_controller->Write(&ack, 1);
-				m_readCnt++;
-
-				// Process the received message
-				ProcessMsg(&buffer[2], length - 2);
-			}
-			else
-			{
-				Log::Write(LogLevel_Warning, nodeId, "WARNING: Checksum incorrect - sending NAK");
-				m_badChecksum++;
-				uint8 nak = NAK;
-				m_controller->Write(&nak, 1);
-				m_controller->Purge();
-			}
-			break;
-		}
-
-		case CAN:
-		{
-			// This is the other side of an unsolicited ACK. As mentioned there if we receive a message
-			// just after we transmitted one, the controller will notice and tell us to retransmit here.
-			// Don't increment the transmission counter as it is possible the message will never get out
-			// on very busy networks with lots of unsolicited messages being received. Increase the amount
-			// of retries but only up to a limit so we don't stay here forever.
-			Log::Write(LogLevel_Detail, GetNodeNumber(m_currentMsg), "CAN received...triggering resend");
-			m_CANCnt++;
-			if (m_currentMsg != NULL)
-			{
-				m_currentMsg->SetMaxSendAttempts(m_currentMsg->GetMaxSendAttempts() + 1);
-			}
-			else
-			{
-				Log::Write(LogLevel_Warning, "m_currentMsg was NULL when trying to set MaxSendAttempts");
-				Log::QueueDump();
-			}
-			WriteMsg("CAN");
-			break;
-		}
-
-		case NAK:
-		{
-			Log::Write(LogLevel_Warning, GetNodeNumber(m_currentMsg), "WARNING: NAK received...triggering resend");
-			m_NAKCnt++;
-			WriteMsg("NAK");
-			break;
-		}
-
-		case ACK:
-		{
-			m_ACKCnt++;
-			m_waitingForAck = false;
-			if (m_currentMsg == NULL)
-			{
-				Log::Write(LogLevel_StreamDetail, 255, "  ACK received");
-			}
-			else
-			{
-				Log::Write(LogLevel_StreamDetail, GetNodeNumber(m_currentMsg), "  ACK received CallbackId 0x%.2x Reply 0x%.2x", m_expectedCallbackId, m_expectedReply);
-				if ((0 == m_expectedCallbackId) && (0 == m_expectedReply))
-				{
-					// Remove the message from the queue, now that it has been acknowledged.
-					RemoveCurrentMsg();
-				}
-			}
-			break;
-		}
-
-		default:
-		{
-			Log::Write(LogLevel_Warning, "WARNING: Out of frame flow! (0x%.2x).  Sending NAK.", buffer[0]);
-			m_OOFCnt++;
-			uint8 nak = NAK;
-			m_controller->Write(&nak, 1);
-			m_controller->Purge();
-			break;
-		}
-	}
-
-	return true;
-}
 
 //-----------------------------------------------------------------------------
 // <Driver::ProcessMsg>
@@ -1823,141 +1518,6 @@ void Driver::ProcessMsg(uint8* _data, uint8 _length)
 	bool handleCallback = true;
 	bool wasencrypted = false;
 	//uint8 nodeId = GetNodeNumber( m_currentMsg );
-
-	if ((REQUEST == _data[0]) && FUNC_ID_APPLICATION_COMMAND_HANDLER == _data[1] && (Internal::CC::Security::StaticGetCommandClassId() == _data[5]))
-	{
-		/* if this message is a NONCE Report - Then just Trigger the Encrypted Send */
-		if (Internal::CC::SecurityCmd_NonceReport == _data[6])
-		{
-			Log::Write(LogLevel_Info, _data[3], "Received SecurityCmd_NonceReport from node %d", _data[3]);
-
-			/* handle possible resends of NONCE_REPORT messages.... See Issue #931 */
-			if (!m_currentMsg)
-			{
-				Log::Write(LogLevel_Warning, _data[3], "Received a NonceReport from node, but no pending messages. Dropping..");
-				return;
-			}
-
-			// No Need to triger a WriteMsg here - It should be handled automatically
-			m_currentMsg->setNonce(&_data[7]);
-			this->SendEncryptedMessage();
-			return;
-
-			/* if this is a NONCE Get - Then call to the CC directly, process it, and then bail out. */
-		}
-		else if (Internal::CC::SecurityCmd_NonceGet == _data[6])
-		{
-			Log::Write(LogLevel_Info, _data[3], "Received SecurityCmd_NonceGet from node %d", _data[3]);
-			{
-				uint8 *nonce = NULL;
-				Internal::LockGuard LG(m_nodeMutex);
-				Node* node = GetNode(_data[3]);
-				if (node)
-				{
-					nonce = node->GenerateNonceKey();
-				}
-				else
-				{
-					Log::Write(LogLevel_Warning, _data[3], "Couldn't Generate Nonce Key for Node %d", _data[3]);
-					return;
-				}
-
-				SendNonceKey(_data[3], nonce);
-
-			}
-			/* don't continue processing */
-			return;
-
-			/* if this message is encrypted, decrypt it first */
-		}
-		else if ((Internal::CC::SecurityCmd_MessageEncap == _data[6]) || (Internal::CC::SecurityCmd_MessageEncapNonceGet == _data[6]))
-		{
-			uint8 _newdata[256];
-			uint8 SecurityCmd = _data[6];
-			uint8 *_nonce;
-
-			/* clear out NONCE Report tracking */
-			m_nonceReportSent = 0;
-			m_nonceReportSentAttempt = 0;
-
-			/* make sure the Node Exists, and it has the Security CC */
-			{
-				Internal::LockGuard LG(m_nodeMutex);
-				Node* node = GetNode(_data[3]);
-				if (node)
-				{
-					_nonce = node->GetNonceKey(_data[_data[4] - 4]);
-					if (!_nonce)
-					{
-						Log::Write(LogLevel_Warning, _data[3], "Could Not Retrieve Nonce for Node %d", _data[3]);
-						return;
-					}
-				}
-				else
-				{
-					Log::Write(LogLevel_Warning, _data[3], "Can't Find Node %d for Encrypted Message", _data[3]);
-					return;
-				}
-			}
-			if (Internal::DecryptBuffer(&_data[5], _data[4] + 1, this, _data[3], this->GetControllerNodeId(), _nonce, &_newdata[0]))
-			{
-				/* Ok - _newdata now contains the decrypted packet */
-				/* copy it back to the _data packet for processing */
-				/* New Length - See Decrypt Packet for why these numbers*/
-				_data[4] = _data[4] - 8 - 8 - 2 - 2;
-
-				/* now copy the decrypted packet */
-				memcpy(&_data[5], &_newdata[1], _data[4]);
-				//PrintHex("Decrypted Packet", _data, _data[4]+5);
-
-				/* if the Node has something else to send, it will encrypt a message and send it as a MessageEncapNonceGet */
-				if (Internal::CC::SecurityCmd_MessageEncapNonceGet == SecurityCmd)
-				{
-					Log::Write(LogLevel_Info, _data[3], "Received SecurityCmd_MessageEncapNonceGet from node %d - Sending New Nonce", _data[3]);
-					Internal::LockGuard LG(m_nodeMutex);
-					Node* node = GetNode(_data[3]);
-					if (node)
-					{
-						_nonce = node->GenerateNonceKey();
-					}
-					else
-					{
-						Log::Write(LogLevel_Warning, _data[3], "Couldn't Generate Nonce Key for Node %d", _data[3]);
-						return;
-					}
-					SendNonceKey(_data[3], _nonce);
-				}
-
-				wasencrypted = true;
-
-			}
-			else
-			{
-				/* if the Node has something else to send, it will encrypt a message and send it as a MessageEncapNonceGet */
-				if (Internal::CC::SecurityCmd_MessageEncapNonceGet == SecurityCmd)
-				{
-					Log::Write(LogLevel_Info, _data[3], "Received SecurityCmd_MessageEncapNonceGet from node %d - Sending New Nonce", _data[3]);
-					Internal::LockGuard LG(m_nodeMutex);
-					Node* node = GetNode(_data[3]);
-					if (node)
-					{
-						_nonce = node->GenerateNonceKey();
-					}
-					else
-					{
-						Log::Write(LogLevel_Warning, _data[3], "Couldn't Generate Nonce Key for Node %d", _data[3]);
-						return;
-					}
-					SendNonceKey(_data[3], _nonce);
-				}
-				/* it failed for some reason, lets just move on */
-				m_expectedReply = 0;
-				m_expectedNodeId = 0;
-				RemoveCurrentMsg();
-				return;
-			}
-		}
-	}
 
 	if ( RESPONSE == _data[0])
 	{
@@ -2738,6 +2298,8 @@ void Driver::HandleMemoryGetIdResponse(uint8* _data)
 //-----------------------------------------------------------------------------
 void Driver::HandleSerialAPIGetInitDataResponse(uint8* _data)
 {
+/*
+ZSA: Original OZW code: remove complete function and all refences
 	int32 i;
 
 	if (!m_init)
@@ -2823,6 +2385,7 @@ void Driver::HandleSerialAPIGetInitDataResponse(uint8* _data)
 	}
 
 	m_init = true;
+*/
 }
 
 //-----------------------------------------------------------------------------
@@ -4434,7 +3997,9 @@ void Driver::InitAllNodes()
 		}
 	}
 	// Fetch new node data from the Z-Wave network
-	m_controller->PlayInitSequence(this);
+	
+	
+	TODO(replace it with zway_terminate and new Z-Way start equence. or just mark as not implemented) // m_controller->PlayInitSequence(this);
 }
 
 //-----------------------------------------------------------------------------
@@ -6608,193 +6173,6 @@ uint8 *Driver::GetNetworkKey()
 	}
 	return keybytes;
 }
-
-//-----------------------------------------------------------------------------
-// <Driver::SendEncryptedMessage>
-// Send either a NONCE request, or the actual encrypted message, depending what state the Message Currently is in.
-//-----------------------------------------------------------------------------
-bool Driver::SendEncryptedMessage()
-{
-
-	uint8 *buffer = m_currentMsg->GetBuffer();
-	uint8 length = m_currentMsg->GetLength();
-	m_expectedCallbackId = m_currentMsg->GetCallbackId();
-	Log::Write(LogLevel_Info, m_currentMsg->GetTargetNodeId(), "Sending (%s) message (Callback ID=0x%.2x, Expected Reply=0x%.2x) - %s", c_sendQueueNames[m_currentMsgQueueSource], m_expectedCallbackId, m_expectedReply, m_currentMsg->GetAsString().c_str());
-
-	m_controller->Write(buffer, length);
-	m_currentMsg->clearNonce();
-
-	return true;
-}
-
-bool Driver::SendNonceRequest(string logmsg)
-{
-
-	uint8 m_buffer[11];
-
-	/* construct a standard NONCE_GET message */
-	m_buffer[0] = SOF;
-	m_buffer[1] = 9;					// Length of the entire message
-	m_buffer[2] = REQUEST;
-	m_buffer[3] = FUNC_ID_ZW_SEND_DATA;
-	m_buffer[4] = m_currentMsg->GetTargetNodeId();
-	m_buffer[5] = 2; 					// Length of the payload
-	m_buffer[6] = Internal::CC::Security::StaticGetCommandClassId();
-	m_buffer[7] = Internal::CC::SecurityCmd_NonceGet;
-	//m_buffer[8] = TRANSMIT_OPTION_ACK | TRANSMIT_OPTION_AUTO_ROUTE;
-	m_buffer[8] = TRANSMIT_OPTION_ACK | TRANSMIT_OPTION_AUTO_ROUTE;
-	/* this is the same as the Actual Message */
-	//m_buffer[9] = m_expectedCallbackId;
-	m_buffer[9] = 2;
-	// Calculate the checksum
-	m_buffer[10] = 0xff;
-	for (uint32 i = 1; i < 10; ++i)
-	{
-		m_buffer[10] ^= m_buffer[i];
-	}
-	Log::Write(LogLevel_Info, m_currentMsg->GetTargetNodeId(), "Sending (%s) message (Callback ID=0x%.2x, Expected Reply=0x%.2x) - Nonce_Get(%s) - %s:", c_sendQueueNames[m_currentMsgQueueSource], 2, m_expectedReply, logmsg.c_str(), Internal::PktToString(m_buffer, 10).c_str());
-
-	m_controller->Write(m_buffer, 11);
-
-	return true;
-}
-
-bool Driver::initNetworkKeys(bool newnode)
-{
-
-	uint8_t EncryptPassword[16] =
-	{ 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };
-	uint8_t AuthPassword[16] =
-	{ 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55 };
-
-	uint8_t SecuritySchemes[1][16] =
-	{
-	{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 } };
-	this->m_inclusionkeySet = newnode;
-	this->AuthKey = new aes_encrypt_ctx;
-	this->EncryptKey = new aes_encrypt_ctx;
-
-	Log::Write(LogLevel_Info, GetControllerNodeId(), "Setting Up %s Network Key for Secure Communications", newnode == true ? "Inclusion" : "Provided");
-
-	if (!isNetworkKeySet())
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed - Network Key Not Set");
-		return false;
-	}
-
-	if (aes_init() == EXIT_FAILURE)
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed to Init AES Engine");
-		return false;
-	}
-
-	if (aes_encrypt_key128(newnode == false ? this->GetNetworkKey() : SecuritySchemes[0], this->EncryptKey) == EXIT_FAILURE)
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed to Set Initial Network Key for Encryption");
-		return false;
-	}
-
-	if (aes_encrypt_key128(newnode == false ? this->GetNetworkKey() : SecuritySchemes[0], this->AuthKey) == EXIT_FAILURE)
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed to Set Initial Network Key for Authentication");
-		return false;
-	}
-
-	uint8 tmpEncKey[32];
-	uint8 tmpAuthKey[32];
-	aes_mode_reset(this->EncryptKey);
-	aes_mode_reset(this->AuthKey);
-
-	if (aes_ecb_encrypt(EncryptPassword, tmpEncKey, 16, this->EncryptKey) == EXIT_FAILURE)
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed to Generate Encrypted Network Key for Encryption");
-		return false;
-	}
-	if (aes_ecb_encrypt(AuthPassword, tmpAuthKey, 16, this->AuthKey) == EXIT_FAILURE)
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed to Generate Encrypted Network Key for Authentication");
-		return false;
-	}
-
-	aes_mode_reset(this->EncryptKey);
-	aes_mode_reset(this->AuthKey);
-	if (aes_encrypt_key128(tmpEncKey, this->EncryptKey) == EXIT_FAILURE)
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed to set Encrypted Network Key for Encryption");
-		return false;
-	}
-	if (aes_encrypt_key128(tmpAuthKey, this->AuthKey) == EXIT_FAILURE)
-	{
-		Log::Write(LogLevel_Warning, GetControllerNodeId(), "Failed to set Encrypted Network Key for Authentication");
-		return false;
-	}
-	aes_mode_reset(this->EncryptKey);
-	aes_mode_reset(this->AuthKey);
-	return true;
-}
-
-void Driver::SendNonceKey(uint8 nodeId, uint8 *nonce)
-{
-
-	uint8 m_buffer[19];
-	/* construct a standard NONCE_GET message */
-	m_buffer[0] = SOF;
-	m_buffer[1] = 17;					// Length of the entire message
-	m_buffer[2] = REQUEST;
-	m_buffer[3] = FUNC_ID_ZW_SEND_DATA;
-	m_buffer[4] = nodeId;
-	m_buffer[5] = 10; 					// Length of the payload
-	m_buffer[6] = Internal::CC::Security::StaticGetCommandClassId();
-	m_buffer[7] = Internal::CC::SecurityCmd_NonceReport;
-	for (int i = 0; i < 8; ++i)
-	{
-		m_buffer[8 + i] = nonce[i];
-	}
-	m_buffer[16] = TRANSMIT_OPTION_ACK | TRANSMIT_OPTION_AUTO_ROUTE;
-	/* this is the same as the Actual Message */
-	m_buffer[17] = 1;
-	// Calculate the checksum
-	m_buffer[18] = 0xff;
-	for (uint32 i = 1; i < 18; ++i)
-	{
-		m_buffer[18] ^= m_buffer[i];
-	}
-	Log::Write(LogLevel_Info, nodeId, "Sending (%s) message (Callback ID=0x%.2x, Expected Reply=0x%.2x) - Nonce_Report - %s:", c_sendQueueNames[m_currentMsgQueueSource], m_buffer[17], m_expectedReply, Internal::PktToString(m_buffer, 19).c_str());
-
-	m_controller->Write(m_buffer, 19);
-
-	m_nonceReportSent = nodeId;
-}
-
-aes_encrypt_ctx *Driver::GetAuthKey()
-{
-	if (m_currentControllerCommand != NULL && m_currentControllerCommand->m_controllerCommand == ControllerCommand_AddDevice && m_currentControllerCommand->m_controllerState == ControllerState_Completed)
-	{
-		/* we are adding a Node, so our AuthKey is different from normal comms */
-		initNetworkKeys(true);
-	}
-	else if (m_inclusionkeySet)
-	{
-		initNetworkKeys(false);
-	}
-	return this->AuthKey;
-}
-;
-aes_encrypt_ctx *Driver::GetEncKey()
-{
-	if (m_currentControllerCommand != NULL && m_currentControllerCommand->m_controllerCommand == ControllerCommand_AddDevice && m_currentControllerCommand->m_controllerState == ControllerState_Completed)
-	{
-		/* we are adding a Node, so our EncryptKey is different from normal comms */
-		initNetworkKeys(true);
-	}
-	else if (m_inclusionkeySet)
-	{
-		initNetworkKeys(false);
-	}
-
-	return this->EncryptKey;
-}
-;
 
 bool Driver::isNetworkKeySet()
 {

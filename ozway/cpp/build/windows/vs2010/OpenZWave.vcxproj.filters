@@ -261,17 +261,8 @@
     <ClInclude Include="..\..\..\src\command_classes\SensorAlarm.h">
       <Filter>Command Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\platform\SerialController.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\platform\windows\SerialControllerImpl.h">
-      <Filter>Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\hidapi\hidapi\hidapi.h">
       <Filter>HIDAPI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\platform\HidController.h">
-      <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Bitfield.h">
       <Filter>Main</Filter>
@@ -632,17 +623,8 @@
     <ClCompile Include="..\..\..\src\command_classes\SensorAlarm.cpp">
       <Filter>Command Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\platform\SerialController.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\platform\windows\SerialControllerImpl.cpp">
-      <Filter>Platform\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\hidapi\windows\hid.cpp">
       <Filter>HIDAPI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\platform\HidController.cpp">
-      <Filter>Platform</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\Scene.cpp">
       <Filter>Main</Filter>

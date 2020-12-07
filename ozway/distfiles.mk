@@ -1447,8 +1447,6 @@ DISTFILES =	.gitignore \
 	cpp/src/platform/Event.h \
 	cpp/src/platform/FileOps.cpp \
 	cpp/src/platform/FileOps.h \
-	cpp/src/platform/HidController.cpp \
-	cpp/src/platform/HidController.h \
 	cpp/src/platform/HttpClient.cpp \
 	cpp/src/platform/HttpClient.h \
 	cpp/src/platform/Log.cpp \
@@ -1456,8 +1454,6 @@ DISTFILES =	.gitignore \
 	cpp/src/platform/Mutex.cpp \
 	cpp/src/platform/Mutex.h \
 	cpp/src/platform/Ref.h \
-	cpp/src/platform/SerialController.cpp \
-	cpp/src/platform/SerialController.h \
 	cpp/src/platform/Stream.cpp \
 	cpp/src/platform/Stream.h \
 	cpp/src/platform/Thread.cpp \
@@ -1476,8 +1472,6 @@ DISTFILES =	.gitignore \
 	cpp/src/platform/unix/LogImpl.h \
 	cpp/src/platform/unix/MutexImpl.cpp \
 	cpp/src/platform/unix/MutexImpl.h \
-	cpp/src/platform/unix/SerialControllerImpl.cpp \
-	cpp/src/platform/unix/SerialControllerImpl.h \
 	cpp/src/platform/unix/ThreadImpl.cpp \
 	cpp/src/platform/unix/ThreadImpl.h \
 	cpp/src/platform/unix/TimeStampImpl.cpp \
@@ -1490,14 +1484,10 @@ DISTFILES =	.gitignore \
 	cpp/src/platform/winRT/EventImpl.h \
 	cpp/src/platform/winRT/FileOpsImpl.cpp \
 	cpp/src/platform/winRT/FileOpsImpl.h \
-	cpp/src/platform/winRT/HidControllerWinRT.cpp \
-	cpp/src/platform/winRT/HidControllerWinRT.h \
 	cpp/src/platform/winRT/LogImpl.cpp \
 	cpp/src/platform/winRT/LogImpl.h \
 	cpp/src/platform/winRT/MutexImpl.cpp \
 	cpp/src/platform/winRT/MutexImpl.h \
-	cpp/src/platform/winRT/SerialControllerImpl.cpp \
-	cpp/src/platform/winRT/SerialControllerImpl.h \
 	cpp/src/platform/winRT/ThreadImpl.cpp \
 	cpp/src/platform/winRT/ThreadImpl.h \
 	cpp/src/platform/winRT/TimeStampImpl.cpp \
@@ -1514,8 +1504,6 @@ DISTFILES =	.gitignore \
 	cpp/src/platform/windows/LogImpl.h \
 	cpp/src/platform/windows/MutexImpl.cpp \
 	cpp/src/platform/windows/MutexImpl.h \
-	cpp/src/platform/windows/SerialControllerImpl.cpp \
-	cpp/src/platform/windows/SerialControllerImpl.h \
 	cpp/src/platform/windows/ThreadImpl.cpp \
 	cpp/src/platform/windows/ThreadImpl.h \
 	cpp/src/platform/windows/TimeStampImpl.cpp \
